@@ -1,8 +1,7 @@
 import sys,logging
 from crex import *
 from crfpp_wrap import *
-import partitioner
-from crossvalidationdataconstructor import CrossValidationDataConstructor
+from partitioner import *
 from utils import *
 import pprint
 
@@ -31,6 +30,7 @@ def eval(fname,n_folds):
 		tot_prec=0.0
 		tot_fscore=0.0
 		tot_rec=0.0
+		html=""
 		for x,iter in enumerate(dataSets_iterator):
 			print "Iteration %i"%(x+1)
 			train_set=[]
@@ -96,6 +96,7 @@ def eval(fname,n_folds):
 			prec=0.0
 			acc=0.0
 			tot_tokens=0
+			results=[]
 			print "Processing #Fold %i..."%(y+1)
 			for ex in test:
 				tokens=[]
@@ -130,6 +131,8 @@ def eval(fname,n_folds):
 							errors+=1
 					except RuntimeError,e:
 						print "Something went wrong"
+				logger.debug(result_to_string(res))
+				results.append(res)
 			prec=tp/float(tp+fp)
 			acc=(tp+tn)/float(tp+fp+tn+fn)
 			rec=tp/float(tp+fn)
@@ -157,6 +160,8 @@ def eval(fname,n_folds):
 		print "Average accuracy: %f"%(tot_acc/float(iterations_num))
 		print "Average precision: %f"%(tot_prec/float(iterations_num))
 		print "Average recall: %f"%(tot_fscore/float(iterations_num))
+		print "Output in HTML format written to output.html"
+		open('output.html','w').write(results_to_HTML(results))
 			
 		
 	except RuntimeError,e:

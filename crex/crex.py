@@ -1,6 +1,6 @@
 # author: 56k
 
-import os,sys,re,pprint,logging,array,string
+import os,sys,re,pprint,logging,string
 from utils import *
 from crfpp_wrap import CRF_classifier
 from crfpp_wrap import *
@@ -302,4 +302,4 @@ if __name__ == "__main__":
     s="Eschilo interprete di se stesso (Ar. Ran. 1126s. e 1138-1150)"
     temp=get_features(s.split(" "),[],False)
     temp=temp.split('\n')
-    pprint.pprint(c.classify([token_tostring(t.split('\t')) for t in temp]))
+    print result_to_HTML(c.classify([token_tostring(t.split('\t')) for t in temp]))

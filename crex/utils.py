@@ -1,9 +1,7 @@
 import CRFPP
 import sys,pprint,re
 from crfpp_wrap import CRF_classifier
-import partitioner
-from partitioner import Partitioner
-from crossvalidationdataconstructor import CrossValidationDataConstructor
+from partitioner import *
 from random import *
 	
 def read_instances(inp_text):
@@ -42,6 +40,33 @@ def instance_tostring(instance):
 			else:
 				string+="%s"%t[0]
 	return string
+	
+def result_to_string(result):
+	"""
+	Tranform the result to a string.
+	"""
+	out=''
+	for i,t in enumerate(result):
+		out+=t['token']+"/"+t['label']
+		if(i<len(result)-1):
+			out+=" "
+	return out
+
+def results_to_HTML(results):
+	"""
+	Tranform the result to a string.
+	"""
+	out="<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/> <style type=\"text/css\">div.result{padding:5px}span.token_B-CRF,span.token_I-CRF{font-weight:bold}</style></head><body>"
+	for r in results:
+		out+="<div class=\"result\">"
+		for i,t in enumerate(r):
+			out+="<span class=\"token_%s\">%s</span>"%(t['label'],t['token'])
+			if(i<len(r)-1):
+				out+=" "
+		out+="</div>"
+	out+="</body></html>"
+	return out
+		
 
 def main():
 	return
@@ -49,4 +74,3 @@ def main():
 		
 if __name__ == "__main__":
     main()
-    #test_cross(range(0,1000))

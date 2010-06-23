@@ -1,6 +1,4 @@
-import crex
-import eval
-from crex import prepare_for_training
+from crex import *
 from eval import *
-from utils import *
+#from utils import *
 from crfpp_wrap import *
