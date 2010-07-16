@@ -13,6 +13,6 @@ setup(name='crex',
     packages=find_packages(),
     package_data={'crex': ['data/*']},
     long_description=LONG_DESC,
-    install_requires=['partitioner'],
+    install_requires=['partitioner,CRFPP'],
     zip_safe=False,
 )

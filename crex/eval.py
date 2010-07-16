@@ -7,6 +7,8 @@ import pprint
 
 logger=logging.getLogger('EVAL')
 
+EVAL_PATH="56k/phd/code/python/eval/fold"
+
 def eval(fname,n_folds):
 	valid_res=[]
 	try:
@@ -81,9 +83,9 @@ def eval(fname,n_folds):
 						out2+="\n"
 				if(c<len(test)-1):
 					out2+="\n"
-			train_file="/56k/phd/code/python/eval/fold_%i.train"%(y+1)
-			test_file="/56k/phd/code/python/eval/fold_%i.test"%(y+1)
-			model_file="/56k/phd/code/python/eval/fold_%i.mdl"%(y+1)
+			train_file="%sfold_%i.train"%(EVAL_PATH,y+1)
+			test_file="%sfold_%i.test"%(EVAL_PATH,y+1)
+			model_file="%sfold_%i.mdl"%(EVAL_PATH,y+1)
 			file=open(train_file,"w").write(out)
 			open(test_file,"w").write(out2)
 			train_crfpp("data/crex.tpl",train_file,model_file)
