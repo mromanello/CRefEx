@@ -7,7 +7,7 @@ import pprint
 
 logger=logging.getLogger('EVAL')
 
-EVAL_PATH="56k/phd/code/python/eval/fold"
+EVAL_PATH="56k/phd/code/python/eval/"
 
 def eval(fname,n_folds):
 	valid_res=[]
