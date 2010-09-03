@@ -6,7 +6,9 @@ from crfpp_wrap import CRF_classifier
 from crfpp_wrap import *
 
 LOG_FILE="/56k/phd/code/python/crfx.log"
-logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=LOG_FILE,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
+#logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=LOG_FILE,datefmt='%a, %d %b %Y 
+#%H:%M:%S',filemode='w')
+logging.basicConfig()
 logger = logging.getLogger('CRFX')
 
 pp = pprint.PrettyPrinter(indent=5)
