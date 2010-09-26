@@ -2,10 +2,14 @@ import sys,logging
 from crex import *
 from crfpp_wrap import *
 from partitioner import *
+from crossvalidationdataconstructor import *
 from utils import *
 import pprint
 
 logger=logging.getLogger('EVAL')
+
+EVAL_PATH="/home/ngs0554/eval/"
+DATA_PATH="/home/ngs0554/crex_data/"
 
 def eval(fname,n_folds):
 	valid_res=[]
@@ -81,12 +85,12 @@ def eval(fname,n_folds):
 						out2+="\n"
 				if(c<len(test)-1):
 					out2+="\n"
-			train_file="/56k/phd/code/python/eval/fold_%i.train"%(y+1)
-			test_file="/56k/phd/code/python/eval/fold_%i.test"%(y+1)
-			model_file="/56k/phd/code/python/eval/fold_%i.mdl"%(y+1)
+			train_file="%sfold_%i.train"%(EVAL_PATH,y+1)
+			test_file="%sfold_%i.test"%(EVAL_PATH,y+1)
+			model_file="%sfold_%i.mdl"%(EVAL_PATH,y+1)
 			file=open(train_file,"w").write(out)
 			open(test_file,"w").write(out2)
-			train_crfpp("data/crex.tpl",train_file,model_file)
+			train_crfpp("%screx.tpl"%DATA_PATH,train_file,model_file)
 			crf=CRF_classifier(model_file)
 			errors=0
 			fp=0
@@ -169,8 +173,9 @@ def eval(fname,n_folds):
 		"Not able to prepare %s for training!"%fname	
 
 def run_example():
+	DATA_DIR="/home/ngs0554/crex_data"
 	#eval("data/test.txt",5)
-	eval("data/test.txt",10)
+	eval("%s/test.txt"%DATA_DIR,10)
 	#eval("data/test.txt",20)
 
 if __name__ == "__main__":
