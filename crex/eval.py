@@ -56,7 +56,7 @@ def eval(fname,n_folds):
 		logger.debug('# of instances in training set: %i'%len(train_set))
 		logger.debug('# of instances in test set: %i'%len(test_set))
 			
-				
+		results=[]	
 		for y,i in enumerate(iterations):
 			out=""
 			out2=""
@@ -96,7 +96,7 @@ def eval(fname,n_folds):
 			prec=0.0
 			acc=0.0
 			tot_tokens=0
-			results=[]
+			
 			print "Processing #Fold %i..."%(y+1)
 			for ex in test:
 				tokens=[]
@@ -106,11 +106,14 @@ def eval(fname,n_folds):
 				# classify the instance
 				res=crf.classify(tokens)
 				logger.debug(instance_tostring(ex))
+				logger.debug(result_to_string(res))
+				results.append(res)
 				for i in range(0,len(tokens)):
 					try:
 						gt_label=tokens[i].split('\t')[len(tokens[i].split('\t'))-1]
 						token=tokens[i].split('\t')[0]
 						class_label=res[i]['label']
+						res[i]['gt_label']=gt_label
 						alpha=res[i]['probs'][class_label]['alpha']
 						beta=res[i]['probs'][class_label]['beta']
 						p=res[i]['probs'][class_label]['prob']
@@ -131,8 +134,6 @@ def eval(fname,n_folds):
 							errors+=1
 					except RuntimeError,e:
 						print "Something went wrong"
-				logger.debug(result_to_string(res))
-				results.append(res)
 			prec=tp/float(tp+fp)
 			acc=(tp+tn)/float(tp+fp+tn+fn)
 			rec=tp/float(tp+fn)
@@ -161,7 +162,7 @@ def eval(fname,n_folds):
 		print "Average precision: %f"%(tot_prec/float(iterations_num))
 		print "Average recall: %f"%(tot_fscore/float(iterations_num))
 		print "Output in HTML format written to output.html"
-		open('output.html','w').write(results_to_HTML(results))
+		open('data/output.html','w').write(results_to_HTML(results))
 			
 		
 	except RuntimeError,e:

@@ -52,15 +52,27 @@ def result_to_string(result):
 			out+=" "
 	return out
 
-def results_to_HTML(results):
+def results_to_HTML(results,labels=[]):
 	"""
 	Tranform the result to a string.
 	"""
-	out="<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/> <style type=\"text/css\">div.result{padding:5px}span.token_B-CRF,span.token_I-CRF{font-weight:bold}</style></head><body>"
-	for r in results:
-		out+="<div class=\"result\">"
+	out="<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/> <style type=\"text/css\">div.result{padding:5px}span.token_B-CRF,span.tp{font-weight:bold} span.fn{color:red} span.fp{color:orange}</style></head><body>"
+	for n,r in enumerate(results):
+		out+="<div class=\"result\">[%s] "%str(n+1)
 		for i,t in enumerate(r):
-			out+="<span class=\"token_%s\">%s</span>"%(t['label'],t['token'])
+			value=""
+			if(t['gt_label']==t['label']):
+				if(t['gt_label']=="O"):
+				   value='tn'
+				else:
+				   value='tp'
+			else:
+				if(t['gt_label']=="O"):
+				   value='fp'
+				else:
+				   value='fn'
+			error="%s -> %s"%(t['gt_label'],t['label'])
+			out+="<span title=\"%s\" class=\"%s\">%s</span>"%(error,value,t['token'])
 			if(i<len(r)-1):
 				out+=" "
 		out+="</div>"
