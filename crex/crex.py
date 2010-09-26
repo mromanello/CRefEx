@@ -5,7 +5,7 @@ from utils import *
 from crfpp_wrap import CRF_classifier
 from crfpp_wrap import *
 
-log_file="/56k/phd/code/python/crfx.log"
+log_file="/56k/phd/code/python_crex/crfx.log"
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=log_file,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
 logger = logging.getLogger('CRFX')
 
@@ -127,6 +127,9 @@ def prepare_for_testing(file_name):
 	return get_features(tokens,labels)
 	
 def tag_IOB_file(train_file_name,to_tag_file_name):
+	"""
+	Takes as input a IOB file and tags it according to a given CRF model
+	"""
 	dir="data/"
 	path,fn = os.path.split(train_file_name)
 	out=open(dir+fn+'.train','w').write(prepare_for_training(train_file_name))
