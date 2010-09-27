@@ -1,6 +1,8 @@
 USAGE
 =====
 
+[needs update]
+
 (1) to prepare an XML file for the manual tagging
 	/usr/local/bin/python2.5 /56k/phd/code/python/crfx.py prep_tag /56k/phd/code/python/10.2307_40236128.xml
 
