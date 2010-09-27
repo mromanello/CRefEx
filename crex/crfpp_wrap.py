@@ -1,6 +1,12 @@
+"""
+Creates a wrapper around the CRF++ implementation
+"""
+
 import CRFPP
 import sys,logging,os
 import pprint
+
+logger = logging.getLogger('CRFPP_WRAP')
 
 def train_crfpp(template_file,train_data_file,model_file):
 		cmd="crf_learn -f 10 -t %s %s %s"%(template_file,train_data_file,model_file)

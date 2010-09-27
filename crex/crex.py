@@ -1,10 +1,17 @@
 # author: 56k
-
+import re,string
 from crfpp_wrap import *
+from utils import *
 
-LOG_FILE="/56k/phd/code/python/crfx.log"
+"""
+Description
+"""
+
+__version__='1.0.0'
+
+LOG_FILE="/56k/phd/code/python_crex/crfx.log"
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=LOG_FILE,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
-logger = logging.getLogger('CRFX')
+logger = logging.getLogger('CREX')
 
 pp = pprint.PrettyPrinter(indent=5)
 
@@ -65,19 +72,23 @@ feat_labels[21]="ROMAN_NUMBER"
 feat_labels[9]="NO_DIGITS"
 feat_labels[22]="MIXED_ALPHANUM"
 
+
+# this class seems useless to me now!
+
 class Classifier:
 	def __init__(self,train_file_name):
-		dir="data/"
+		dir="/56k/phd/code/python_crex/data/"
 		path,fn = os.path.split(train_file_name)
 		train_fname=dir+fn+'.train'
 		out=open(train_fname,'w').write(prepare_for_training(train_file_name))
 		model_fname=dir+fn+'.mdl'
-		train_crfpp("data/crex.tpl",train_fname,model_fname)
+		train_crfpp(dir+"crex.tpl",train_fname,model_fname)
 		self.crf_model=CRF_classifier(model_fname)
 		return
 	
 	def classify(self,tagged_tokens_list):
 		return self.crf_model.classify(tagged_tokens_list)
+
 
 def parse_jstordfr_XML(inp):
 	"""
@@ -164,13 +175,15 @@ def prepare_for_tagging(file_name):
 		
 	"""
 	inp=open(file_name).read()
-	prolog="""# File generated from %s
+	prolog="""
+# File generated from %s
 # The tag to be used to mark up Canonical References are: B-CRF, I-CRF and O (according to the
-# classical IOB format for NER)\n"""%(file_name)
+# classical IOB format for NER)
+	"""%(file_name)
 	out=""
 	out+=prolog
 	for i in parse_jstordfr_XML(inp):
-		out+=("# Original line: %s\n"%i)
+		out+=("\n# Original line: %s\n"%i)
 		for t in i.split(' '):
 			out+="%s\tO\n"%t
 		out+="\n"
@@ -270,13 +283,16 @@ def get_features(tokens,labels,outp_label=True):
 				else:	
 					tags[i]=feat_labels[0]
 			if(outp_label):
-				out+=concat([t]+tags+extract_char_ngrams(t)+[labels[count]],'\t')
+				temp=concat([t]+tags+extract_char_ngrams(t)+[labels[count]],'\t')
+				logger.debug(temp)
+				out+=temp
 			else:
-				out+=concat([t]+tags+extract_char_ngrams(t),'\t')+"\n"
+				temp=concat([t]+tags+extract_char_ngrams(t),'\t')+"\n"
+				logger.debug(temp)
+				out+=temp
 			count+=1
 		else:
-			out+=t
-		
+			out+=t	
 	return out
 	
 def main():

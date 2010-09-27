@@ -52,7 +52,7 @@ def result_to_string(result):
 			out+=" "
 	return out
 
-def results_to_HTML(results,labels=[]):
+def eval_results_to_HTML(results,labels=[]):
 	"""
 	Tranform the result to a string.
 	"""
@@ -77,6 +77,18 @@ def results_to_HTML(results,labels=[]):
 				out+=" "
 		out+="</div>"
 	out+="</body></html>"
+	return out
+	
+def results_to_HTML(results,labels=[]):
+	"""
+	Tranform the result to a string.
+	"""
+	#out="<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/> <style type=\"text/css\">div.result{padding:5px}span.token_B-CRF,span.tp{font-weight:bold} span.fn{color:red} span.fp{color:orange}</style></head><body>"
+	out="<div class=\"results\">"
+	for n,r in enumerate(results):
+		out+="<span title=\"%s\">%s</span>"%(str(r['label']),str(r['token']))
+	out+="</div></body>"
+	#out+="</html>"
 	return out
 		
 

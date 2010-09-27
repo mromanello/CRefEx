@@ -1,17 +1,17 @@
-import sys,logging
+import sys,logging,re
 from crex import *
 from crfpp_wrap import *
 from partitioner import *
-from crossvalidationdataconstructor import *
+from partitioner import crossvalidationdataconstructor
 from utils import *
 import pprint
 
 logger=logging.getLogger('EVAL')
-
 EVAL_PATH="/home/ngs0554/eval/"
 DATA_PATH="/home/ngs0554/crex_data/"
 
 def eval(fname,n_folds):
+	print EVAL_PATH
 	valid_res=[]
 	try:
 		instances=read_instances(prepare_for_testing(fname))
@@ -166,17 +166,25 @@ def eval(fname,n_folds):
 		print "Average precision: %f"%(tot_prec/float(iterations_num))
 		print "Average recall: %f"%(tot_fscore/float(iterations_num))
 		print "Output in HTML format written to output.html"
-		open('data/output.html','w').write(results_to_HTML(results))
+		open('data/output.html','w').write(eval_results_to_HTML(results))
 			
 		
 	except RuntimeError,e:
 		"Not able to prepare %s for training!"%fname	
 
+def main():
+	global DATA_PATH,EVAL_PATH
+	DATA_PATH=sys.argv[1]
+	EVAL_PATH=sys.argv[2]
+	eval("%s/test.txt"%DATA_PATH,10)
+
+def run_example(data_dir):
+	DATA_PATH=data_dir
+	eval("%s/test.txt"%DATA_PATH,10)
+
 def run_example():
-	DATA_DIR="/home/ngs0554/crex_data"
-	#eval("data/test.txt",5)
-	eval("%s/test.txt"%DATA_DIR,10)
-	#eval("data/test.txt",20)
+	DATA_PATH="/home/ngs0554/crex_data"
+	run_example(DATA_PATH)
 
 if __name__ == "__main__":
     main()
