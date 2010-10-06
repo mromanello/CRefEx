@@ -87,7 +87,8 @@ class CrexService:
 		"""
 		logger.debug("Printing version")
 		return __version__
-		
+	
+# this class should extend an abstract classifier˝	
 class CRFPP_Classifier:
 	def __init__(self,train_file_name):
 		dir="/56k/phd/code/python_crex/data/"
