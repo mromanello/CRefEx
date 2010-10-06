@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 # author: 56k
 import re,string
 from crfpp_wrap import *
@@ -73,9 +74,21 @@ feat_labels[9]="NO_DIGITS"
 feat_labels[22]="MIXED_ALPHANUM"
 
 
-# this class seems useless to me now!
-
-class Classifier:
+class CrexService:
+	def __init__(self):
+		self.core = CRefEx()
+		
+	def test(self,arg):
+		return self.core.classify(arg)
+		
+	def version(self): 
+		"""
+		Return the version of CRefEx
+		"""
+		logger.debug("Printing version")
+		return __version__
+		
+class CRFPP_Classifier:
 	def __init__(self,train_file_name):
 		dir="/56k/phd/code/python_crex/data/"
 		path,fn = os.path.split(train_file_name)
@@ -88,6 +101,30 @@ class Classifier:
 	
 	def classify(self,tagged_tokens_list):
 		return self.crf_model.classify(tagged_tokens_list)
+		
+class CRefEx:
+	"""Canonical Reference Extractor"""
+	
+	def __init__(self,training_model=None,training_file=None):
+		self.training_model=training_model
+		self.classifier=None
+		self._default_training_dir="/56k/phd/code/python_crex/data/"
+		self._default_training_file="test.txt"
+		
+		if(training_model=="CRF" or training_model is None):
+			if(training_file is not None):
+				self.classifier=CRFPP_Classifier(training_file)
+			else:
+				# read the default value
+				self.classifier=CRFPP_Classifier("%s%s"%(self._default_training_dir,self._default_training_file))
+				
+	def tokenize(self, arg):
+		pass
+				
+	# actually it's a proxy method
+	def classify(self, arg):
+		features=get_features(arg.split(" "),[],False).split('\n')
+		return self.classifier.classify([token_tostring(f.split('\t')) for f in features])
 
 
 def parse_jstordfr_XML(inp):
@@ -311,11 +348,10 @@ def main():
 		return
 
 if __name__ == "__main__":
-    #main()
-    #exp("A")
-    c=Classifier('data/test.txt')
-    s1="this is a string Il. 1.125"
-    s="Eschilo interprete di se stesso (Ar. Ran. 1126s. e 1138-1150)"
-    temp=get_features(s.split(" "),[],False)
-    temp=temp.split('\n')
-    print result_to_HTML(c.classify([token_tostring(t.split('\t')) for t in temp]))
+	#main()
+	#exp("A")
+	c=CRefEx()
+	s1="this is a string Il. 1.125"
+	s="Eschilo interprete di se stesso (Ar. Ran. 1126s. e 1138-1150)"
+	#print result_to_HTML(c.classify([token_tostring(t.split('\t')) for t in temp]))
+	print c.classify(s)
