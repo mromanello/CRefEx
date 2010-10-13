@@ -42,6 +42,7 @@ class CRF_classifier:
 			else:
 				feats.append(self.tagger.x(i, j))
 			res['features']=feats
+			logger.debug(feats)
 		   res['label']=self.tagger.y2(i)
 		   res['probs']={}
 		   for j in range(0, (ysize)):

@@ -5,7 +5,7 @@ import xmlrpclib,pprint
 import simplejson as json
 from nltk import regexp_tokenize
 from Crex.Utils.IO import *
-from Crex.crex import *
+from Crex.core import *
 pp = pprint.PrettyPrinter(indent=5)
 
 LHOST="localhost"
