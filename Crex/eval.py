@@ -1,9 +1,8 @@
 import sys,logging,re
-from crex import *
-from crfpp_wrap import *
+from Crex.core import *
+from Crex.crfpp_wrap import CRF_classifier
 from partitioner import *
 from partitioner import crossvalidationdataconstructor
-from utils import *
 import pprint
 
 logger=logging.getLogger('EVAL')
@@ -13,8 +12,9 @@ DATA_PATH="/home/ngs0554/crex_data/"
 def eval(fname,n_folds):
 	print EVAL_PATH
 	valid_res=[]
+	fe = FeatureExtractor()
 	try:
-		instances=read_instances(prepare_for_testing(fname))
+		instances=read_instances(fe.prepare_for_training(fname))
 		pos_inst=[ins for ins in instances if not instance_contains_label(ins,'O')]
 		neg_inst=[ins for ins in instances if instance_contains_label(ins,'O')]
 		shuffle(neg_inst)

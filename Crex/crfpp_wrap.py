@@ -32,16 +32,17 @@ class CRF_classifier:
 		size = self.tagger.size()
 		xsize = self.tagger.xsize()
 		ysize = self.tagger.ysize()
-		
 		for i in range(0, (size)):
 		   res={}
 		   feats=[]
+		   res['id']=i+1
 		   for j in range(0, (xsize)):
 			if(j==0):
 				res['token']=self.tagger.x(i, j)
 			else:
 				feats.append(self.tagger.x(i, j))
 			res['features']=feats
+			logger.debug(feats)
 		   res['label']=self.tagger.y2(i)
 		   res['probs']={}
 		   for j in range(0, (ysize)):
