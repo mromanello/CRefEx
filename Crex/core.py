@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # author: 56k
-import os,re,string,logging,pprint
+import os,re,string,logging,pprint,types
 from Crex.crfpp_wrap import *
 from Crex.Utils.IO import *
 
@@ -19,7 +19,6 @@ pp = pprint.PrettyPrinter(indent=5)
 class CrexService:
 	def __init__(self):
 		self.core = CRefEx()
-		
 	def test(self,arg):
 		res = self.core.classify(arg)
 		out=[]
@@ -32,8 +31,6 @@ class CrexService:
 				t.append(temp)
 			out.append(t)
 		return {'short':out,'verbose':res}
-		
-		
 	def version(self): 
 		"""
 		Return the version of CRefEx
@@ -48,13 +45,17 @@ class CRFPP_Classifier:
 		fe = FeatureExtractor()
 		path,fn = os.path.split(train_file_name)
 		train_fname=dir+fn+'.train'
-		out=open(train_fname,'w').write(fe.prepare_for_training(train_file_name))
+		t = fe.prepare_for_training(train_file_name)
+		out=open(train_fname,'w').write(t)
 		model_fname=dir+fn+'.mdl'
 		train_crfpp(dir+"crex.tpl",train_fname,model_fname)
 		self.crf_model=CRF_classifier(model_fname)
 		return
 	
 	def classify(self,tagged_tokens_list):
+		"""
+		@param tagged_tokens_list the list of tokens with tab separated tags
+		"""
 		return self.crf_model.classify(tagged_tokens_list)
 		
 class CRefEx:
@@ -72,7 +73,6 @@ class CRefEx:
 			else:
 				# read the default value
 				self.classifier=CRFPP_Classifier("%s%s"%(self._default_training_dir,self._default_training_file))
-				
 	def tokenize(self, arg):
 		pass
 				
@@ -80,13 +80,14 @@ class CRefEx:
 	def classify(self, instances,input="text"):
 		res = []
 		for i in instances:
-			features=self.fe.get_features(i,[],False).split('\n')
-			res.append(self.classifier.classify([token_tostring(f.split('\t')) for f in features]))
+			feat_sets = self.fe.get_features(i,[],False)
+			res.append(self.classifier.classify(instance_to_string(feat_sets)))
+				
 		return res
 		
 class FeatureExtractor:
 	"""
-	...
+	A feature extractor to extract features from tokens.
 	"""
 	def __init__(self):
 		# brackets
@@ -146,6 +147,10 @@ class FeatureExtractor:
 		self.feat_labels[0]="OTHERS"
 		
 	def extract_bracket_feature(self,check_str):
+		"""
+		Extract a feature concerning the eventual presence of brackets
+		"""
+		res = None
 		# define check regexps
 		pair_sq_bra=re.compile(r'\[.*?\]')
 		unpair_sq_bra=re.compile(r'[\[\]]')
@@ -153,147 +158,155 @@ class FeatureExtractor:
 		unpair_rd_bra=re.compile(r'[\(\)]')
 		# execute checks
 		if(pair_sq_bra.search(check_str)):
-			return self.PAIRED_SQUARE_BRACKETS
+			res = self.PAIRED_SQUARE_BRACKETS
 		elif(unpair_sq_bra.search(check_str)):
-			return self.UNPAIRED_SQUARE_BRACKETS
+			res = self.UNPAIRED_SQUARE_BRACKETS
 		elif(pair_rd_bra.search(check_str)):
-			return self.PAIRED_ROUND_BRACKETS
+			res = self.PAIRED_ROUND_BRACKETS
 		elif(unpair_rd_bra.search(check_str)):
-			return self.UNPAIRED_ROUND_BRACKETS
+			res = self.UNPAIRED_ROUND_BRACKETS
 		else:
-			return self.OTHERS
+			res = self.OTHERS
+		return ("brackets",res)
 	def extract_case_feature(self,check_str):
+		"""
+		Extract a feature concerning the ortographic case of a token
+		"""
 		naked = re.sub('[%s]' % re.escape(string.punctuation), '', check_str)
+		res = self.OTHERS
 		if(naked.isalpha()):
 			if(naked.isupper()):
-				return self.ALL_CAPS
+				res = self.ALL_CAPS
 			elif(naked.islower()):
-				return self.ALL_LOWER
+				res = self.ALL_LOWER
 			elif(naked[0].isupper()):
-				return self.INIT_CAPS
+				res = self.INIT_CAPS
+		return ("case",res)
 	def extract_punctuation_feature(self,check_str):
+		res = self.OTHERS
 		punct_exp=re.compile('[%s]' % re.escape(string.punctuation))
-		# TODO
 		final_dot=re.compile(r'.*?\.$')
 		three_dots=re.compile(r'.*?\.\.\.$')
 		cont_punct=re.compile(r'.*?[,;:]$')
 		if(three_dots.match(check_str)):
-			return
+			res = self.OTHERS
 		elif(final_dot.match(check_str)):
-			return self.FINAL_DOT
+			res = self.FINAL_DOT
 		elif(cont_punct.match(check_str)):
-			return self.CONTINUING_PUNCTUATION
+			res = self.CONTINUING_PUNCTUATION
+		return ("punct",res)
 	def extract_number_feature(self,check_str):
+		"""
+		TODO
+		"""
+		res = self.OTHERS
 		naked = re.sub('[%s]' % re.escape(string.punctuation), '', check_str).lower()
 		if(naked.isdigit()):
-			return self.NUMBER
+			res = self.NUMBER
 		elif(naked.isalpha()):
-			return self.NO_DIGITS
+			res = self.NO_DIGITS
 		elif(naked.isalnum()):
-			return self.MIXED_ALPHANUM
+			res = self.MIXED_ALPHANUM
+		return ("number",res)
 	def extract_char_ngrams(self,string):
+		"""
+		"""
 		size=4
 		out=[]
 		for i in range(0,4):
 			i+=1
-			out.append(string[0:i])
+			temp = ("subs %i"%i,string[0:i])
+			out.append(temp)
 		for i in range(0,4):
 			i+=1
-			out.append(string[len(string)-i:])
+			temp = ("susb -%i"%(i),string[len(string)-i:])
+			out.append(temp)
 		return out
-	
 	def extract_string_features(self,check_str):
 		"""
 		Extract string length and text only string lowercase
 		"""
 		out = re.sub('[%s]' % re.escape(string.punctuation), '', check_str)
+		res = []
 		if(not out==""):
-			return [out.lower(),str(len(out))]
+			t = ('lowcase',out.lower())
+			res.append(t)
+			t = ('str-length',str(len(out)))
+			res.append(t)
 		else:
-			return ["_",str(len(out))]
+			t = ('lowcase','_')
+			res.append(t)
+			t = ('str-length',str(len(out)))
+			res.append(t)
+		res.append(('a_token',check_str))
+		return res
 	
 	def extract_features(self,inp):
 		feature_set=[]
-		feat_funcs=[self.extract_punctuation_feature,self.extract_bracket_feature,self.extract_case_feature,self.extract_number_feature]
+		feat_funcs=[self.extract_punctuation_feature,
+		self.extract_bracket_feature,
+		self.extract_case_feature,
+		self.extract_number_feature,
+		self.extract_char_ngrams,
+		self.extract_string_features]
 		for f in feat_funcs:
-			feature_set.append(f(inp))
+			result = f(inp)
+			if(type(result) == types.TupleType):
+				feature_set.append(result)
+			elif(type(result) == types.ListType):
+				for r in result:
+					feature_set.append(r)	
 		return feature_set
-	def get_features(self,tokens,labels=[],outp_label=True):
-		out=""
-		count=0
-		for t in tokens:
-			if(t!="\n"):
-				logger.debug("Extracting features for token \"%s\""%t)
-				tags=self.extract_features(t)
-				tags+=self.extract_string_features(t)
-				for i in range(len(tags)):	
-					if(tags[i] is not None and type(tags[i]) is not type('string')):
-						tags[i]=self.feat_labels[tags[i]]
-					elif(type(tags[i]) is type('string')):
-						tags[i]
-					else:	
-						tags[i]=self.feat_labels[0]
-				if(outp_label):
-					temp=concat([t]+tags+self.extract_char_ngrams(t)+[labels[count]],'\t')
-					logger.debug(temp)
-					out+=temp
-				else:
-					temp=concat([t]+tags+self.extract_char_ngrams(t),'\t')+"\n"
-					logger.debug(temp)
-					out+=temp
-				count+=1
-			else:
-				out+=t	
-		return out		
+		
+	def get_features(self,instance,labels=[],outp_label=True):
+		out = [self.extract_features(tok) for tok in instance]
+		res = [dict(r) for r in out]
+		# transform the numeric values into strings
+		for n,x in enumerate(res):
+			for m,key in enumerate(x.iterkeys()):
+				if(type(x[key]) is type('string')):
+					pass
+				elif(type(x[key]) is not types.NoneType):
+					x[key] = self.feat_labels[x[key]]
+			if(outp_label is True):
+				x['z_gt_label']=labels[n]
+		return res
+
 	def prepare_for_training(self,file_name):
+		"""
+		@param file_name the input file in IOB format
+		@return 
+		"""
 		file=open(file_name)
-		out=""
-		lines=file.readlines()
-		tokens=[]
-		labels=[]
-		for l in lines:
-			comment=re.compile(r'#.*?')
-			if(l=="\n"):
-				tokens.append(l)
-			elif(not comment.match(l)):
-				tokens.append(l.split('\t')[0])
-				labels.append(l.split('\t')[1])	
-		return self.get_features(tokens,labels)
-	def prepare_for_testing(self,file_name):
-		file=open(file_name)
-		out=""
-		lines=file.readlines()
-		tokens=[]
-		labels=[]
-		for l in lines:
-			comment=re.compile(r'#.*?')
-			if(l=="\n"):
-				tokens.append(l)
-			elif(not comment.match(l)):
-				tokens.append(l.split('\t')[0])
-				labels.append(l.split('\t')[1])	
-		return self.get_features(tokens,labels)
+		comment=re.compile(r'#.*?')
+		lines = file.read()
+		instances=[group.split('\n')for group in lines.split("\n\n")]
+		res = []
+		all_labels = []
+		for inst in instances:
+			labels= []
+			tokens=[]
+			for line in inst:
+				if(not comment.match(line)):
+					tokens.append(line.split('\t')[0])
+					labels.append(line.split('\t')[1])
+			all_labels.append(labels)
+			res.append(tokens)
+		res2=[]
+		for n,r in enumerate(res):
+			res2.append(self.get_features(r,all_labels[n]))
+		# all this fuss is to have instances and feature sets as text
+		res2=[instance_to_string(r) for r in res2]
+		res3 = ["\n".join(i) for i in res2]
+		out = "\n\n".join(res3)
+		return out
 	
 def main():
-	fname=sys.argv[2]
-	if(sys.argv[1]=="prep_train"):
-		print prepare_for_training(fname)
-		return
-	elif(sys.argv[1]=="prep_tag"):
-		print prepare_for_tagging(fname)
-		return
-	elif(sys.argv[1]=="prep_test"):
-		print prepare_for_testing(fname)
-		return
-	elif(sys.argv[1]=="tag"):
-		tag_IOB_file(fname,sys.argv[3])
-		return
-
-if __name__ == "__main__":
-	#main()
-	#exp("A")
 	c=CRefEx()
 	s1="this is a string Il. 1.125"
 	s="Eschilo interprete di se stesso (Ar. Ran. 1126s. e 1138-1150)"
-	#print result_to_HTML(c.classify([token_tostring(t.split('\t')) for t in temp]))
 	pp.pprint(c.classify([s.split(" ")]))
+
+if __name__ == "__main__":
+	main()
+
