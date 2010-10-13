@@ -33,6 +33,19 @@ def read_IOB_file(file):
 			instances.append(instance)
 	return instances
 	
+def token_to_string(tok_dict):
+	tmp = []
+	for k in sorted(tok_dict.keys()):
+		tmp.append(tok_dict[k])
+	return tmp
+	
+def instance_to_string(inst):
+	out = []
+	for fs in inst:
+		tmp = token_to_string(fs)
+		out.append("\t".join(tmp))
+	return out
+	
 def instance_contains_label(instance,neg_label="O"):
 	temp=[]
 	for token in instance:
@@ -170,21 +183,6 @@ def tag_IOB_file(train_file_name,to_tag_file_name):
 		print "%s"%out
 	logger.info('Tagged %i instances'%len(instances))
 	return
-
-def concat(strings,concat_string,last_char=None):
-	"""
-	Utility function to concatenate strings.
-	"""
-	out=""
-	count=0
-	for s in strings:
-		out+=str(s)
-		count+=1
-		if(count<len(strings)):
-			out+=concat_string
-		if(not count<len(strings) and last_char is not None):
-			out+=last_char
-	return out
 
 def prepare_for_tagging(file_name):
 	"""
