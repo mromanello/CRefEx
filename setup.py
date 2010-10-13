@@ -1,9 +1,11 @@
+import os
 from setuptools import setup, find_packages
 
-VERSION = '0.2'
-LONG_DESC = """
-CRefEx is a tool for the automatic extraction of Canonical References.
-"""
+VERSION = '1.0.0'
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 setup(name='crex',
 	author='Matteo Romanello',
@@ -11,8 +13,10 @@ setup(name='crex',
 	url='http://github.com/mromanello/CRefEx/',
     version=VERSION,
     packages=find_packages(),
-    package_data={'crex': ['data/*']},
-    long_description=LONG_DESC,
-    install_requires=['partitioner,CRFPP'],
+    include_package_data=True,
+    #package_dir={'crex': 'crex'},
+    package_data={'crex': ['data/*.*']},
+    long_description=read('README.md'),
+    #install_requires=['partitioner','CRFPP'],
     zip_safe=False,
 )

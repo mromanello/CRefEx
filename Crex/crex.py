@@ -218,7 +218,7 @@ class FeatureExtractor:
 		for f in feat_funcs:
 			feature_set.append(f(inp))
 		return feature_set
-	def get_features(self,tokens,labels,outp_label=True):
+	def get_features(self,tokens,labels=[],outp_label=True):
 		out=""
 		count=0
 		for t in tokens:

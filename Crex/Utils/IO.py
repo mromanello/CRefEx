@@ -58,7 +58,6 @@ def filter_IOB(instances,tag_name):
 		temp = []
 		open = False
 		for i in instance:
-				#print "%s:%s"%(i[1],i[2])
 				if(i[2]=='B-%s'%tag_name):
 					temp.append(i[1])
 					open = True
