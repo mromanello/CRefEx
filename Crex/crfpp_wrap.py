@@ -42,16 +42,18 @@ class CRF_classifier:
 			else:
 				feats.append(self.tagger.x(i, j))
 			res['features']=feats
-			logger.debug(feats)
+			#logger.debug(feats)
 		   res['label']=self.tagger.y2(i)
 		   res['probs']={}
 		   for j in range(0, (ysize)):
 			tag=self.tagger.yname(j)
 			probs={}
-			probs['prob']=self.tagger.prob(i,j)
-			probs['alpha']=self.tagger.alpha(i, j)
-			probs['beta']=self.tagger.beta(i, j)
+			vals = (float(self.tagger.prob(i,j)),float(self.tagger.alpha(i, j)),float(self.tagger.beta(i, j)))
+			probs['prob']="%f"%vals[0]
+			probs['alpha']="%f"%vals[1]
+			probs['beta']="%f"%vals[2]
 			res['probs'][tag]=probs
+			logger.debug(str(res))
 		   out.append(res)
 		return out
 	
