@@ -3,6 +3,7 @@ import sys,pprint,re,string
 from Crex.crfpp_wrap import CRF_classifier
 from partitioner import *
 from random import *
+import xml.dom.minidom as mdom
 	
 def read_instances(inp_text):
 	out=[]
@@ -16,6 +17,38 @@ def read_instances(inp_text):
 			out.append(inst)
 	return out
 	
+def verbose_to_XML(instances):
+	"""docstring for verbose_to_XML"""
+	for inst in instances:	
+		out = mdom.Document()
+		root = out.createElement('reply')
+		root.setAttribute("service","crefex")
+		root.setAttribute("version",str(1.0))
+		ins = out.createElement('instance')
+		for t in inst:
+			text = out.createTextNode(t['token'])
+			tok = out.createElement('token')
+			tok.setAttribute("label",t['label'])
+			tok.setAttribute("id",str(t['id']))
+			features = out.createElement('features')
+			features.appendChild(out.createTextNode(", ".join(t['features'])))
+			probs = out.createElement('tags')
+			for tag in t['probs'].keys():
+				prob = out.createElement('tag')
+				prob.setAttribute("label",tag)
+				prob.setAttribute("alpha",str(t['probs'][tag]['alpha']))
+				prob.setAttribute("prob",str(t['probs'][tag]['prob']))
+				prob.setAttribute("beta",str(t['probs'][tag]['beta']))
+				out.createTextNode(tag)
+				probs.appendChild(prob)
+			tok.appendChild(probs)
+			tok.appendChild(features)
+			tok.appendChild(text)
+			tok.appendChild(out.createTextNode(" "))
+			ins.appendChild(tok)
+		root.appendChild(ins)
+	out.appendChild(root)
+	return out.toxml()
 def read_IOB_file(file):
 	# instances is a list of lists
 	instances=[]
@@ -163,6 +196,15 @@ def parse_jstordfr_XML(inp):
 			out.append(res1.groups()[0])
 	return out
 
+def parse_one_p_line(inp):
+	"""
+	Describe what the function does.
+	"""
+	out=[]
+	for line in inp.split("\n"):
+		out.append(line)
+	return out
+
 def tag_IOB_file(train_file_name,to_tag_file_name):
 	"""
 	Takes as input a IOB file and tags it according to a given CRF model
@@ -184,7 +226,7 @@ def tag_IOB_file(train_file_name,to_tag_file_name):
 	logger.info('Tagged %i instances'%len(instances))
 	return
 
-def prepare_for_tagging(file_name):
+def prepare_for_tagging(file_name,inp="jstor/xml"):
 	"""
 
 	"""
@@ -196,7 +238,12 @@ def prepare_for_tagging(file_name):
 	"""%(file_name)
 	out=""
 	out+=prolog
-	for i in parse_jstordfr_XML(inp):
+	raw = None
+	if(inp=="jstor/xml"):
+		raw = parse_jstordfr_XML(inp)
+	else:
+		raw = parse_one_p_line(inp)
+	for i in raw:
 		out+=("\n# Original line: %s\n"%i)
 		for t in i.split(' '):
 			out+="%s\tO\n"%t

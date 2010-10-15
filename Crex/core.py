@@ -8,7 +8,7 @@ from Crex.Utils.IO import *
 Description
 """
 
-__version__='1.0.0'
+__version__='dev-1.0.1'
 
 LOG_FILE="/56k/phd/code/python_crex/crfx.log"
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=LOG_FILE,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
