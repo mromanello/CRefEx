@@ -158,7 +158,7 @@ Bibac.	OTHERS	INIT_CAPS	bibac	NO_DIGITS	FINAL_DOT	5	B	Bi	Bib	Biba	.	c.	ac.	bac.	
 carm.	OTHERS	ALL_LOWER	carm	NO_DIGITS	FINAL_DOT	4	c	ca	car	carm	.	m.	rm.	arm.	I-CRF
 frg.	OTHERS	ALL_LOWER	frg	NO_DIGITS	FINAL_DOT	3	f	fr	frg	frg.	.	g.	rg.	frg.	I-CRF
 7	OTHERS	OTHERS	7	NUMBER	OTHERS	1	7	7	7	7	7	7	7	7	I-CRF
-Büch.:	OTHERS	OTHERS	büch	OTHERS	CONTINUING_PUNCTUATION	5	B	B�	Bü	Büc	:	.:	h.:	ch.:	I-CRF
+Büch.:	OTHERS	INIT_CAPS	büch	NO_DIGITS	CONTINUING_PUNCTUATION	4	B	Bü	Büc	Büch	:	.:	h.:	ch.:	I-CRF
 Oceani	OTHERS	INIT_CAPS	oceani	NO_DIGITS	OTHERS	6	O	Oc	Oce	Ocea	i	ni	ani	eani	O
 croceum	OTHERS	ALL_LOWER	croceum	NO_DIGITS	OTHERS	7	c	cr	cro	croc	m	um	eum	ceum	O
 linquens	OTHERS	ALL_LOWER	linquens	NO_DIGITS	OTHERS	8	l	li	lin	linq	s	ns	ens	uens	O
@@ -268,7 +268,7 @@ s.	OTHERS	ALL_LOWER	s	NO_DIGITS	FINAL_DOT	1	s	s.	s.	s.	.	s.	.	s.	I-CRF
 Pf.	OTHERS	INIT_CAPS	pf	NO_DIGITS	FINAL_DOT	2	P	Pf	Pf.	Pf.	.	f.	Pf.	.	I-CRF
 
 E.	OTHERS	ALL_CAPS	e	NO_DIGITS	FINAL_DOT	1	E	E.	E.	E.	.	E.	.	E.	O
-Wüst,	OTHERS	OTHERS	wüst	OTHERS	CONTINUING_PUNCTUATION	5	W	W�	Wü	Wüs	,	t,	st,	�st,	O
+Wüst,	OTHERS	INIT_CAPS	wüst	NO_DIGITS	CONTINUING_PUNCTUATION	4	W	Wü	Wüs	Wüst	,	t,	st,	üst,	O
 RE,	OTHERS	ALL_CAPS	re	NO_DIGITS	CONTINUING_PUNCTUATION	2	R	RE	RE,	RE,	,	E,	RE,	,	O
 VI	OTHERS	ALL_CAPS	vi	NO_DIGITS	OTHERS	2	V	VI	VI	VI	I	VI	I	VI	O
 A,	OTHERS	ALL_CAPS	a	NO_DIGITS	CONTINUING_PUNCTUATION	1	A	A,	A,	A,	,	A,	,	A,	O
@@ -305,7 +305,7 @@ Antike	OTHERS	INIT_CAPS	antike	NO_DIGITS	OTHERS	6	A	An	Ant	Anti	e	ke	ike	tike	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 Neuzeit,	OTHERS	INIT_CAPS	neuzeit	NO_DIGITS	CONTINUING_PUNCTUATION	7	N	Ne	Neu	Neuz	,	t,	it,	eit,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Schrift.	OTHERS	OTHERS	«schrift	OTHERS	FINAL_DOT	9	�	«	«S	«Sc	.	t.	ft.	ift.	O
+«Schrift.	OTHERS	OTHERS	«schrift	OTHERS	FINAL_DOT	8	«	«S	«Sc	«Sch	.	t.	ft.	ift.	O
 u.	OTHERS	ALL_LOWER	u	NO_DIGITS	FINAL_DOT	1	u	u.	u.	u.	.	u.	.	u.	O
 Vortr.	OTHERS	INIT_CAPS	vortr	NO_DIGITS	FINAL_DOT	5	V	Vo	Vor	Vort	.	r.	tr.	rtr.	O
 Wiirtenberg	OTHERS	INIT_CAPS	wiirtenberg	NO_DIGITS	OTHERS	11	W	Wi	Wii	Wiir	g	rg	erg	berg	O
@@ -322,14 +322,14 @@ und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 Apollonios	OTHERS	INIT_CAPS	apollonios	NO_DIGITS	OTHERS	10	A	Ap	Apo	Apol	s	os	ios	nios	O
 Rhodios.	OTHERS	INIT_CAPS	rhodios	NO_DIGITS	FINAL_DOT	7	R	Rh	Rho	Rhod	.	s.	os.	ios.	O
 Untersuchungen	OTHERS	INIT_CAPS	untersuchungen	NO_DIGITS	OTHERS	14	U	Un	Unt	Unte	n	en	gen	ngen	O
-über	OTHERS	OTHERS	über	OTHERS	OTHERS	5	�	ü	üb	übe	r	er	ber	�ber	O
+über	OTHERS	ALL_LOWER	über	NO_DIGITS	OTHERS	4	ü	üb	übe	über	r	er	ber	über	O
 die	OTHERS	ALL_LOWER	die	NO_DIGITS	OTHERS	3	d	di	die	die	e	ie	die	e	O
 Zeitvorstellung	OTHERS	INIT_CAPS	zeitvorstellung	NO_DIGITS	OTHERS	15	Z	Ze	Zei	Zeit	g	ng	ung	lung	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
 der	OTHERS	ALL_LOWER	der	NO_DIGITS	OTHERS	3	d	de	der	der	r	er	der	r	O
 antiken	OTHERS	ALL_LOWER	antiken	NO_DIGITS	OTHERS	7	a	an	ant	anti	n	en	ken	iken	O
 epischen	OTHERS	ALL_LOWER	epischen	NO_DIGITS	OTHERS	8	e	ep	epi	epis	n	en	hen	chen	O
-Erzählung,	OTHERS	OTHERS	erzählung	OTHERS	CONTINUING_PUNCTUATION	10	E	Er	Erz	Erz�	,	g,	ng,	ung,	O
+Erzählung,	OTHERS	INIT_CAPS	erzählung	NO_DIGITS	CONTINUING_PUNCTUATION	9	E	Er	Erz	Erzä	,	g,	ng,	ung,	O
 Hamburg	OTHERS	INIT_CAPS	hamburg	NO_DIGITS	OTHERS	7	H	Ha	Ham	Hamb	g	rg	urg	burg	O
 1940;	OTHERS	OTHERS	1940	NUMBER	CONTINUING_PUNCTUATION	4	1	19	194	1940	;	0;	40;	940;	O
 
@@ -343,12 +343,12 @@ Epos	OTHERS	INIT_CAPS	epos	NO_DIGITS	OTHERS	4	E	Ep	Epo	Epos	s	os	pos	Epos	O
 der	OTHERS	ALL_LOWER	der	NO_DIGITS	OTHERS	3	d	de	der	der	r	er	der	r	O
 Griechen	OTHERS	INIT_CAPS	griechen	NO_DIGITS	OTHERS	8	G	Gr	Gri	Grie	n	en	hen	chen	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
-Römer,	OTHERS	OTHERS	römer	OTHERS	CONTINUING_PUNCTUATION	6	R	R�	Rö	Röm	,	r,	er,	mer,	O
-Würzburg	OTHERS	OTHERS	würzburg	OTHERS	OTHERS	9	W	W�	Wü	Wür	g	rg	urg	burg	O
+Römer,	OTHERS	INIT_CAPS	römer	NO_DIGITS	CONTINUING_PUNCTUATION	5	R	Rö	Röm	Röme	,	r,	er,	mer,	O
+Würzburg	OTHERS	INIT_CAPS	würzburg	NO_DIGITS	OTHERS	8	W	Wü	Wür	Würz	g	rg	urg	burg	O
 1944;	OTHERS	OTHERS	1944	NUMBER	CONTINUING_PUNCTUATION	4	1	19	194	1944	;	4;	44;	944;	O
 
 W.	OTHERS	ALL_CAPS	w	NO_DIGITS	FINAL_DOT	1	W	W.	W.	W.	.	W.	.	W.	O
-Bühler,	OTHERS	OTHERS	bühler	OTHERS	CONTINUING_PUNCTUATION	7	B	B�	Bü	Büh	,	r,	er,	ler,	O
+Bühler,	OTHERS	INIT_CAPS	bühler	NO_DIGITS	CONTINUING_PUNCTUATION	6	B	Bü	Büh	Bühl	,	r,	er,	ler,	O
 Die	OTHERS	INIT_CAPS	die	NO_DIGITS	OTHERS	3	D	Di	Die	Die	e	ie	Die	e	O
 Europa	OTHERS	INIT_CAPS	europa	NO_DIGITS	OTHERS	6	E	Eu	Eur	Euro	a	pa	opa	ropa	O
 des	OTHERS	ALL_LOWER	des	NO_DIGITS	OTHERS	3	d	de	des	des	s	es	des	s	O
@@ -360,13 +360,13 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 ss.;	OTHERS	ALL_LOWER	ss	NO_DIGITS	CONTINUING_PUNCTUATION	2	s	ss	ss.	ss.;	;	.;	s.;	ss.;	O
 
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
-Fränkel,	OTHERS	OTHERS	fränkel	OTHERS	CONTINUING_PUNCTUATION	8	F	Fr	Fr�	Frä	,	l,	el,	kel,	O
+Fränkel,	OTHERS	INIT_CAPS	fränkel	NO_DIGITS	CONTINUING_PUNCTUATION	7	F	Fr	Frä	Frän	,	l,	el,	kel,	O
 Wege	OTHERS	INIT_CAPS	wege	NO_DIGITS	OTHERS	4	W	We	Weg	Wege	e	ge	ege	Wege	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 Formen	OTHERS	INIT_CAPS	formen	NO_DIGITS	OTHERS	6	F	Fo	For	Form	n	en	men	rmen	O
-frühgriechischen	OTHERS	OTHERS	frühgriechischen	OTHERS	OTHERS	17	f	fr	fr�	frü	n	en	hen	chen	O
+frühgriechischen	OTHERS	ALL_LOWER	frühgriechischen	NO_DIGITS	OTHERS	16	f	fr	frü	früh	n	en	hen	chen	O
 Denkens,	OTHERS	INIT_CAPS	denkens	NO_DIGITS	CONTINUING_PUNCTUATION	7	D	De	Den	Denk	,	s,	ns,	ens,	O
-München	OTHERS	OTHERS	münchen	OTHERS	OTHERS	8	M	M�	Mü	Mün	n	en	hen	chen	O
+München	OTHERS	INIT_CAPS	münchen	NO_DIGITS	OTHERS	7	M	Mü	Mün	Münc	n	en	hen	chen	O
 1968;	OTHERS	OTHERS	1968	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1968	;	8;	68;	968;	O
 
 A.	OTHERS	ALL_CAPS	a	NO_DIGITS	FINAL_DOT	1	A	A.	A.	A.	.	A.	.	A.	O
@@ -384,9 +384,9 @@ to	OTHERS	ALL_LOWER	to	NO_DIGITS	OTHERS	2	t	to	to	to	o	to	o	to	O
 Quintus	OTHERS	INIT_CAPS	quintus	NO_DIGITS	OTHERS	7	Q	Qu	Qui	Quin	s	us	tus	ntus	O
 of	OTHERS	ALL_LOWER	of	NO_DIGITS	OTHERS	2	o	of	of	of	f	of	f	of	O
 Smyrna,	OTHERS	INIT_CAPS	smyrna	NO_DIGITS	CONTINUING_PUNCTUATION	6	S	Sm	Smy	Smyr	,	a,	na,	rna,	O
-«Mus.	OTHERS	OTHERS	«mus	OTHERS	FINAL_DOT	5	�	«	«M	«Mu	.	s.	us.	Mus.	O
+«Mus.	OTHERS	OTHERS	«mus	OTHERS	FINAL_DOT	4	«	«M	«Mu	«Mus	.	s.	us.	Mus.	O
 Philol.	OTHERS	INIT_CAPS	philol	NO_DIGITS	FINAL_DOT	6	P	Ph	Phi	Phil	.	l.	ol.	lol.	O
-Lond.»	OTHERS	OTHERS	lond»	OTHERS	OTHERS	6	L	Lo	Lon	Lond	�	»	.»	d.»	O
+Lond.»	OTHERS	OTHERS	lond»	OTHERS	OTHERS	5	L	Lo	Lon	Lond	»	.»	d.»	nd.»	O
 3,	OTHERS	OTHERS	3	NUMBER	CONTINUING_PUNCTUATION	1	3	3,	3,	3,	,	3,	,	3,	O
 1978,	OTHERS	OTHERS	1978	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1978	,	8,	78,	978,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -401,7 +401,7 @@ the	OTHERS	ALL_LOWER	the	NO_DIGITS	OTHERS	3	t	th	the	the	e	he	the	e	O
 Idea	OTHERS	INIT_CAPS	idea	NO_DIGITS	OTHERS	4	I	Id	Ide	Idea	a	ea	dea	Idea	O
 of	OTHERS	ALL_LOWER	of	NO_DIGITS	OTHERS	2	o	of	of	of	f	of	f	of	O
 Time,	OTHERS	INIT_CAPS	time	NO_DIGITS	CONTINUING_PUNCTUATION	4	T	Ti	Tim	Time	,	e,	me,	ime,	O
-«Ramus»	OTHERS	OTHERS	«ramus»	OTHERS	OTHERS	9	�	«	«R	«Ra	�	»	s»	us»	O
+«Ramus»	OTHERS	OTHERS	«ramus»	OTHERS	OTHERS	7	«	«R	«Ra	«Ram	»	s»	us»	mus»	O
 8,	OTHERS	OTHERS	8	NUMBER	CONTINUING_PUNCTUATION	1	8	8,	8,	8,	,	8,	,	8,	O
 2,	OTHERS	OTHERS	2	NUMBER	CONTINUING_PUNCTUATION	1	2	2,	2,	2,	,	2,	,	2,	O
 1980,	OTHERS	OTHERS	1980	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1980	,	0,	80,	980,	O
@@ -430,7 +430,7 @@ Apollonius,	OTHERS	INIT_CAPS	apollonius	NO_DIGITS	CONTINUING_PUNCTUATION	10	A	Ap
 Theocritus,	OTHERS	INIT_CAPS	theocritus	NO_DIGITS	CONTINUING_PUNCTUATION	10	T	Th	The	Theo	,	s,	us,	tus,	O
 Virgil),	UNPAIRED_ROUND_BRACKETS	INIT_CAPS	virgil	NO_DIGITS	CONTINUING_PUNCTUATION	6	V	Vi	Vir	Virg	,	),	l),	il),	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Atti	OTHERS	OTHERS	«atti	OTHERS	OTHERS	6	�	«	«A	«At	i	ti	tti	Atti	O
+«Atti	OTHERS	OTHERS	«atti	OTHERS	OTHERS	5	«	«A	«At	«Att	i	ti	tti	Atti	O
 del	OTHERS	ALL_LOWER	del	NO_DIGITS	OTHERS	3	d	de	del	del	l	el	del	l	O
 Convegno	OTHERS	INIT_CAPS	convegno	NO_DIGITS	OTHERS	8	C	Co	Con	Conv	o	no	gno	egno	O
 mondiale	OTHERS	ALL_LOWER	mondiale	NO_DIGITS	OTHERS	8	m	mo	mon	mond	e	le	ale	iale	O
@@ -444,7 +444,7 @@ Roma,	OTHERS	INIT_CAPS	roma	NO_DIGITS	CONTINUING_PUNCTUATION	4	R	Ro	Rom	Roma	,	a
 Napoli,	OTHERS	INIT_CAPS	napoli	NO_DIGITS	CONTINUING_PUNCTUATION	6	N	Na	Nap	Napo	,	i,	li,	oli,	O
 19-24	OTHERS	OTHERS	1924	NUMBER	OTHERS	4	1	19	19-	19-2	4	24	-24	9-24	O
 sett.	OTHERS	ALL_LOWER	sett	NO_DIGITS	FINAL_DOT	4	s	se	set	sett	.	t.	tt.	ett.	O
-1981»,	OTHERS	OTHERS	1981»	OTHERS	CONTINUING_PUNCTUATION	6	1	19	198	1981	,	�,	»,	1»,	O
+1981»,	OTHERS	OTHERS	1981»	OTHERS	CONTINUING_PUNCTUATION	5	1	19	198	1981	,	»,	1»,	81»,	O
 Milano	OTHERS	INIT_CAPS	milano	NO_DIGITS	OTHERS	6	M	Mi	Mil	Mila	o	no	ano	lano	O
 1984,	OTHERS	OTHERS	1984	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1984	,	4,	84,	984,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -461,9 +461,9 @@ nell'epica	OTHERS	ALL_LOWER	nellepica	NO_DIGITS	OTHERS	9	n	ne	nel	nell	a	ca	ica	
 omerica	OTHERS	ALL_LOWER	omerica	NO_DIGITS	OTHERS	7	o	om	ome	omer	a	ca	ica	rica	O
 e	OTHERS	ALL_LOWER	e	NO_DIGITS	OTHERS	1	e	e	e	e	e	e	e	e	O
 postomerica,	OTHERS	ALL_LOWER	postomerica	NO_DIGITS	CONTINUING_PUNCTUATION	11	p	po	pos	post	,	a,	ca,	ica,	O
-«Giorn.	OTHERS	OTHERS	«giorn	OTHERS	FINAL_DOT	7	�	«	«G	«Gi	.	n.	rn.	orn.	O
+«Giorn.	OTHERS	OTHERS	«giorn	OTHERS	FINAL_DOT	6	«	«G	«Gi	«Gio	.	n.	rn.	orn.	O
 it.	OTHERS	ALL_LOWER	it	NO_DIGITS	FINAL_DOT	2	i	it	it.	it.	.	t.	it.	.	O
-fil.»	OTHERS	OTHERS	fil»	OTHERS	OTHERS	5	f	fi	fil	fil.	�	»	.»	l.»	O
+fil.»	OTHERS	OTHERS	fil»	OTHERS	OTHERS	4	f	fi	fil	fil.	»	.»	l.»	il.»	O
 16,	OTHERS	OTHERS	16	NUMBER	CONTINUING_PUNCTUATION	2	1	16	16,	16,	,	6,	16,	,	O
 1985,	OTHERS	OTHERS	1985	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1985	,	5,	85,	985,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -483,11 +483,11 @@ delle	OTHERS	ALL_LOWER	delle	NO_DIGITS	OTHERS	5	d	de	del	dell	e	le	lle	elle	O
 notazioni	OTHERS	ALL_LOWER	notazioni	NO_DIGITS	OTHERS	9	n	no	not	nota	i	ni	oni	ioni	O
 temporali	OTHERS	ALL_LOWER	temporali	NO_DIGITS	OTHERS	9	t	te	tem	temp	i	li	ali	rali	O
 nelle	OTHERS	ALL_LOWER	nelle	NO_DIGITS	OTHERS	5	n	ne	nel	nell	e	le	lle	elle	O
-«Ecloghe»	OTHERS	OTHERS	«ecloghe»	OTHERS	OTHERS	11	�	«	«E	«Ec	�	»	e»	he»	O
+«Ecloghe»	OTHERS	OTHERS	«ecloghe»	OTHERS	OTHERS	9	«	«E	«Ec	«Ecl	»	e»	he»	ghe»	O
 di	OTHERS	ALL_LOWER	di	NO_DIGITS	OTHERS	2	d	di	di	di	i	di	i	di	O
 Virgilio,	OTHERS	INIT_CAPS	virgilio	NO_DIGITS	CONTINUING_PUNCTUATION	8	V	Vi	Vir	Virg	,	o,	io,	lio,	O
-«Quad.	OTHERS	OTHERS	«quad	OTHERS	FINAL_DOT	6	�	«	«Q	«Qu	.	d.	ad.	uad.	O
-Urb.»	OTHERS	OTHERS	urb»	OTHERS	OTHERS	5	U	Ur	Urb	Urb.	�	»	.»	b.»	O
+«Quad.	OTHERS	OTHERS	«quad	OTHERS	FINAL_DOT	5	«	«Q	«Qu	«Qua	.	d.	ad.	uad.	O
+Urb.»	OTHERS	OTHERS	urb»	OTHERS	OTHERS	4	U	Ur	Urb	Urb.	»	.»	b.»	rb.»	O
 50,	OTHERS	OTHERS	50	NUMBER	CONTINUING_PUNCTUATION	2	5	50	50,	50,	,	0,	50,	,	O
 1985,	OTHERS	OTHERS	1985	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1985	,	5,	85,	985,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -513,8 +513,8 @@ Ovid	OTHERS	INIT_CAPS	ovid	NO_DIGITS	OTHERS	4	O	Ov	Ovi	Ovid	d	id	vid	Ovid	O
 and	OTHERS	ALL_LOWER	and	NO_DIGITS	OTHERS	3	a	an	and	and	d	nd	and	d	O
 the	OTHERS	ALL_LOWER	the	NO_DIGITS	OTHERS	3	t	th	the	the	e	he	the	e	O
 antiepic,	OTHERS	ALL_LOWER	antiepic	NO_DIGITS	CONTINUING_PUNCTUATION	8	a	an	ant	anti	,	c,	ic,	pic,	O
-«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	7	�	«	«C	«Cl	.	s.	ss.	ass.	O
-Rev.»	OTHERS	OTHERS	rev»	OTHERS	OTHERS	5	R	Re	Rev	Rev.	�	»	.»	v.»	O
+«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	6	«	«C	«Cl	«Cla	.	s.	ss.	ass.	O
+Rev.»	OTHERS	OTHERS	rev»	OTHERS	OTHERS	4	R	Re	Rev	Rev.	»	.»	v.»	ev.»	O
 81,	OTHERS	OTHERS	81	NUMBER	CONTINUING_PUNCTUATION	2	8	81	81,	81,	,	1,	81,	,	O
 1967,	OTHERS	OTHERS	1967	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1967	,	7,	67,	967,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -528,21 +528,21 @@ alcuni	OTHERS	ALL_LOWER	alcuni	NO_DIGITS	OTHERS	6	a	al	alc	alcu	i	ni	uni	cuni	O
 aspetti	OTHERS	ALL_LOWER	aspetti	NO_DIGITS	OTHERS	7	a	as	asp	aspe	i	ti	tti	etti	O
 dell'epica	OTHERS	ALL_LOWER	dellepica	NO_DIGITS	OTHERS	9	d	de	del	dell	a	ca	ica	pica	O
 ovidiana,	OTHERS	ALL_LOWER	ovidiana	NO_DIGITS	CONTINUING_PUNCTUATION	8	o	ov	ovi	ovid	,	a,	na,	ana,	O
-«Atene	OTHERS	OTHERS	«atene	OTHERS	OTHERS	7	�	«	«A	«At	e	ne	ene	tene	O
+«Atene	OTHERS	OTHERS	«atene	OTHERS	OTHERS	6	«	«A	«At	«Ate	e	ne	ene	tene	O
 e	OTHERS	ALL_LOWER	e	NO_DIGITS	OTHERS	1	e	e	e	e	e	e	e	e	O
-Roma»	OTHERS	OTHERS	roma»	OTHERS	OTHERS	6	R	Ro	Rom	Roma	�	»	a»	ma»	O
+Roma»	OTHERS	OTHERS	roma»	OTHERS	OTHERS	5	R	Ro	Rom	Roma	»	a»	ma»	oma»	O
 14,	OTHERS	OTHERS	14	NUMBER	CONTINUING_PUNCTUATION	2	1	14	14,	14,	,	4,	14,	,	O
 1969,	OTHERS	OTHERS	1969	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1969	,	9,	69,	969,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 14-18;	OTHERS	OTHERS	1418	NUMBER	CONTINUING_PUNCTUATION	4	1	14	14-	14-1	;	8;	18;	-18;	O
 
 G.	OTHERS	ALL_CAPS	g	NO_DIGITS	FINAL_DOT	1	G	G.	G.	G.	.	G.	.	G.	O
-Κ.	OTHERS	OTHERS	Κ	OTHERS	FINAL_DOT	2	�	Κ	Κ.	Κ.	.	�.	Κ.	.	O
+Κ.	OTHERS	ALL_CAPS	κ	NO_DIGITS	FINAL_DOT	1	Κ	Κ.	Κ.	Κ.	.	Κ.	.	Κ.	O
 Galinsky,	OTHERS	INIT_CAPS	galinsky	NO_DIGITS	CONTINUING_PUNCTUATION	8	G	Ga	Gal	Gali	,	y,	ky,	sky,	O
-L'«Eneide»	OTHERS	OTHERS	l«eneide»	OTHERS	OTHERS	11	L	L'	L'�	L'«	�	»	e»	de»	O
+L'«Eneide»	OTHERS	OTHERS	l«eneide»	OTHERS	OTHERS	9	L	L'	L'«	L'«E	»	e»	de»	ide»	O
 di	OTHERS	ALL_LOWER	di	NO_DIGITS	OTHERS	2	d	di	di	di	i	di	i	di	O
 Ovidio,	OTHERS	INIT_CAPS	ovidio	NO_DIGITS	CONTINUING_PUNCTUATION	6	O	Ov	Ovi	Ovid	,	o,	io,	dio,	O
-«Maia»	OTHERS	OTHERS	«maia»	OTHERS	OTHERS	8	�	«	«M	«Ma	�	»	a»	ia»	O
+«Maia»	OTHERS	OTHERS	«maia»	OTHERS	OTHERS	6	«	«M	«Ma	«Mai	»	a»	ia»	aia»	O
 28,	OTHERS	OTHERS	28	NUMBER	CONTINUING_PUNCTUATION	2	2	28	28,	28,	,	8,	28,	,	O
 1976,	OTHERS	OTHERS	1976	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1976	,	6,	76,	976,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -558,7 +558,7 @@ nelle	OTHERS	ALL_LOWER	nelle	NO_DIGITS	OTHERS	5	n	ne	nel	nell	e	le	lle	elle	O
 Metamorfosi	OTHERS	INIT_CAPS	metamorfosi	NO_DIGITS	OTHERS	11	M	Me	Met	Meta	i	si	osi	fosi	O
 di	OTHERS	ALL_LOWER	di	NO_DIGITS	OTHERS	2	d	di	di	di	i	di	i	di	O
 Ovidio,	OTHERS	INIT_CAPS	ovidio	NO_DIGITS	CONTINUING_PUNCTUATION	6	O	Ov	Ovi	Ovid	,	o,	io,	dio,	O
-«MD»	OTHERS	OTHERS	«md»	OTHERS	OTHERS	6	�	«	«M	«MD	�	»	D»	MD»	O
+«MD»	OTHERS	OTHERS	«md»	OTHERS	OTHERS	4	«	«M	«MD	«MD»	»	D»	MD»	«MD»	O
 16,	OTHERS	OTHERS	16	NUMBER	CONTINUING_PUNCTUATION	2	1	16	16,	16,	,	6,	16,	,	O
 1986,	OTHERS	OTHERS	1986	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1986	,	6,	86,	986,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -587,7 +587,7 @@ p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 15;	OTHERS	OTHERS	15	NUMBER	CONTINUING_PUNCTUATION	2	1	15	15;	15;	;	5;	15;	;	O
 
 V.	OTHERS	ALL_CAPS	v	NO_DIGITS	FINAL_DOT	1	V	V.	V.	V.	.	V.	.	V.	O
-Pöschl,	OTHERS	OTHERS	pöschl	OTHERS	CONTINUING_PUNCTUATION	7	P	P�	Pö	Pös	,	l,	hl,	chl,	O
+Pöschl,	OTHERS	INIT_CAPS	pöschl	NO_DIGITS	CONTINUING_PUNCTUATION	6	P	Pö	Pös	Pösc	,	l,	hl,	chl,	O
 Varie	OTHERS	INIT_CAPS	varie	NO_DIGITS	OTHERS	5	V	Va	Var	Vari	e	ie	rie	arie	O
 narrativa	OTHERS	ALL_LOWER	narrativa	NO_DIGITS	OTHERS	9	n	na	nar	narr	a	va	iva	tiva	O
 di	OTHERS	ALL_LOWER	di	NO_DIGITS	OTHERS	2	d	di	di	di	i	di	i	di	O
@@ -595,14 +595,14 @@ Ovidio	OTHERS	INIT_CAPS	ovidio	NO_DIGITS	OTHERS	6	O	Ov	Ovi	Ovid	o	io	dio	idio	O
 nelle	OTHERS	ALL_LOWER	nelle	NO_DIGITS	OTHERS	5	n	ne	nel	nell	e	le	lle	elle	O
 'Metamorfosi',	OTHERS	INIT_CAPS	metamorfosi	NO_DIGITS	CONTINUING_PUNCTUATION	11	'	'M	'Me	'Met	,	',	i',	si',	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Atti	OTHERS	OTHERS	«atti	OTHERS	OTHERS	6	�	«	«A	«At	i	ti	tti	Atti	O
+«Atti	OTHERS	OTHERS	«atti	OTHERS	OTHERS	5	«	«A	«At	«Att	i	ti	tti	Atti	O
 del	OTHERS	ALL_LOWER	del	NO_DIGITS	OTHERS	3	d	de	del	del	l	el	del	l	O
 Convegno	OTHERS	INIT_CAPS	convegno	NO_DIGITS	OTHERS	8	C	Co	Con	Conv	o	no	gno	egno	O
 Internazionale	OTHERS	INIT_CAPS	internazionale	NO_DIGITS	OTHERS	14	I	In	Int	Inte	e	le	ale	nale	O
 Ovidiano,	OTHERS	INIT_CAPS	ovidiano	NO_DIGITS	CONTINUING_PUNCTUATION	8	O	Ov	Ovi	Ovid	,	o,	no,	ano,	O
 Sulmona,	OTHERS	INIT_CAPS	sulmona	NO_DIGITS	CONTINUING_PUNCTUATION	7	S	Su	Sul	Sulm	,	a,	na,	ona,	O
 maggio	OTHERS	ALL_LOWER	maggio	NO_DIGITS	OTHERS	6	m	ma	mag	magg	o	io	gio	ggio	O
-1958»,	OTHERS	OTHERS	1958»	OTHERS	CONTINUING_PUNCTUATION	6	1	19	195	1958	,	�,	»,	8»,	O
+1958»,	OTHERS	OTHERS	1958»	OTHERS	CONTINUING_PUNCTUATION	5	1	19	195	1958	,	»,	8»,	58»,	O
 II,	OTHERS	ALL_CAPS	ii	NO_DIGITS	CONTINUING_PUNCTUATION	2	I	II	II,	II,	,	I,	II,	,	O
 Roma	OTHERS	INIT_CAPS	roma	NO_DIGITS	OTHERS	4	R	Ro	Rom	Roma	a	ma	oma	Roma	O
 1959,	OTHERS	OTHERS	1959	NUMBER	CONTINUING_PUNCTUATION	4	1	19	195	1959	,	9,	59,	959,	O
@@ -614,13 +614,13 @@ R.	OTHERS	ALL_CAPS	r	NO_DIGITS	FINAL_DOT	1	R	R.	R.	R.	.	R.	.	R.	O
 Crahay,	OTHERS	INIT_CAPS	crahay	NO_DIGITS	CONTINUING_PUNCTUATION	6	C	Cr	Cra	Crah	,	y,	ay,	hay,	O
 La	OTHERS	INIT_CAPS	la	NO_DIGITS	OTHERS	2	L	La	La	La	a	La	a	La	O
 vision	OTHERS	ALL_LOWER	vision	NO_DIGITS	OTHERS	6	v	vi	vis	visi	n	on	ion	sion	O
-poétique	OTHERS	OTHERS	poétique	OTHERS	OTHERS	9	p	po	po�	poé	e	ue	que	ique	O
+poétique	OTHERS	ALL_LOWER	poétique	NO_DIGITS	OTHERS	8	p	po	poé	poét	e	ue	que	ique	O
 d'Ovide	OTHERS	OTHERS	dovide	NO_DIGITS	OTHERS	6	d	d'	d'O	d'Ov	e	de	ide	vide	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
-l'esthétique	OTHERS	OTHERS	lesthétique	OTHERS	OTHERS	12	l	l'	l'e	l'es	e	ue	que	ique	O
+l'esthétique	OTHERS	ALL_LOWER	lesthétique	NO_DIGITS	OTHERS	11	l	l'	l'e	l'es	e	ue	que	ique	O
 baroque,	OTHERS	ALL_LOWER	baroque	NO_DIGITS	CONTINUING_PUNCTUATION	7	b	ba	bar	baro	,	e,	ue,	que,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Atti...»	OTHERS	OTHERS	«atti»	OTHERS	OTHERS	8	�	«	«A	«At	�	»	.»	..»	O
+«Atti...»	OTHERS	OTHERS	«atti»	OTHERS	OTHERS	6	«	«A	«At	«Att	»	.»	..»	...»	O
 cit.,	OTHERS	ALL_LOWER	cit	NO_DIGITS	CONTINUING_PUNCTUATION	3	c	ci	cit	cit.	,	.,	t.,	it.,	O
 I,	OTHERS	ALL_CAPS	i	NO_DIGITS	CONTINUING_PUNCTUATION	1	I	I,	I,	I,	,	I,	,	I,	O
 Roma	OTHERS	INIT_CAPS	roma	NO_DIGITS	OTHERS	4	R	Ro	Rom	Roma	a	ma	oma	Roma	O
@@ -636,7 +636,7 @@ and	OTHERS	ALL_LOWER	and	NO_DIGITS	OTHERS	3	a	an	and	and	d	nd	and	d	O
 the	OTHERS	ALL_LOWER	the	NO_DIGITS	OTHERS	3	t	th	the	the	e	he	the	e	O
 Erymanthian	OTHERS	INIT_CAPS	erymanthian	NO_DIGITS	OTHERS	11	E	Er	Ery	Erym	n	an	ian	hian	O
 Bear,	OTHERS	INIT_CAPS	bear	NO_DIGITS	CONTINUING_PUNCTUATION	4	B	Be	Bea	Bear	,	r,	ar,	ear,	O
-«Mnemosyne»	OTHERS	OTHERS	«mnemosyne»	OTHERS	OTHERS	13	�	«	«M	«Mn	�	»	e»	ne»	O
+«Mnemosyne»	OTHERS	OTHERS	«mnemosyne»	OTHERS	OTHERS	11	«	«M	«Mn	«Mne	»	e»	ne»	yne»	O
 41,	OTHERS	OTHERS	41	NUMBER	CONTINUING_PUNCTUATION	2	4	41	41,	41,	,	1,	41,	,	O
 1988,	OTHERS	OTHERS	1988	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1988	,	8,	88,	988,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -647,7 +647,7 @@ W.	OTHERS	ALL_CAPS	w	NO_DIGITS	FINAL_DOT	1	W	W.	W.	W.	.	W.	.	W.	O
 S.	OTHERS	ALL_CAPS	s	NO_DIGITS	FINAL_DOT	1	S	S.	S.	S.	.	S.	.	S.	O
 Anderson,	OTHERS	INIT_CAPS	anderson	NO_DIGITS	CONTINUING_PUNCTUATION	8	A	An	And	Ande	,	n,	on,	son,	O
 Ovid's	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	's	d's	id's	O
-Métamorphoses	OTHERS	OTHERS	métamorphoses	OTHERS	OTHERS	14	M	M�	Mé	Mét	s	es	ses	oses	O
+Métamorphoses	OTHERS	INIT_CAPS	métamorphoses	NO_DIGITS	OTHERS	13	M	Mé	Mét	Méta	s	es	ses	oses	O
 books	OTHERS	ALL_LOWER	books	NO_DIGITS	OTHERS	5	b	bo	boo	book	s	ks	oks	ooks	O
 6-10,	OTHERS	OTHERS	610	NUMBER	CONTINUING_PUNCTUATION	3	6	6-	6-1	6-10	,	0,	10,	-10,	O
 Norman,	OTHERS	INIT_CAPS	norman	NO_DIGITS	CONTINUING_PUNCTUATION	6	N	No	Nor	Norm	,	n,	an,	man,	O
@@ -693,8 +693,8 @@ Aen.	OTHERS	INIT_CAPS	aen	NO_DIGITS	FINAL_DOT	3	A	Ae	Aen	Aen.	.	n.	en.	Aen.	B-CR
 453:	OTHERS	OTHERS	453	NUMBER	CONTINUING_PUNCTUATION	3	4	45	453	453:	:	3:	53:	453:	I-CRF
 hoc	OTHERS	ALL_LOWER	hoc	NO_DIGITS	OTHERS	3	h	ho	hoc	hoc	c	oc	hoc	c	O
 fremebant	OTHERS	ALL_LOWER	fremebant	NO_DIGITS	OTHERS	9	f	fr	fre	frem	t	nt	ant	bant	O
-«arma,	OTHERS	OTHERS	«arma	OTHERS	CONTINUING_PUNCTUATION	6	�	«	«a	«ar	,	a,	ma,	rma,	O
-arma»	OTHERS	OTHERS	arma»	OTHERS	OTHERS	6	a	ar	arm	arma	�	»	a»	ma»	O
+«arma,	OTHERS	OTHERS	«arma	OTHERS	CONTINUING_PUNCTUATION	5	«	«a	«ar	«arm	,	a,	ma,	rma,	O
+arma»	OTHERS	OTHERS	arma»	OTHERS	OTHERS	5	a	ar	arm	arma	»	a»	ma»	rma»	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
 militaris	OTHERS	ALL_LOWER	militaris	NO_DIGITS	OTHERS	9	m	mi	mil	mili	s	is	ris	aris	O
 vox	OTHERS	ALL_LOWER	vox	NO_DIGITS	OTHERS	3	v	vo	vox	vox	x	ox	vox	x	O
@@ -764,8 +764,8 @@ M.	OTHERS	ALL_CAPS	m	NO_DIGITS	FINAL_DOT	1	M	M.	M.	M.	.	M.	.	M.	O
 Haupt,	OTHERS	INIT_CAPS	haupt	NO_DIGITS	CONTINUING_PUNCTUATION	5	H	Ha	Hau	Haup	,	t,	pt,	upt,	O
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
 J.	OTHERS	ALL_CAPS	j	NO_DIGITS	FINAL_DOT	1	J	J.	J.	J.	.	J.	.	J.	O
-Müller,	OTHERS	OTHERS	müller	OTHERS	CONTINUING_PUNCTUATION	7	M	M�	Mü	Mül	,	r,	er,	ler,	O
-Ο.	OTHERS	OTHERS	Ο	OTHERS	FINAL_DOT	2	�	Ο	Ο.	Ο.	.	�.	Ο.	.	O
+Müller,	OTHERS	INIT_CAPS	müller	NO_DIGITS	CONTINUING_PUNCTUATION	6	M	Mü	Mül	Müll	,	r,	er,	ler,	O
+Ο.	OTHERS	ALL_CAPS	ο	NO_DIGITS	FINAL_DOT	1	Ο	Ο.	Ο.	Ο.	.	Ο.	.	Ο.	O
 Korn,	OTHERS	INIT_CAPS	korn	NO_DIGITS	CONTINUING_PUNCTUATION	4	K	Ko	Kor	Korn	,	n,	rn,	orn,	O
 R.	OTHERS	ALL_CAPS	r	NO_DIGITS	FINAL_DOT	1	R	R.	R.	R.	.	R.	.	R.	O
 Ehwald,	OTHERS	INIT_CAPS	ehwald	NO_DIGITS	CONTINUING_PUNCTUATION	6	E	Eh	Ehw	Ehwa	,	d,	ld,	ald,	O
@@ -777,7 +777,7 @@ Ovidius	OTHERS	INIT_CAPS	ovidius	NO_DIGITS	OTHERS	7	O	Ov	Ovi	Ovid	s	us	ius	dius	
 Naso	OTHERS	INIT_CAPS	naso	NO_DIGITS	OTHERS	4	N	Na	Nas	Naso	o	so	aso	Naso	O
 Metamorphosen,	OTHERS	INIT_CAPS	metamorphosen	NO_DIGITS	CONTINUING_PUNCTUATION	13	M	Me	Met	Meta	,	n,	en,	sen,	O
 I-II,	OTHERS	ALL_CAPS	iii	NO_DIGITS	CONTINUING_PUNCTUATION	3	I	I-	I-I	I-II	,	I,	II,	-II,	O
-Dublin-Zürich	OTHERS	OTHERS	dublinzürich	OTHERS	OTHERS	13	D	Du	Dub	Dubl	h	ch	ich	rich	O
+Dublin-Zürich	OTHERS	INIT_CAPS	dublinzürich	NO_DIGITS	OTHERS	12	D	Du	Dub	Dubl	h	ch	ich	rich	O
 1966	OTHERS	OTHERS	1966	NUMBER	OTHERS	4	1	19	196	1966	6	66	966	1966	O
 (rist.	UNPAIRED_ROUND_BRACKETS	ALL_LOWER	rist	NO_DIGITS	FINAL_DOT	4	(	(r	(ri	(ris	.	t.	st.	ist.	O
 1969);	UNPAIRED_ROUND_BRACKETS	OTHERS	1969	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1969	;	);	9);	69);	O
@@ -795,7 +795,7 @@ London	OTHERS	INIT_CAPS	london	NO_DIGITS	OTHERS	6	L	Lo	Lon	Lond	n	on	don	ndon	O
 1929;	OTHERS	OTHERS	1929	NUMBER	CONTINUING_PUNCTUATION	4	1	19	192	1929	;	9;	29;	929;	O
 
 F.	OTHERS	ALL_CAPS	f	NO_DIGITS	FINAL_DOT	1	F	F.	F.	F.	.	F.	.	F.	O
-Bömer,	OTHERS	OTHERS	bömer	OTHERS	CONTINUING_PUNCTUATION	6	B	B�	Bö	Böm	,	r,	er,	mer,	O
+Bömer,	OTHERS	INIT_CAPS	bömer	NO_DIGITS	CONTINUING_PUNCTUATION	5	B	Bö	Böm	Böme	,	r,	er,	mer,	O
 P.	OTHERS	ALL_CAPS	p	NO_DIGITS	FINAL_DOT	1	P	P.	P.	P.	.	P.	.	P.	O
 Ovidius	OTHERS	INIT_CAPS	ovidius	NO_DIGITS	OTHERS	7	O	Ov	Ovi	Ovid	s	us	ius	dius	O
 Naso,	OTHERS	INIT_CAPS	naso	NO_DIGITS	CONTINUING_PUNCTUATION	4	N	Na	Nas	Naso	,	o,	so,	aso,	O
@@ -823,12 +823,12 @@ Leeds	OTHERS	INIT_CAPS	leeds	NO_DIGITS	OTHERS	5	L	Le	Lee	Leed	s	ds	eds	eeds	O
 W.	OTHERS	ALL_CAPS	w	NO_DIGITS	FINAL_DOT	1	W	W.	W.	W.	.	W.	.	W.	O
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
 Roscher;	OTHERS	INIT_CAPS	roscher	NO_DIGITS	CONTINUING_PUNCTUATION	7	R	Ro	Ros	Rosc	;	r;	er;	her;	O
-Ausführliches	OTHERS	OTHERS	ausführliches	OTHERS	OTHERS	14	A	Au	Aus	Ausf	s	es	hes	ches	O
+Ausführliches	OTHERS	INIT_CAPS	ausführliches	NO_DIGITS	OTHERS	13	A	Au	Aus	Ausf	s	es	hes	ches	O
 Lexikon	OTHERS	INIT_CAPS	lexikon	NO_DIGITS	OTHERS	7	L	Le	Lex	Lexi	n	on	kon	ikon	O
 der	OTHERS	ALL_LOWER	der	NO_DIGITS	OTHERS	3	d	de	der	der	r	er	der	r	O
 griechischen	OTHERS	ALL_LOWER	griechischen	NO_DIGITS	OTHERS	12	g	gr	gri	grie	n	en	hen	chen	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
-römischen	OTHERS	OTHERS	römischen	OTHERS	OTHERS	10	r	r�	rö	röm	n	en	hen	chen	O
+römischen	OTHERS	ALL_LOWER	römischen	NO_DIGITS	OTHERS	9	r	rö	röm	römi	n	en	hen	chen	O
 Mythologie,	OTHERS	INIT_CAPS	mythologie	NO_DIGITS	CONTINUING_PUNCTUATION	10	M	My	Myt	Myth	,	e,	ie,	gie,	O
 voll.	OTHERS	ALL_LOWER	voll	NO_DIGITS	FINAL_DOT	4	v	vo	vol	voll	.	l.	ll.	oll.	O
 I-VI,	OTHERS	ALL_CAPS	ivi	NO_DIGITS	CONTINUING_PUNCTUATION	3	I	I-	I-V	I-VI	,	I,	VI,	-VI,	O
@@ -867,7 +867,7 @@ fast.	OTHERS	ALL_LOWER	fast	NO_DIGITS	FINAL_DOT	4	f	fa	fas	fast	.	t.	st.	ast.	B-
 
 Hyperionis	OTHERS	INIT_CAPS	hyperionis	NO_DIGITS	OTHERS	10	H	Hy	Hyp	Hype	s	is	nis	onis	O
 e	OTHERS	ALL_LOWER	e	NO_DIGITS	OTHERS	1	e	e	e	e	e	e	e	e	O
-Bömer	OTHERS	OTHERS	bömer	OTHERS	OTHERS	6	B	B�	Bö	Böm	r	er	mer	�mer	O
+Bömer	OTHERS	INIT_CAPS	bömer	NO_DIGITS	OTHERS	5	B	Bö	Böm	Böme	r	er	mer	ömer	O
 ad	OTHERS	ALL_LOWER	ad	NO_DIGITS	OTHERS	2	a	ad	ad	ad	d	ad	d	ad	O
 6,	OTHERS	OTHERS	6	NUMBER	CONTINUING_PUNCTUATION	1	6	6,	6,	6,	,	6,	,	6,	O
 567	OTHERS	OTHERS	567	NUMBER	OTHERS	3	5	56	567	567	7	67	567	7	O
@@ -917,7 +917,7 @@ la	OTHERS	ALL_LOWER	la	NO_DIGITS	OTHERS	2	l	la	la	la	a	la	a	la	O
 figlia	OTHERS	ALL_LOWER	figlia	NO_DIGITS	OTHERS	6	f	fi	fig	figl	a	ia	lia	glia	O
 di	OTHERS	ALL_LOWER	di	NO_DIGITS	OTHERS	2	d	di	di	di	i	di	i	di	O
 Pallas	OTHERS	INIT_CAPS	pallas	NO_DIGITS	OTHERS	6	P	Pa	Pal	Pall	s	as	las	llas	O
-è	OTHERS	OTHERS	è	OTHERS	OTHERS	2	�	è	è	è	�	è	�	è	O
+è	OTHERS	ALL_LOWER	è	NO_DIGITS	OTHERS	1	è	è	è	è	è	è	è	è	O
 la	OTHERS	ALL_LOWER	la	NO_DIGITS	OTHERS	2	l	la	la	la	a	la	a	la	O
 Luna	OTHERS	INIT_CAPS	luna	NO_DIGITS	OTHERS	4	L	Lu	Lun	Luna	a	na	una	Luna	O
 
@@ -942,7 +942,7 @@ fast.	OTHERS	ALL_LOWER	fast	NO_DIGITS	FINAL_DOT	4	f	fa	fas	fast	.	t.	st.	ast.	B-
 943	OTHERS	OTHERS	943	NUMBER	OTHERS	3	9	94	943	943	3	43	943	3	I-CRF
 s.	OTHERS	ALL_LOWER	s	NO_DIGITS	FINAL_DOT	1	s	s.	s.	s.	.	s.	.	s.	I-CRF
 
-Röscher,	OTHERS	OTHERS	röscher	OTHERS	CONTINUING_PUNCTUATION	8	R	R�	Rö	Rös	,	r,	er,	her,	O
+Röscher,	OTHERS	INIT_CAPS	röscher	NO_DIGITS	CONTINUING_PUNCTUATION	7	R	Rö	Rös	Rösc	,	r,	er,	her,	O
 s.v.	OTHERS	ALL_LOWER	sv	NO_DIGITS	FINAL_DOT	2	s	s.	s.v	s.v.	.	v.	.v.	s.v.	O
 Eos	OTHERS	INIT_CAPS	eos	NO_DIGITS	OTHERS	3	E	Eo	Eos	Eos	s	os	Eos	s	O
 I,	OTHERS	ALL_CAPS	i	NO_DIGITS	CONTINUING_PUNCTUATION	1	I	I,	I,	I,	,	I,	,	I,	O
@@ -965,9 +965,9 @@ W.	OTHERS	ALL_CAPS	w	NO_DIGITS	FINAL_DOT	1	W	W.	W.	W.	.	W.	.	W.	O
 Kroll,	OTHERS	INIT_CAPS	kroll	NO_DIGITS	CONTINUING_PUNCTUATION	5	K	Kr	Kro	Krol	,	l,	ll,	oll,	O
 Studien	OTHERS	INIT_CAPS	studien	NO_DIGITS	OTHERS	7	S	St	Stu	Stud	n	en	ien	dien	O
 zum	OTHERS	ALL_LOWER	zum	NO_DIGITS	OTHERS	3	z	zu	zum	zum	m	um	zum	m	O
-Verständnis	OTHERS	OTHERS	verständnis	OTHERS	OTHERS	12	V	Ve	Ver	Vers	s	is	nis	dnis	O
+Verständnis	OTHERS	INIT_CAPS	verständnis	NO_DIGITS	OTHERS	11	V	Ve	Ver	Vers	s	is	nis	dnis	O
 der	OTHERS	ALL_LOWER	der	NO_DIGITS	OTHERS	3	d	de	der	der	r	er	der	r	O
-römischen	OTHERS	OTHERS	römischen	OTHERS	OTHERS	10	r	r�	rö	röm	n	en	hen	chen	O
+römischen	OTHERS	ALL_LOWER	römischen	NO_DIGITS	OTHERS	9	r	rö	röm	römi	n	en	hen	chen	O
 Literatur,	OTHERS	INIT_CAPS	literatur	NO_DIGITS	CONTINUING_PUNCTUATION	9	L	Li	Lit	Lite	,	r,	ur,	tur,	O
 Stuttgart	OTHERS	INIT_CAPS	stuttgart	NO_DIGITS	OTHERS	9	S	St	Stu	Stut	t	rt	art	gart	O
 1924	OTHERS	OTHERS	1924	NUMBER	OTHERS	4	1	19	192	1924	4	24	924	1924	O
@@ -1063,15 +1063,15 @@ zu	OTHERS	ALL_LOWER	zu	NO_DIGITS	OTHERS	2	z	zu	zu	zu	u	zu	u	zu	O
 Varros	OTHERS	INIT_CAPS	varros	NO_DIGITS	OTHERS	6	V	Va	Var	Varr	s	os	ros	rros	O
 Menippea	OTHERS	INIT_CAPS	menippea	NO_DIGITS	OTHERS	8	M	Me	Men	Meni	a	ea	pea	ppea	O
 Tithonus,	OTHERS	INIT_CAPS	tithonus	NO_DIGITS	CONTINUING_PUNCTUATION	8	T	Ti	Tit	Tith	,	s,	us,	nus,	O
-περί	OTHERS	OTHERS	περί	OTHERS	OTHERS	8	�	π	π�	πε	�	ί	�ί	ρί	O
-γήϱως,	OTHERS	OTHERS	γήϱως	OTHERS	CONTINUING_PUNCTUATION	10	�	γ	γ�	γή	,	�,	ς,	�ς,	O
+περί	OTHERS	ALL_LOWER	περί	NO_DIGITS	OTHERS	4	π	πε	περ	περί	ί	ρί	ερί	περί	O
+γήϱως,	OTHERS	ALL_LOWER	γήϱως	NO_DIGITS	CONTINUING_PUNCTUATION	5	γ	γή	γήϱ	γήϱω	,	ς,	ως,	ϱως,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
 Studien	OTHERS	INIT_CAPS	studien	NO_DIGITS	OTHERS	7	S	St	Stu	Stud	n	en	ien	dien	O
 zur	OTHERS	ALL_LOWER	zur	NO_DIGITS	OTHERS	3	z	zu	zur	zur	r	ur	zur	r	O
 Textgeschichte	OTHERS	INIT_CAPS	textgeschichte	NO_DIGITS	OTHERS	14	T	Te	Tex	Text	e	te	hte	chte	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 Textkritik,	OTHERS	INIT_CAPS	textkritik	NO_DIGITS	CONTINUING_PUNCTUATION	10	T	Te	Tex	Text	,	k,	ik,	tik,	O
-Köln	OTHERS	OTHERS	köln	OTHERS	OTHERS	5	K	K�	Kö	Köl	n	ln	�ln	öln	O
+Köln	OTHERS	INIT_CAPS	köln	NO_DIGITS	OTHERS	4	K	Kö	Köl	Köln	n	ln	öln	Köln	O
 1959,	OTHERS	OTHERS	1959	NUMBER	CONTINUING_PUNCTUATION	4	1	19	195	1959	,	9,	59,	959,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 37	OTHERS	OTHERS	37	NUMBER	OTHERS	2	3	37	37	37	7	37	7	37	O
@@ -1198,7 +1198,7 @@ ss.	OTHERS	ALL_LOWER	ss	NO_DIGITS	FINAL_DOT	2	s	ss	ss.	ss.	.	s.	ss.	.	O
 384)	UNPAIRED_ROUND_BRACKETS	OTHERS	384	NUMBER	OTHERS	3	3	38	384	384)	)	4)	84)	384)	I-CRF
 
 J.-M.	OTHERS	ALL_CAPS	jm	NO_DIGITS	FINAL_DOT	2	J	J.	J.-	J.-M	.	M.	-M.	.-M.	O
-Frécaut,	OTHERS	OTHERS	frécaut	OTHERS	CONTINUING_PUNCTUATION	8	F	Fr	Fr�	Fré	,	t,	ut,	aut,	O
+Frécaut,	OTHERS	INIT_CAPS	frécaut	NO_DIGITS	CONTINUING_PUNCTUATION	7	F	Fr	Fré	Fréc	,	t,	ut,	aut,	O
 L'esprit	OTHERS	INIT_CAPS	lesprit	NO_DIGITS	OTHERS	7	L	L'	L'e	L'es	t	it	rit	prit	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
 l'humour	OTHERS	ALL_LOWER	lhumour	NO_DIGITS	OTHERS	7	l	l'	l'h	l'hu	r	ur	our	mour	O
@@ -1213,7 +1213,7 @@ E.	OTHERS	ALL_CAPS	e	NO_DIGITS	FINAL_DOT	1	E	E.	E.	E.	.	E.	.	E.	O
 Doblhofer,	OTHERS	INIT_CAPS	doblhofer	NO_DIGITS	CONTINUING_PUNCTUATION	9	D	Do	Dob	Dobl	,	r,	er,	fer,	O
 Ovidius	OTHERS	INIT_CAPS	ovidius	NO_DIGITS	OTHERS	7	O	Ov	Ovi	Ovid	s	us	ius	dius	O
 urbanus,	OTHERS	ALL_LOWER	urbanus	NO_DIGITS	CONTINUING_PUNCTUATION	7	u	ur	urb	urba	,	s,	us,	nus,	O
-«Philologus»	OTHERS	OTHERS	«philologus»	OTHERS	OTHERS	14	�	«	«P	«Ph	�	»	s»	us»	O
+«Philologus»	OTHERS	OTHERS	«philologus»	OTHERS	OTHERS	12	«	«P	«Ph	«Phi	»	s»	us»	gus»	O
 104,	OTHERS	OTHERS	104	NUMBER	CONTINUING_PUNCTUATION	3	1	10	104	104,	,	4,	04,	104,	O
 1960,	OTHERS	OTHERS	1960	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1960	,	0,	60,	960,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -1267,8 +1267,8 @@ Amores	OTHERS	INIT_CAPS	amores	NO_DIGITS	OTHERS	6	A	Am	Amo	Amor	s	es	res	ores	O
 13:	OTHERS	OTHERS	13	NUMBER	CONTINUING_PUNCTUATION	2	1	13	13:	13:	:	3:	13:	:	O
 Ovid's	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	's	d's	id's	O
 Art,	OTHERS	INIT_CAPS	art	NO_DIGITS	CONTINUING_PUNCTUATION	3	A	Ar	Art	Art,	,	t,	rt,	Art,	O
-«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	7	�	«	«C	«Cl	.	s.	ss.	ass.	O
-Journ.»	OTHERS	OTHERS	journ»	OTHERS	OTHERS	7	J	Jo	Jou	Jour	�	»	.»	n.»	O
+«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	6	«	«C	«Cl	«Cla	.	s.	ss.	ass.	O
+Journ.»	OTHERS	OTHERS	journ»	OTHERS	OTHERS	6	J	Jo	Jou	Jour	»	.»	n.»	rn.»	O
 69,	OTHERS	OTHERS	69	NUMBER	CONTINUING_PUNCTUATION	2	6	69	69,	69,	,	9,	69,	,	O
 1973,	OTHERS	OTHERS	1973	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1973	,	3,	73,	973,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -1279,7 +1279,7 @@ e	OTHERS	ALL_LOWER	e	NO_DIGITS	OTHERS	1	e	e	e	e	e	e	e	e	O
 A.-F.	OTHERS	ALL_CAPS	af	NO_DIGITS	FINAL_DOT	2	A	A.	A.-	A.-F	.	F.	-F.	.-F.	O
 Sabot,	OTHERS	INIT_CAPS	sabot	NO_DIGITS	CONTINUING_PUNCTUATION	5	S	Sa	Sab	Sabo	,	t,	ot,	bot,	O
 Ovide,	OTHERS	INIT_CAPS	ovide	NO_DIGITS	CONTINUING_PUNCTUATION	5	O	Ov	Ovi	Ovid	,	e,	de,	ide,	O
-poète	OTHERS	OTHERS	poète	OTHERS	OTHERS	6	p	po	po�	poè	e	te	�te	ète	O
+poète	OTHERS	ALL_LOWER	poète	NO_DIGITS	OTHERS	5	p	po	poè	poèt	e	te	ète	oète	O
 de	OTHERS	ALL_LOWER	de	NO_DIGITS	OTHERS	2	d	de	de	de	e	de	e	de	O
 l'amour	OTHERS	ALL_LOWER	lamour	NO_DIGITS	OTHERS	6	l	l'	l'a	l'am	r	ur	our	mour	O
 dans	OTHERS	ALL_LOWER	dans	NO_DIGITS	OTHERS	4	d	da	dan	dans	s	ns	ans	dans	O
@@ -1294,7 +1294,7 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 ss	OTHERS	ALL_LOWER	ss	NO_DIGITS	OTHERS	2	s	ss	ss	ss	s	ss	s	ss	O
 
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
-Fränkel,	OTHERS	OTHERS	fränkel	OTHERS	CONTINUING_PUNCTUATION	8	F	Fr	Fr�	Frä	,	l,	el,	kel,	O
+Fränkel,	OTHERS	INIT_CAPS	fränkel	NO_DIGITS	CONTINUING_PUNCTUATION	7	F	Fr	Frä	Frän	,	l,	el,	kel,	O
 Ovid:	OTHERS	INIT_CAPS	ovid	NO_DIGITS	CONTINUING_PUNCTUATION	4	O	Ov	Ovi	Ovid	:	d:	id:	vid:	O
 A	OTHERS	ALL_CAPS	a	NO_DIGITS	OTHERS	1	A	A	A	A	A	A	A	A	O
 poet	OTHERS	ALL_LOWER	poet	NO_DIGITS	OTHERS	4	p	po	poe	poet	t	et	oet	poet	O
@@ -1313,7 +1313,7 @@ vv.	OTHERS	ALL_LOWER	vv	NO_DIGITS	FINAL_DOT	2	v	vv	vv.	vv.	.	v.	vv.	.	O
 s.:	OTHERS	ALL_LOWER	s	NO_DIGITS	CONTINUING_PUNCTUATION	1	s	s.	s.:	s.:	:	.:	s.:	:	O
 Iurgia	OTHERS	INIT_CAPS	iurgia	NO_DIGITS	OTHERS	6	I	Iu	Iur	Iurg	a	ia	gia	rgia	O
 finieram.	OTHERS	ALL_LOWER	finieram	NO_DIGITS	FINAL_DOT	8	f	fi	fin	fini	.	m.	am.	ram.	O
-Sàres	OTHERS	OTHERS	sàres	OTHERS	OTHERS	6	S	S�	Sà	Sàr	s	es	res	�res	O
+Sàres	OTHERS	INIT_CAPS	sàres	NO_DIGITS	OTHERS	5	S	Sà	Sàr	Sàre	s	es	res	àres	O
 audisse:	OTHERS	ALL_LOWER	audisse	NO_DIGITS	CONTINUING_PUNCTUATION	7	a	au	aud	audi	:	e:	se:	sse:	O
 rubebat;	OTHERS	ALL_LOWER	rubebat	NO_DIGITS	CONTINUING_PUNCTUATION	7	r	ru	rub	rube	;	t;	at;	bat;	O
 /	OTHERS	OTHERS	_	OTHERS	OTHERS	0	/	/	/	/	/	/	/	/	O
@@ -1333,7 +1333,7 @@ v.	OTHERS	ALL_LOWER	v	NO_DIGITS	FINAL_DOT	1	v	v.	v.	v.	.	v.	.	v.	O
 dies	OTHERS	ALL_LOWER	dies	NO_DIGITS	OTHERS	4	d	di	die	dies	s	es	ies	dies	O
 
 G.	OTHERS	ALL_CAPS	g	NO_DIGITS	FINAL_DOT	1	G	G.	G.	G.	.	G.	.	G.	O
-Β.	OTHERS	OTHERS	Β	OTHERS	FINAL_DOT	2	�	Β	Β.	Β.	.	�.	Β.	.	O
+Β.	OTHERS	ALL_CAPS	β	NO_DIGITS	FINAL_DOT	1	Β	Β.	Β.	Β.	.	Β.	.	Β.	O
 Conte,	OTHERS	INIT_CAPS	conte	NO_DIGITS	CONTINUING_PUNCTUATION	5	C	Co	Con	Cont	,	e,	te,	nte,	O
 L'amore	OTHERS	INIT_CAPS	lamore	NO_DIGITS	OTHERS	6	L	L'	L'a	L'am	e	re	ore	more	O
 senza	OTHERS	ALL_LOWER	senza	NO_DIGITS	OTHERS	5	s	se	sen	senz	a	za	nza	enza	O
@@ -1448,12 +1448,12 @@ compositiva	OTHERS	ALL_LOWER	compositiva	NO_DIGITS	OTHERS	11	c	co	com	comp	a	va	
 dei	OTHERS	ALL_LOWER	dei	NO_DIGITS	OTHERS	3	d	de	dei	dei	i	ei	dei	i	O
 Tristia,	OTHERS	INIT_CAPS	tristia	NO_DIGITS	CONTINUING_PUNCTUATION	7	T	Tr	Tri	Tris	,	a,	ia,	tia,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Cultura	OTHERS	OTHERS	«cultura	OTHERS	OTHERS	9	�	«	«C	«Cu	a	ra	ura	tura	O
+«Cultura	OTHERS	OTHERS	«cultura	OTHERS	OTHERS	8	«	«C	«Cu	«Cul	a	ra	ura	tura	O
 poesia	OTHERS	ALL_LOWER	poesia	NO_DIGITS	OTHERS	6	p	po	poe	poes	a	ia	sia	esia	O
 ideologia	OTHERS	ALL_LOWER	ideologia	NO_DIGITS	OTHERS	9	i	id	ide	ideo	a	ia	gia	ogia	O
 nell'opera	OTHERS	ALL_LOWER	nellopera	NO_DIGITS	OTHERS	9	n	ne	nel	nell	a	ra	era	pera	O
 di	OTHERS	ALL_LOWER	di	NO_DIGITS	OTHERS	2	d	di	di	di	i	di	i	di	O
-Ovidio»,	OTHERS	OTHERS	ovidio»	OTHERS	CONTINUING_PUNCTUATION	8	O	Ov	Ovi	Ovid	,	�,	»,	o»,	O
+Ovidio»,	OTHERS	OTHERS	ovidio»	OTHERS	CONTINUING_PUNCTUATION	7	O	Ov	Ovi	Ovid	,	»,	o»,	io»,	O
 Napoli	OTHERS	INIT_CAPS	napoli	NO_DIGITS	OTHERS	6	N	Na	Nap	Napo	i	li	oli	poli	O
 1991,	OTHERS	OTHERS	1991	NUMBER	CONTINUING_PUNCTUATION	4	1	19	199	1991	,	1,	91,	991,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -1469,8 +1469,8 @@ Myth	OTHERS	INIT_CAPS	myth	NO_DIGITS	OTHERS	4	M	My	Myt	Myth	h	th	yth	Myth	O
 and	OTHERS	ALL_LOWER	and	NO_DIGITS	OTHERS	3	a	an	and	and	d	nd	and	d	O
 Tragedy,	OTHERS	INIT_CAPS	tragedy	NO_DIGITS	CONTINUING_PUNCTUATION	7	T	Tr	Tra	Trag	,	y,	dy,	edy,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Grazer	OTHERS	OTHERS	«grazer	OTHERS	OTHERS	8	�	«	«G	«Gr	r	er	zer	azer	O
-Beiträge»	OTHERS	OTHERS	beiträge»	OTHERS	OTHERS	11	B	Be	Bei	Beit	�	»	e»	ge»	O
+«Grazer	OTHERS	OTHERS	«grazer	OTHERS	OTHERS	7	«	«G	«Gr	«Gra	r	er	zer	azer	O
+Beiträge»	OTHERS	OTHERS	beiträge»	OTHERS	OTHERS	9	B	Be	Bei	Beit	»	e»	ge»	äge»	O
 7,	OTHERS	OTHERS	7	NUMBER	CONTINUING_PUNCTUATION	1	7	7,	7,	7,	,	7,	,	7,	O
 1978,	OTHERS	OTHERS	1978	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1978	,	8,	78,	978,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -1486,8 +1486,8 @@ Ovid	OTHERS	INIT_CAPS	ovid	NO_DIGITS	OTHERS	4	O	Ov	Ovi	Ovid	d	id	vid	Ovid	O
 A.A.	OTHERS	ALL_CAPS	aa	NO_DIGITS	FINAL_DOT	2	A	A.	A.A	A.A.	.	A.	.A.	A.A.	O
 3,	OTHERS	OTHERS	3	NUMBER	CONTINUING_PUNCTUATION	1	3	3,	3,	3,	,	3,	,	3,	O
 687-746,	OTHERS	OTHERS	687746	NUMBER	CONTINUING_PUNCTUATION	6	6	68	687	687-	,	6,	46,	746,	O
-«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	7	�	«	«C	«Cl	.	s.	ss.	ass.	O
-Journ.»	OTHERS	OTHERS	journ»	OTHERS	OTHERS	7	J	Jo	Jou	Jour	�	»	.»	n.»	O
+«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	6	«	«C	«Cl	«Cla	.	s.	ss.	ass.	O
+Journ.»	OTHERS	OTHERS	journ»	OTHERS	OTHERS	6	J	Jo	Jou	Jour	»	.»	n.»	rn.»	O
 75,	OTHERS	OTHERS	75	NUMBER	CONTINUING_PUNCTUATION	2	7	75	75,	75,	,	5,	75,	,	O
 1979,	OTHERS	OTHERS	1979	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1979	,	9,	79,	979,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -1521,10 +1521,10 @@ fast.,	OTHERS	ALL_LOWER	fast	NO_DIGITS	CONTINUING_PUNCTUATION	4	f	fa	fas	fast	,	
 2,	OTHERS	OTHERS	2	NUMBER	CONTINUING_PUNCTUATION	1	2	2,	2,	2,	,	2,	,	2,	I-CRF
 767	OTHERS	OTHERS	767	NUMBER	OTHERS	3	7	76	767	767	7	67	767	7	I-CRF
 
-«scuotersi	OTHERS	OTHERS	«scuotersi	OTHERS	OTHERS	11	�	«	«s	«sc	i	si	rsi	ersi	O
+«scuotersi	OTHERS	OTHERS	«scuotersi	OTHERS	OTHERS	10	«	«s	«sc	«scu	i	si	rsi	ersi	O
 da	OTHERS	ALL_LOWER	da	NO_DIGITS	OTHERS	2	d	da	da	da	a	da	a	da	O
 se	OTHERS	ALL_LOWER	se	NO_DIGITS	OTHERS	2	s	se	se	se	e	se	e	se	O
-stesso»:	OTHERS	OTHERS	stesso»	OTHERS	CONTINUING_PUNCTUATION	8	s	st	ste	stes	:	�:	»:	o»:	O
+stesso»:	OTHERS	OTHERS	stesso»	OTHERS	CONTINUING_PUNCTUATION	7	s	st	ste	stes	:	»:	o»:	so»:	O
 v.	OTHERS	ALL_LOWER	v	NO_DIGITS	FINAL_DOT	1	v	v.	v.	v.	.	v.	.	v.	O
 621	OTHERS	OTHERS	621	NUMBER	OTHERS	3	6	62	621	621	1	21	621	1	O
 
@@ -1566,7 +1566,7 @@ Bibac.	OTHERS	INIT_CAPS	bibac	NO_DIGITS	FINAL_DOT	5	B	Bi	Bib	Biba	.	c.	ac.	bac.	
 carm.	OTHERS	ALL_LOWER	carm	NO_DIGITS	FINAL_DOT	4	c	ca	car	carm	.	m.	rm.	arm.	I-CRF
 frg.	OTHERS	ALL_LOWER	frg	NO_DIGITS	FINAL_DOT	3	f	fr	frg	frg.	.	g.	rg.	frg.	I-CRF
 7	OTHERS	OTHERS	7	NUMBER	OTHERS	1	7	7	7	7	7	7	7	7	I-CRF
-Büch.;	OTHERS	OTHERS	büch	OTHERS	CONTINUING_PUNCTUATION	5	B	B�	Bü	Büc	;	.;	h.;	ch.;	I-CRF
+Büch.;	OTHERS	INIT_CAPS	büch	NO_DIGITS	CONTINUING_PUNCTUATION	4	B	Bü	Büc	Büch	;	.;	h.;	ch.;	I-CRF
 
 Hom.	OTHERS	INIT_CAPS	hom	NO_DIGITS	FINAL_DOT	3	H	Ho	Hom	Hom.	.	m.	om.	Hom.	B-CRF
 Od.	OTHERS	INIT_CAPS	od	NO_DIGITS	FINAL_DOT	2	O	Od	Od.	Od.	.	d.	Od.	.	I-CRF
@@ -1729,12 +1729,12 @@ aureus	OTHERS	ALL_LOWER	aureus	NO_DIGITS	OTHERS	6	a	au	aur	aure	s	us	eus	reus	O
 egit...)	UNPAIRED_ROUND_BRACKETS	ALL_LOWER	egit	NO_DIGITS	OTHERS	4	e	eg	egi	egit	)	.)	..)	...)	O
 
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
-Blümner,	OTHERS	OTHERS	blümner	OTHERS	CONTINUING_PUNCTUATION	8	B	Bl	Bl�	Blü	,	r,	er,	ner,	O
+Blümner,	OTHERS	INIT_CAPS	blümner	NO_DIGITS	CONTINUING_PUNCTUATION	7	B	Bl	Blü	Blüm	,	r,	er,	ner,	O
 Die	OTHERS	INIT_CAPS	die	NO_DIGITS	OTHERS	3	D	Di	Die	Die	e	ie	Die	e	O
 Farbenbezeichnungen	OTHERS	INIT_CAPS	farbenbezeichnungen	NO_DIGITS	OTHERS	19	F	Fa	Far	Farb	n	en	gen	ngen	O
 bei	OTHERS	ALL_LOWER	bei	NO_DIGITS	OTHERS	3	b	be	bei	bei	i	ei	bei	i	O
 den	OTHERS	ALL_LOWER	den	NO_DIGITS	OTHERS	3	d	de	den	den	n	en	den	n	O
-römischen	OTHERS	OTHERS	römischen	OTHERS	OTHERS	10	r	r�	rö	röm	n	en	hen	chen	O
+römischen	OTHERS	ALL_LOWER	römischen	NO_DIGITS	OTHERS	9	r	rö	röm	römi	n	en	hen	chen	O
 Dichtern,	OTHERS	INIT_CAPS	dichtern	NO_DIGITS	CONTINUING_PUNCTUATION	8	D	Di	Dic	Dich	,	n,	rn,	ern,	O
 Berlin	OTHERS	INIT_CAPS	berlin	NO_DIGITS	OTHERS	6	B	Be	Ber	Berl	n	in	lin	rlin	O
 1892;	OTHERS	OTHERS	1892	NUMBER	CONTINUING_PUNCTUATION	4	1	18	189	1892	;	2;	92;	892;	O
@@ -1754,7 +1754,7 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 s.;	OTHERS	ALL_LOWER	s	NO_DIGITS	CONTINUING_PUNCTUATION	1	s	s.	s.;	s.;	;	.;	s.;	;	O
 
 J.	OTHERS	ALL_CAPS	j	NO_DIGITS	FINAL_DOT	1	J	J.	J.	J.	.	J.	.	J.	O
-André,	OTHERS	OTHERS	andré	OTHERS	CONTINUING_PUNCTUATION	6	A	An	And	Andr	,	�,	é,	ré,	O
+André,	OTHERS	INIT_CAPS	andré	NO_DIGITS	CONTINUING_PUNCTUATION	5	A	An	And	Andr	,	é,	ré,	dré,	O
 Etude	OTHERS	INIT_CAPS	etude	NO_DIGITS	OTHERS	5	E	Et	Etu	Etud	e	de	ude	tude	O
 sur	OTHERS	ALL_LOWER	sur	NO_DIGITS	OTHERS	3	s	su	sur	sur	r	ur	sur	r	O
 les	OTHERS	ALL_LOWER	les	NO_DIGITS	OTHERS	3	l	le	les	les	s	es	les	s	O
@@ -1765,7 +1765,7 @@ dans	OTHERS	ALL_LOWER	dans	NO_DIGITS	OTHERS	4	d	da	dan	dans	s	ns	ans	dans	O
 la	OTHERS	ALL_LOWER	la	NO_DIGITS	OTHERS	2	l	la	la	la	a	la	a	la	O
 langue	OTHERS	ALL_LOWER	langue	NO_DIGITS	OTHERS	6	l	la	lan	lang	e	ue	gue	ngue	O
 latine	OTHERS	ALL_LOWER	latine	NO_DIGITS	OTHERS	6	l	la	lat	lati	e	ne	ine	tine	O
-·,	OTHERS	OTHERS	·	OTHERS	CONTINUING_PUNCTUATION	2	�	·	·,	·,	,	�,	·,	,	O
+·,	OTHERS	OTHERS	·	OTHERS	CONTINUING_PUNCTUATION	1	·	·,	·,	·,	,	·,	,	·,	O
 Paris	OTHERS	INIT_CAPS	paris	NO_DIGITS	OTHERS	5	P	Pa	Par	Pari	s	is	ris	aris	O
 1949,	OTHERS	OTHERS	1949	NUMBER	CONTINUING_PUNCTUATION	4	1	19	194	1949	,	9,	49,	949,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -1773,11 +1773,11 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 ss.	OTHERS	ALL_LOWER	ss	NO_DIGITS	FINAL_DOT	2	s	ss	ss.	ss.	.	s.	ss.	.	O
 
 V.	OTHERS	ALL_CAPS	v	NO_DIGITS	FINAL_DOT	1	V	V.	V.	V.	.	V.	.	V.	O
-Pöschl,	OTHERS	OTHERS	pöschl	OTHERS	CONTINUING_PUNCTUATION	7	P	P�	Pö	Pös	,	l,	hl,	chl,	O
+Pöschl,	OTHERS	INIT_CAPS	pöschl	NO_DIGITS	CONTINUING_PUNCTUATION	6	P	Pö	Pös	Pösc	,	l,	hl,	chl,	O
 Kephalos	OTHERS	INIT_CAPS	kephalos	NO_DIGITS	OTHERS	8	K	Ke	Kep	Keph	s	os	los	alos	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 Prokris,	OTHERS	INIT_CAPS	prokris	NO_DIGITS	CONTINUING_PUNCTUATION	7	P	Pr	Pro	Prok	,	s,	is,	ris,	O
-«Hermes»	OTHERS	OTHERS	«hermes»	OTHERS	OTHERS	10	�	«	«H	«He	�	»	s»	es»	O
+«Hermes»	OTHERS	OTHERS	«hermes»	OTHERS	OTHERS	8	«	«H	«He	«Her	»	s»	es»	mes»	O
 87,	OTHERS	OTHERS	87	NUMBER	CONTINUING_PUNCTUATION	2	8	87	87,	87,	,	7,	87,	,	O
 1959,	OTHERS	OTHERS	1959	NUMBER	CONTINUING_PUNCTUATION	4	1	19	195	1959	,	9,	59,	959,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -1795,10 +1795,10 @@ ss.	OTHERS	ALL_LOWER	ss	NO_DIGITS	FINAL_DOT	2	s	ss	ss.	ss.	.	s.	ss.	.	I-CRF
 met.	OTHERS	ALL_LOWER	met	NO_DIGITS	FINAL_DOT	3	m	me	met	met.	.	t.	et.	met.	I-CRF
 7,	OTHERS	OTHERS	7	NUMBER	CONTINUING_PUNCTUATION	1	7	7,	7,	7,	,	7,	,	7,	I-CRF
 661-865),	UNPAIRED_ROUND_BRACKETS	OTHERS	661865	NUMBER	CONTINUING_PUNCTUATION	6	6	66	661	661-	,	),	5),	65),	I-CRF
-«Ann.	OTHERS	OTHERS	«ann	OTHERS	FINAL_DOT	5	�	«	«A	«An	.	n.	nn.	Ann.	O
+«Ann.	OTHERS	OTHERS	«ann	OTHERS	FINAL_DOT	4	«	«A	«An	«Ann	.	n.	nn.	Ann.	O
 Se.	OTHERS	INIT_CAPS	se	NO_DIGITS	FINAL_DOT	2	S	Se	Se.	Se.	.	e.	Se.	.	O
 Norm.	OTHERS	INIT_CAPS	norm	NO_DIGITS	FINAL_DOT	4	N	No	Nor	Norm	.	m.	rm.	orm.	O
-Pisa»	OTHERS	OTHERS	pisa»	OTHERS	OTHERS	6	P	Pi	Pis	Pisa	�	»	a»	sa»	O
+Pisa»	OTHERS	OTHERS	pisa»	OTHERS	OTHERS	5	P	Pi	Pis	Pisa	»	a»	sa»	isa»	O
 s.	OTHERS	ALL_LOWER	s	NO_DIGITS	FINAL_DOT	1	s	s.	s.	s.	.	s.	.	s.	O
 III,	OTHERS	ALL_CAPS	iii	NO_DIGITS	CONTINUING_PUNCTUATION	3	I	II	III	III,	,	I,	II,	III,	O
 5,	OTHERS	OTHERS	5	NUMBER	CONTINUING_PUNCTUATION	1	5	5,	5,	5,	,	5,	,	5,	O
@@ -1839,7 +1839,7 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 ss.	OTHERS	ALL_LOWER	ss	NO_DIGITS	FINAL_DOT	2	s	ss	ss.	ss.	.	s.	ss.	.	O
 
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
-Blümner,	OTHERS	OTHERS	blümner	OTHERS	CONTINUING_PUNCTUATION	8	B	Bl	Bl�	Blü	,	r,	er,	ner,	O
+Blümner,	OTHERS	INIT_CAPS	blümner	NO_DIGITS	CONTINUING_PUNCTUATION	7	B	Bl	Blü	Blüm	,	r,	er,	ner,	O
 Die	OTHERS	INIT_CAPS	die	NO_DIGITS	OTHERS	3	D	Di	Die	Die	e	ie	Die	e	O
 Farbenbezeichnungen...	OTHERS	INIT_CAPS	farbenbezeichnungen	NO_DIGITS	OTHERS	19	F	Fa	Far	Farb	.	..	...	n...	O
 cit.,	OTHERS	ALL_LOWER	cit	NO_DIGITS	CONTINUING_PUNCTUATION	3	c	ci	cit	cit.	,	.,	t.,	it.,	O
@@ -1848,7 +1848,7 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 ss.	OTHERS	ALL_LOWER	ss	NO_DIGITS	FINAL_DOT	2	s	ss	ss.	ss.	.	s.	ss.	.	O
 
 J.	OTHERS	ALL_CAPS	j	NO_DIGITS	FINAL_DOT	1	J	J.	J.	J.	.	J.	.	J.	O
-André,	OTHERS	OTHERS	andré	OTHERS	CONTINUING_PUNCTUATION	6	A	An	And	Andr	,	�,	é,	ré,	O
+André,	OTHERS	INIT_CAPS	andré	NO_DIGITS	CONTINUING_PUNCTUATION	5	A	An	And	Andr	,	é,	ré,	dré,	O
 Etude	OTHERS	INIT_CAPS	etude	NO_DIGITS	OTHERS	5	E	Et	Etu	Etud	e	de	ude	tude	O
 sur	OTHERS	ALL_LOWER	sur	NO_DIGITS	OTHERS	3	s	su	sur	sur	r	ur	sur	r	O
 les	OTHERS	ALL_LOWER	les	NO_DIGITS	OTHERS	3	l	le	les	les	s	es	les	s	O
@@ -1974,9 +1974,9 @@ des	OTHERS	ALL_LOWER	des	NO_DIGITS	OTHERS	3	d	de	des	des	s	es	des	s	O
 Parques	OTHERS	INIT_CAPS	parques	NO_DIGITS	OTHERS	7	P	Pa	Par	Parq	s	es	ues	ques	O
 (LXIV,	UNPAIRED_ROUND_BRACKETS	ALL_CAPS	lxiv	NO_DIGITS	CONTINUING_PUNCTUATION	4	(	(L	(LX	(LXI	,	V,	IV,	XIV,	O
 309),	UNPAIRED_ROUND_BRACKETS	OTHERS	309	NUMBER	CONTINUING_PUNCTUATION	3	3	30	309	309)	,	),	9),	09),	O
-«Rev.	OTHERS	OTHERS	«rev	OTHERS	FINAL_DOT	5	�	«	«R	«Re	.	v.	ev.	Rev.	O
-Ét.	OTHERS	OTHERS	Ét	OTHERS	FINAL_DOT	3	�	É	Ét	Ét.	.	t.	�t.	Ét.	O
-Lat.»	OTHERS	OTHERS	lat»	OTHERS	OTHERS	5	L	La	Lat	Lat.	�	»	.»	t.»	O
+«Rev.	OTHERS	OTHERS	«rev	OTHERS	FINAL_DOT	4	«	«R	«Re	«Rev	.	v.	ev.	Rev.	O
+Ét.	OTHERS	INIT_CAPS	ét	NO_DIGITS	FINAL_DOT	2	É	Ét	Ét.	Ét.	.	t.	Ét.	.	O
+Lat.»	OTHERS	OTHERS	lat»	OTHERS	OTHERS	4	L	La	Lat	Lat.	»	.»	t.»	at.»	O
 54,	OTHERS	OTHERS	54	NUMBER	CONTINUING_PUNCTUATION	2	5	54	54,	54,	,	4,	54,	,	O
 1976,	OTHERS	OTHERS	1976	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1976	,	6,	76,	976,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -2030,10 +2030,10 @@ ad	OTHERS	ALL_LOWER	ad	NO_DIGITS	OTHERS	2	a	ad	ad	ad	d	ad	d	ad	O
 loc.	OTHERS	ALL_LOWER	loc	NO_DIGITS	FINAL_DOT	3	l	lo	loc	loc.	.	c.	oc.	loc.	O
 
 J.	OTHERS	ALL_CAPS	j	NO_DIGITS	FINAL_DOT	1	J	J.	J.	J.	.	J.	.	J.	O
-André,	OTHERS	OTHERS	andré	OTHERS	CONTINUING_PUNCTUATION	6	A	An	And	Andr	,	�,	é,	ré,	O
+André,	OTHERS	INIT_CAPS	andré	NO_DIGITS	CONTINUING_PUNCTUATION	5	A	An	And	Andr	,	é,	ré,	dré,	O
 Paris	OTHERS	INIT_CAPS	paris	NO_DIGITS	OTHERS	5	P	Pa	Par	Pari	s	is	ris	aris	O
 1977:	OTHERS	OTHERS	1977	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1977	:	7:	77:	977:	O
-«levres»	OTHERS	OTHERS	«levres»	OTHERS	OTHERS	10	�	«	«l	«le	�	»	s»	es»	O
+«levres»	OTHERS	OTHERS	«levres»	OTHERS	OTHERS	8	«	«l	«le	«lev	»	s»	es»	res»	O
 
 Sii.	OTHERS	INIT_CAPS	sii	NO_DIGITS	FINAL_DOT	3	S	Si	Sii	Sii.	.	i.	ii.	Sii.	B-CRF
 7,	OTHERS	OTHERS	7	NUMBER	CONTINUING_PUNCTUATION	1	7	7,	7,	7,	,	7,	,	7,	I-CRF
@@ -2246,7 +2246,7 @@ FGrHist	OTHERS	INIT_CAPS	fgrhist	NO_DIGITS	OTHERS	7	F	FG	FGr	FGrH	t	st	ist	Hist	
 F	OTHERS	ALL_CAPS	f	NO_DIGITS	OTHERS	1	F	F	F	F	F	F	F	F	I-CRF
 34	OTHERS	OTHERS	34	NUMBER	OTHERS	2	3	34	34	34	4	34	4	34	I-CRF
 
-«MD»	OTHERS	OTHERS	«md»	OTHERS	OTHERS	6	�	«	«M	«MD	�	»	D»	MD»	O
+«MD»	OTHERS	OTHERS	«md»	OTHERS	OTHERS	4	«	«M	«MD	«MD»	»	D»	MD»	«MD»	O
 2,	OTHERS	OTHERS	2	NUMBER	CONTINUING_PUNCTUATION	1	2	2,	2,	2,	,	2,	,	2,	O
 1979,	OTHERS	OTHERS	1979	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1979	,	9,	79,	979,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -2255,7 +2255,7 @@ n.	OTHERS	ALL_LOWER	n	NO_DIGITS	FINAL_DOT	1	n	n.	n.	n.	.	n.	.	n.	O
 54	OTHERS	OTHERS	54	NUMBER	OTHERS	2	5	54	54	54	4	54	4	54	O
 
 G.	OTHERS	ALL_CAPS	g	NO_DIGITS	FINAL_DOT	1	G	G.	G.	G.	.	G.	.	G.	O
-Β.	OTHERS	OTHERS	Β	OTHERS	FINAL_DOT	2	�	Β	Β.	Β.	.	�.	Β.	.	O
+Β.	OTHERS	ALL_CAPS	β	NO_DIGITS	FINAL_DOT	1	Β	Β.	Β.	Β.	.	Β.	.	Β.	O
 Conte,	OTHERS	INIT_CAPS	conte	NO_DIGITS	CONTINUING_PUNCTUATION	5	C	Co	Con	Cont	,	e,	te,	nte,	O
 Memoria	OTHERS	INIT_CAPS	memoria	NO_DIGITS	OTHERS	7	M	Me	Mem	Memo	a	ia	ria	oria	O
 dei	OTHERS	ALL_LOWER	dei	NO_DIGITS	OTHERS	3	d	de	dei	dei	i	ei	dei	i	O
@@ -2321,7 +2321,7 @@ in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
 Ovids	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	ds	ids	vids	O
 Ars	OTHERS	INIT_CAPS	ars	NO_DIGITS	OTHERS	3	A	Ar	Ars	Ars	s	rs	Ars	s	O
 amatoria,	OTHERS	ALL_LOWER	amatoria	NO_DIGITS	CONTINUING_PUNCTUATION	8	a	am	ama	amat	,	a,	ia,	ria,	O
-«Maia»	OTHERS	OTHERS	«maia»	OTHERS	OTHERS	8	�	«	«M	«Ma	�	»	a»	ia»	O
+«Maia»	OTHERS	OTHERS	«maia»	OTHERS	OTHERS	6	«	«M	«Ma	«Mai	»	a»	ia»	aia»	O
 14,	OTHERS	OTHERS	14	NUMBER	CONTINUING_PUNCTUATION	2	1	14	14,	14,	,	4,	14,	,	O
 1962,	OTHERS	OTHERS	1962	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1962	,	2,	62,	962,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -2331,9 +2331,9 @@ s.	OTHERS	ALL_LOWER	s	NO_DIGITS	FINAL_DOT	1	s	s.	s.	s.	.	s.	.	s.	O
 J.	OTHERS	ALL_CAPS	j	NO_DIGITS	FINAL_DOT	1	J	J.	J.	J.	.	J.	.	J.	O
 Fontenrose,	OTHERS	INIT_CAPS	fontenrose	NO_DIGITS	CONTINUING_PUNCTUATION	10	F	Fo	Fon	Font	,	e,	se,	ose,	O
 Ovid's	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	's	d's	id's	O
-Procrìs,	OTHERS	OTHERS	procrìs	OTHERS	CONTINUING_PUNCTUATION	8	P	Pr	Pro	Proc	,	s,	�s,	ìs,	O
-«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	7	�	«	«C	«Cl	.	s.	ss.	ass.	O
-Journ.»	OTHERS	OTHERS	journ»	OTHERS	OTHERS	7	J	Jo	Jou	Jour	�	»	.»	n.»	O
+Procrìs,	OTHERS	INIT_CAPS	procrìs	NO_DIGITS	CONTINUING_PUNCTUATION	7	P	Pr	Pro	Proc	,	s,	ìs,	rìs,	O
+«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	6	«	«C	«Cl	«Cla	.	s.	ss.	ass.	O
+Journ.»	OTHERS	OTHERS	journ»	OTHERS	OTHERS	6	J	Jo	Jou	Jour	»	.»	n.»	rn.»	O
 75,	OTHERS	OTHERS	75	NUMBER	CONTINUING_PUNCTUATION	2	7	75	75,	75,	,	5,	75,	,	O
 1979,	OTHERS	OTHERS	1979	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1979	,	9,	79,	979,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -2478,22 +2478,22 @@ Huber	OTHERS	INIT_CAPS	huber	NO_DIGITS	OTHERS	5	H	Hu	Hub	Hube	r	er	ber	uber	O
 Rebenich,	OTHERS	INIT_CAPS	rebenich	NO_DIGITS	CONTINUING_PUNCTUATION	8	R	Re	Reb	Rebe	,	h,	ch,	ich,	O
 Beobachtungen	OTHERS	INIT_CAPS	beobachtungen	NO_DIGITS	OTHERS	13	B	Be	Beo	Beob	n	en	gen	ngen	O
 zur	OTHERS	ALL_LOWER	zur	NO_DIGITS	OTHERS	3	z	zu	zur	zur	r	ur	zur	r	O
-Feuermetaphorìk	OTHERS	OTHERS	feuermetaphorìk	OTHERS	OTHERS	16	F	Fe	Feu	Feue	k	�k	ìk	rìk	O
+Feuermetaphorìk	OTHERS	INIT_CAPS	feuermetaphorìk	NO_DIGITS	OTHERS	15	F	Fe	Feu	Feue	k	ìk	rìk	orìk	O
 im	OTHERS	ALL_LOWER	im	NO_DIGITS	OTHERS	2	i	im	im	im	m	im	m	im	O
 Sermo	OTHERS	INIT_CAPS	sermo	NO_DIGITS	OTHERS	5	S	Se	Ser	Serm	o	mo	rmo	ermo	O
 amatorius	OTHERS	ALL_LOWER	amatorius	NO_DIGITS	OTHERS	9	a	am	ama	amat	s	us	ius	rius	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
 Ovids	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	ds	ids	vids	O
 Metamorphosen,	OTHERS	INIT_CAPS	metamorphosen	NO_DIGITS	CONTINUING_PUNCTUATION	13	M	Me	Met	Meta	,	n,	en,	sen,	O
-«Rhein.	OTHERS	OTHERS	«rhein	OTHERS	FINAL_DOT	7	�	«	«R	«Rh	.	n.	in.	ein.	O
-Mus.»	OTHERS	OTHERS	mus»	OTHERS	OTHERS	5	M	Mu	Mus	Mus.	�	»	.»	s.»	O
+«Rhein.	OTHERS	OTHERS	«rhein	OTHERS	FINAL_DOT	6	«	«R	«Rh	«Rhe	.	n.	in.	ein.	O
+Mus.»	OTHERS	OTHERS	mus»	OTHERS	OTHERS	4	M	Mu	Mus	Mus.	»	.»	s.»	us.»	O
 137,	OTHERS	OTHERS	137	NUMBER	CONTINUING_PUNCTUATION	3	1	13	137	137,	,	7,	37,	137,	O
 1994,	OTHERS	OTHERS	1994	NUMBER	CONTINUING_PUNCTUATION	4	1	19	199	1994	,	4,	94,	994,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 132	OTHERS	OTHERS	132	NUMBER	OTHERS	3	1	13	132	132	2	32	132	2	O
 
 J.-M.	OTHERS	ALL_CAPS	jm	NO_DIGITS	FINAL_DOT	2	J	J.	J.-	J.-M	.	M.	-M.	.-M.	O
-Frécaut,	OTHERS	OTHERS	frécaut	OTHERS	CONTINUING_PUNCTUATION	8	F	Fr	Fr�	Fré	,	t,	ut,	aut,	O
+Frécaut,	OTHERS	INIT_CAPS	frécaut	NO_DIGITS	CONTINUING_PUNCTUATION	7	F	Fr	Fré	Fréc	,	t,	ut,	aut,	O
 L'espnt	OTHERS	INIT_CAPS	lespnt	NO_DIGITS	OTHERS	6	L	L'	L'e	L'es	t	nt	pnt	spnt	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
 l'humour...	OTHERS	ALL_LOWER	lhumour	NO_DIGITS	OTHERS	7	l	l'	l'h	l'hu	.	..	...	r...	O
@@ -2503,7 +2503,7 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 s.,	OTHERS	ALL_LOWER	s	NO_DIGITS	CONTINUING_PUNCTUATION	1	s	s.	s.,	s.,	,	.,	s.,	,	O
 
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
-Fränkel,	OTHERS	OTHERS	fränkel	OTHERS	CONTINUING_PUNCTUATION	8	F	Fr	Fr�	Frä	,	l,	el,	kel,	O
+Fränkel,	OTHERS	INIT_CAPS	fränkel	NO_DIGITS	CONTINUING_PUNCTUATION	7	F	Fr	Frä	Frän	,	l,	el,	kel,	O
 Ovid:	OTHERS	INIT_CAPS	ovid	NO_DIGITS	CONTINUING_PUNCTUATION	4	O	Ov	Ovi	Ovid	:	d:	id:	vid:	O
 a	OTHERS	ALL_LOWER	a	NO_DIGITS	OTHERS	1	a	a	a	a	a	a	a	a	O
 poet	OTHERS	ALL_LOWER	poet	NO_DIGITS	OTHERS	4	p	po	poe	poet	t	et	oet	poet	O
@@ -2527,7 +2527,7 @@ Procri,	OTHERS	INIT_CAPS	procri	NO_DIGITS	CONTINUING_PUNCTUATION	6	P	Pr	Pro	Proc
 Cefalo	OTHERS	INIT_CAPS	cefalo	NO_DIGITS	OTHERS	6	C	Ce	Cef	Cefa	o	lo	alo	falo	O
 e	OTHERS	ALL_LOWER	e	NO_DIGITS	OTHERS	1	e	e	e	e	e	e	e	e	O
 l'Aurora,	OTHERS	OTHERS	laurora	NO_DIGITS	CONTINUING_PUNCTUATION	7	l	l'	l'A	l'Au	,	a,	ra,	ora,	O
-«Athenaeum»	OTHERS	OTHERS	«athenaeum»	OTHERS	OTHERS	13	�	«	«A	«At	�	»	m»	um»	O
+«Athenaeum»	OTHERS	OTHERS	«athenaeum»	OTHERS	OTHERS	11	«	«A	«At	«Ath	»	m»	um»	eum»	O
 4,	OTHERS	OTHERS	4	NUMBER	CONTINUING_PUNCTUATION	1	4	4,	4,	4,	,	4,	,	4,	O
 1916,	OTHERS	OTHERS	1916	NUMBER	CONTINUING_PUNCTUATION	4	1	19	191	1916	,	6,	16,	916,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -2542,7 +2542,7 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 ss.;	OTHERS	ALL_LOWER	ss	NO_DIGITS	CONTINUING_PUNCTUATION	2	s	ss	ss.	ss.;	;	.;	s.;	ss.;	O
 
 V.	OTHERS	ALL_CAPS	v	NO_DIGITS	FINAL_DOT	1	V	V.	V.	V.	.	V.	.	V.	O
-Pöschl,	OTHERS	OTHERS	pöschl	OTHERS	CONTINUING_PUNCTUATION	7	P	P�	Pö	Pös	,	l,	hl,	chl,	O
+Pöschl,	OTHERS	INIT_CAPS	pöschl	NO_DIGITS	CONTINUING_PUNCTUATION	6	P	Pö	Pös	Pösc	,	l,	hl,	chl,	O
 Kephalos	OTHERS	INIT_CAPS	kephalos	NO_DIGITS	OTHERS	8	K	Ke	Kep	Keph	s	os	los	alos	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 Prokris...	OTHERS	INIT_CAPS	prokris	NO_DIGITS	OTHERS	7	P	Pr	Pro	Prok	.	..	...	s...	O
@@ -2619,17 +2619,17 @@ malheur	OTHERS	ALL_LOWER	malheur	NO_DIGITS	OTHERS	7	m	ma	mal	malh	r	ur	eur	heur	
 d'un	OTHERS	ALL_LOWER	dun	NO_DIGITS	OTHERS	3	d	d'	d'u	d'un	n	un	'un	d'un	O
 amour	OTHERS	ALL_LOWER	amour	NO_DIGITS	OTHERS	5	a	am	amo	amou	r	ur	our	mour	O
 conjugal:	OTHERS	ALL_LOWER	conjugal	NO_DIGITS	CONTINUING_PUNCTUATION	8	c	co	con	conj	:	l:	al:	gal:	O
-Céphale	OTHERS	OTHERS	céphale	OTHERS	OTHERS	8	C	C�	Cé	Cép	e	le	ale	hale	O
+Céphale	OTHERS	INIT_CAPS	céphale	NO_DIGITS	OTHERS	7	C	Cé	Cép	Céph	e	le	ale	hale	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
 Procris	OTHERS	INIT_CAPS	procris	NO_DIGITS	OTHERS	7	P	Pr	Pro	Proc	s	is	ris	cris	O
 (Ov.	UNPAIRED_ROUND_BRACKETS	INIT_CAPS	ov	NO_DIGITS	FINAL_DOT	2	(	(O	(Ov	(Ov.	.	v.	Ov.	(Ov.	B-CRF
 met.	OTHERS	ALL_LOWER	met	NO_DIGITS	FINAL_DOT	3	m	me	met	met.	.	t.	et.	met.	I-CRF
 VII,	OTHERS	ALL_CAPS	vii	NO_DIGITS	CONTINUING_PUNCTUATION	3	V	VI	VII	VII,	,	I,	II,	VII,	I-CRF
 661-862),	UNPAIRED_ROUND_BRACKETS	OTHERS	661862	NUMBER	CONTINUING_PUNCTUATION	6	6	66	661	661-	,	),	2),	62),	I-CRF
-«Journées	OTHERS	OTHERS	«journées	OTHERS	OTHERS	11	�	«	«J	«Jo	s	es	�es	ées	O
+«Journées	OTHERS	OTHERS	«journées	OTHERS	OTHERS	9	«	«J	«Jo	«Jou	s	es	ées	nées	O
 Ovidiennes	OTHERS	INIT_CAPS	ovidiennes	NO_DIGITS	OTHERS	10	O	Ov	Ovi	Ovid	s	es	nes	nnes	O
 de	OTHERS	ALL_LOWER	de	NO_DIGITS	OTHERS	2	d	de	de	de	e	de	e	de	O
-Parménie.	OTHERS	OTHERS	parménie	OTHERS	FINAL_DOT	9	P	Pa	Par	Parm	.	e.	ie.	nie.	O
+Parménie.	OTHERS	INIT_CAPS	parménie	NO_DIGITS	FINAL_DOT	8	P	Pa	Par	Parm	.	e.	ie.	nie.	O
 Actes	OTHERS	INIT_CAPS	actes	NO_DIGITS	OTHERS	5	A	Ac	Act	Acte	s	es	tes	ctes	O
 du	OTHERS	ALL_LOWER	du	NO_DIGITS	OTHERS	2	d	du	du	du	u	du	u	du	O
 colloque	OTHERS	ALL_LOWER	colloque	NO_DIGITS	OTHERS	8	c	co	col	coll	e	ue	que	oque	O
@@ -2637,14 +2637,14 @@ sur	OTHERS	ALL_LOWER	sur	NO_DIGITS	OTHERS	3	s	su	sur	sur	r	ur	sur	r	O
 Ovide,	OTHERS	INIT_CAPS	ovide	NO_DIGITS	CONTINUING_PUNCTUATION	5	O	Ov	Ovi	Ovid	,	e,	de,	ide,	O
 24-26	OTHERS	OTHERS	2426	NUMBER	OTHERS	4	2	24	24-	24-2	6	26	-26	4-26	O
 Juine	OTHERS	INIT_CAPS	juine	NO_DIGITS	OTHERS	5	J	Ju	Jui	Juin	e	ne	ine	uine	O
-1983»,	OTHERS	OTHERS	1983»	OTHERS	CONTINUING_PUNCTUATION	6	1	19	198	1983	,	�,	»,	3»,	O
+1983»,	OTHERS	OTHERS	1983»	OTHERS	CONTINUING_PUNCTUATION	5	1	19	198	1983	,	»,	3»,	83»,	O
 Bruxelles	OTHERS	INIT_CAPS	bruxelles	NO_DIGITS	OTHERS	9	B	Br	Bru	Brux	s	es	les	lles	O
 1985,	OTHERS	OTHERS	1985	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1985	,	5,	85,	985,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 199	OTHERS	OTHERS	199	NUMBER	OTHERS	3	1	19	199	199	9	99	199	9	O
 ss.	OTHERS	ALL_LOWER	ss	NO_DIGITS	FINAL_DOT	2	s	ss	ss.	ss.	.	s.	ss.	.	O
 
-Börner,	OTHERS	OTHERS	börner	OTHERS	CONTINUING_PUNCTUATION	7	B	B�	Bö	Bör	,	r,	er,	ner,	O
+Börner,	OTHERS	INIT_CAPS	börner	NO_DIGITS	CONTINUING_PUNCTUATION	6	B	Bö	Bör	Börn	,	r,	er,	ner,	O
 vol.	OTHERS	ALL_LOWER	vol	NO_DIGITS	FINAL_DOT	3	v	vo	vol	vol.	.	l.	ol.	vol.	O
 III,	OTHERS	ALL_CAPS	iii	NO_DIGITS	CONTINUING_PUNCTUATION	3	I	II	III	III,	,	I,	II,	III,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -2735,7 +2735,7 @@ e	OTHERS	ALL_LOWER	e	NO_DIGITS	OTHERS	1	e	e	e	e	e	e	e	e	O
 s.;	OTHERS	ALL_LOWER	s	NO_DIGITS	CONTINUING_PUNCTUATION	1	s	s.	s.;	s.;	;	.;	s.;	;	O
 
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
-Fränkel,	OTHERS	OTHERS	fränkel	OTHERS	CONTINUING_PUNCTUATION	8	F	Fr	Fr�	Frä	,	l,	el,	kel,	O
+Fränkel,	OTHERS	INIT_CAPS	fränkel	NO_DIGITS	CONTINUING_PUNCTUATION	7	F	Fr	Frä	Frän	,	l,	el,	kel,	O
 Noten	OTHERS	INIT_CAPS	noten	NO_DIGITS	OTHERS	5	N	No	Not	Note	n	en	ten	oten	O
 zu	OTHERS	ALL_LOWER	zu	NO_DIGITS	OTHERS	2	z	zu	zu	zu	u	zu	u	zu	O
 den	OTHERS	ALL_LOWER	den	NO_DIGITS	OTHERS	3	d	de	den	den	n	en	den	n	O
@@ -2841,7 +2841,7 @@ Demetra	OTHERS	INIT_CAPS	demetra	NO_DIGITS	OTHERS	7	D	De	Dem	Deme	a	ra	tra	etra	
 (v.	UNPAIRED_ROUND_BRACKETS	ALL_LOWER	v	NO_DIGITS	FINAL_DOT	1	(	(v	(v.	(v.	.	v.	(v.	.	O
 51)	UNPAIRED_ROUND_BRACKETS	OTHERS	51	NUMBER	OTHERS	2	5	51	51)	51)	)	1)	51)	)	I-CRF
 
-Varrò	OTHERS	OTHERS	varrò	OTHERS	OTHERS	6	V	Va	Var	Varr	�	ò	rò	rrò	B-CRF
+Varrò	OTHERS	INIT_CAPS	varrò	NO_DIGITS	OTHERS	5	V	Va	Var	Varr	ò	rò	rrò	arrò	B-CRF
 ling.	OTHERS	ALL_LOWER	ling	NO_DIGITS	FINAL_DOT	4	l	li	lin	ling	.	g.	ng.	ing.	I-CRF
 5,	OTHERS	OTHERS	5	NUMBER	CONTINUING_PUNCTUATION	1	5	5,	5,	5,	,	5,	,	5,	I-CRF
 23-24	OTHERS	OTHERS	2324	NUMBER	OTHERS	4	2	23	23-	23-2	4	24	-24	3-24	I-CRF
@@ -2912,8 +2912,8 @@ The	OTHERS	INIT_CAPS	the	NO_DIGITS	OTHERS	3	T	Th	The	The	e	he	The	e	O
 dating	OTHERS	ALL_LOWER	dating	NO_DIGITS	OTHERS	6	d	da	dat	dati	g	ng	ing	ting	O
 of	OTHERS	ALL_LOWER	of	NO_DIGITS	OTHERS	2	o	of	of	of	f	of	f	of	O
 Ciris,	OTHERS	INIT_CAPS	ciris	NO_DIGITS	CONTINUING_PUNCTUATION	5	C	Ci	Cir	Ciri	,	s,	is,	ris,	O
-«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	7	�	«	«C	«Cl	.	s.	ss.	ass.	O
-Quart.»	OTHERS	OTHERS	quart»	OTHERS	OTHERS	7	Q	Qu	Qua	Quar	�	»	.»	t.»	O
+«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	6	«	«C	«Cl	«Cla	.	s.	ss.	ass.	O
+Quart.»	OTHERS	OTHERS	quart»	OTHERS	OTHERS	6	Q	Qu	Qua	Quar	»	.»	t.»	rt.»	O
 21,	OTHERS	OTHERS	21	NUMBER	CONTINUING_PUNCTUATION	2	2	21	21,	21,	,	1,	21,	,	I-CRF
 1971,	OTHERS	OTHERS	1971	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1971	,	1,	71,	971,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -3014,7 +3014,7 @@ fast.	OTHERS	ALL_LOWER	fast	NO_DIGITS	FINAL_DOT	4	f	fa	fas	fast	.	t.	st.	ast.	B-
 4,	OTHERS	OTHERS	4	NUMBER	CONTINUING_PUNCTUATION	1	4	4,	4,	4,	,	4,	,	4,	I-CRF
 141	OTHERS	OTHERS	141	NUMBER	OTHERS	3	1	14	141	141	1	41	141	1	I-CRF
 
-Bömer;	OTHERS	OTHERS	bömer	OTHERS	CONTINUING_PUNCTUATION	6	B	B�	Bö	Böm	;	r;	er;	mer;	O
+Bömer;	OTHERS	INIT_CAPS	bömer	NO_DIGITS	CONTINUING_PUNCTUATION	5	B	Bö	Böm	Böme	;	r;	er;	mer;	O
 5,	OTHERS	OTHERS	5	NUMBER	CONTINUING_PUNCTUATION	1	5	5,	5,	5,	,	5,	,	5,	O
 679	OTHERS	OTHERS	679	NUMBER	OTHERS	3	6	67	679	679	9	79	679	9	O
 
@@ -3034,13 +3034,13 @@ Bardon,	OTHERS	INIT_CAPS	bardon	NO_DIGITS	CONTINUING_PUNCTUATION	6	B	Ba	Bar	Bard
 L'aurore	OTHERS	INIT_CAPS	laurore	NO_DIGITS	OTHERS	7	L	L'	L'a	L'au	e	re	ore	rore	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
 le	OTHERS	ALL_LOWER	le	NO_DIGITS	OTHERS	2	l	le	le	le	e	le	e	le	O
-crépuscule,	OTHERS	OTHERS	crépuscule	OTHERS	CONTINUING_PUNCTUATION	11	c	cr	cr�	cré	,	e,	le,	ule,	O
-thèmes	OTHERS	OTHERS	thèmes	OTHERS	OTHERS	7	t	th	th�	thè	s	es	mes	�mes	O
+crépuscule,	OTHERS	ALL_LOWER	crépuscule	NO_DIGITS	CONTINUING_PUNCTUATION	10	c	cr	cré	crép	,	e,	le,	ule,	O
+thèmes	OTHERS	ALL_LOWER	thèmes	NO_DIGITS	OTHERS	6	t	th	thè	thèm	s	es	mes	èmes	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
-clichés,	OTHERS	OTHERS	clichés	OTHERS	CONTINUING_PUNCTUATION	8	c	cl	cli	clic	,	s,	�s,	és,	O
-«Rev.	OTHERS	OTHERS	«rev	OTHERS	FINAL_DOT	5	�	«	«R	«Re	.	v.	ev.	Rev.	O
+clichés,	OTHERS	ALL_LOWER	clichés	NO_DIGITS	CONTINUING_PUNCTUATION	7	c	cl	cli	clic	,	s,	és,	hés,	O
+«Rev.	OTHERS	OTHERS	«rev	OTHERS	FINAL_DOT	4	«	«R	«Re	«Rev	.	v.	ev.	Rev.	O
 Et.	OTHERS	INIT_CAPS	et	NO_DIGITS	FINAL_DOT	2	E	Et	Et.	Et.	.	t.	Et.	.	O
-Lat.»	OTHERS	OTHERS	lat»	OTHERS	OTHERS	5	L	La	Lat	Lat.	�	»	.»	t.»	O
+Lat.»	OTHERS	OTHERS	lat»	OTHERS	OTHERS	4	L	La	Lat	Lat.	»	.»	t.»	at.»	O
 24,	OTHERS	OTHERS	24	NUMBER	CONTINUING_PUNCTUATION	2	2	24	24,	24,	,	4,	24,	,	O
 1946,	OTHERS	OTHERS	1946	NUMBER	CONTINUING_PUNCTUATION	4	1	19	194	1946	,	6,	46,	946,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -3077,7 +3077,7 @@ p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 B.	OTHERS	ALL_CAPS	b	NO_DIGITS	FINAL_DOT	1	B	B.	B.	B.	.	B.	.	B.	O
 Axelson,	OTHERS	INIT_CAPS	axelson	NO_DIGITS	CONTINUING_PUNCTUATION	7	A	Ax	Axe	Axel	,	n,	on,	son,	O
 Unpoetische	OTHERS	INIT_CAPS	unpoetische	NO_DIGITS	OTHERS	11	U	Un	Unp	Unpo	e	he	che	sche	O
-Wörter,	OTHERS	OTHERS	wörter	OTHERS	CONTINUING_PUNCTUATION	7	W	W�	Wö	Wör	,	r,	er,	ter,	O
+Wörter,	OTHERS	INIT_CAPS	wörter	NO_DIGITS	CONTINUING_PUNCTUATION	6	W	Wö	Wör	Wört	,	r,	er,	ter,	O
 Lund	OTHERS	INIT_CAPS	lund	NO_DIGITS	OTHERS	4	L	Lu	Lun	Lund	d	nd	und	Lund	O
 1945,	OTHERS	OTHERS	1945	NUMBER	CONTINUING_PUNCTUATION	4	1	19	194	1945	,	5,	45,	945,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -3129,7 +3129,7 @@ p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 207.	OTHERS	OTHERS	207	NUMBER	FINAL_DOT	3	2	20	207	207.	.	7.	07.	207.	O
 
 P.	OTHERS	ALL_CAPS	p	NO_DIGITS	FINAL_DOT	1	P	P.	P.	P.	.	P.	.	P.	O
-Heuzé,	OTHERS	OTHERS	heuzé	OTHERS	CONTINUING_PUNCTUATION	6	H	He	Heu	Heuz	,	�,	é,	zé,	O
+Heuzé,	OTHERS	INIT_CAPS	heuzé	NO_DIGITS	CONTINUING_PUNCTUATION	5	H	He	Heu	Heuz	,	é,	zé,	uzé,	O
 L'image	OTHERS	INIT_CAPS	limage	NO_DIGITS	OTHERS	6	L	L'	L'i	L'im	e	ge	age	mage	O
 du	OTHERS	ALL_LOWER	du	NO_DIGITS	OTHERS	2	d	du	du	du	u	du	u	du	O
 corps	OTHERS	ALL_LOWER	corps	NO_DIGITS	OTHERS	5	c	co	cor	corp	s	ps	rps	orps	O
@@ -3150,7 +3150,7 @@ erotischen	OTHERS	ALL_LOWER	erotischen	NO_DIGITS	OTHERS	10	e	er	ero	erot	n	en	he
 Epoden	OTHERS	INIT_CAPS	epoden	NO_DIGITS	OTHERS	6	E	Ep	Epo	Epod	n	en	den	oden	O
 des	OTHERS	ALL_LOWER	des	NO_DIGITS	OTHERS	3	d	de	des	des	s	es	des	s	O
 Horaz,	OTHERS	INIT_CAPS	horaz	NO_DIGITS	CONTINUING_PUNCTUATION	5	H	Ho	Hor	Hora	,	z,	az,	raz,	O
-München	OTHERS	OTHERS	münchen	OTHERS	OTHERS	8	M	M�	Mü	Mün	n	en	hen	chen	O
+München	OTHERS	INIT_CAPS	münchen	NO_DIGITS	OTHERS	7	M	Mü	Mün	Münc	n	en	hen	chen	O
 1966,	OTHERS	OTHERS	1966	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1966	,	6,	66,	966,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 152	OTHERS	OTHERS	152	NUMBER	OTHERS	3	1	15	152	152	2	52	152	2	O
@@ -3163,8 +3163,8 @@ Diminutives	OTHERS	INIT_CAPS	diminutives	NO_DIGITS	OTHERS	11	D	Di	Dim	Dimi	s	es	
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
 augustan	OTHERS	ALL_LOWER	augustan	NO_DIGITS	OTHERS	8	a	au	aug	augu	n	an	tan	stan	O
 poetry,	OTHERS	ALL_LOWER	poetry	NO_DIGITS	CONTINUING_PUNCTUATION	6	p	po	poe	poet	,	y,	ry,	try,	O
-«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	7	�	«	«C	«Cl	.	s.	ss.	ass.	O
-Quart.»	OTHERS	OTHERS	quart»	OTHERS	OTHERS	7	Q	Qu	Qua	Quar	�	»	.»	t.»	O
+«Class.	OTHERS	OTHERS	«class	OTHERS	FINAL_DOT	6	«	«C	«Cl	«Cla	.	s.	ss.	ass.	O
+Quart.»	OTHERS	OTHERS	quart»	OTHERS	OTHERS	6	Q	Qu	Qua	Quar	»	.»	t.»	rt.»	O
 26,	OTHERS	OTHERS	26	NUMBER	CONTINUING_PUNCTUATION	2	2	26	26,	26,	,	6,	26,	,	O
 1932,	OTHERS	OTHERS	1932	NUMBER	CONTINUING_PUNCTUATION	4	1	19	193	1932	,	2,	32,	932,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -3174,7 +3174,7 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 capillus,	OTHERS	ALL_LOWER	capillus	NO_DIGITS	CONTINUING_PUNCTUATION	8	c	ca	cap	capi	,	s,	us,	lus,	O
 coma,	OTHERS	ALL_LOWER	coma	NO_DIGITS	CONTINUING_PUNCTUATION	4	c	co	com	coma	,	a,	ma,	oma,	O
 crinis	OTHERS	ALL_LOWER	crinis	NO_DIGITS	OTHERS	6	c	cr	cri	crin	s	is	nis	inis	O
-è,	OTHERS	OTHERS	è	OTHERS	CONTINUING_PUNCTUATION	2	�	è	è,	è,	,	�,	è,	,	O
+è,	OTHERS	ALL_LOWER	è	NO_DIGITS	CONTINUING_PUNCTUATION	1	è	è,	è,	è,	,	è,	,	è,	O
 rispettivamente,	OTHERS	ALL_LOWER	rispettivamente	NO_DIGITS	CONTINUING_PUNCTUATION	15	r	ri	ris	risp	,	e,	te,	nte,	O
 il	OTHERS	ALL_LOWER	il	NO_DIGITS	OTHERS	2	i	il	il	il	l	il	l	il	O
 seguente:	OTHERS	ALL_LOWER	seguente	NO_DIGITS	CONTINUING_PUNCTUATION	8	s	se	seg	segu	:	e:	te:	nte:	O
@@ -3242,7 +3242,7 @@ P.	OTHERS	ALL_CAPS	p	NO_DIGITS	FINAL_DOT	1	P	P.	P.	P.	.	P.	.	P.	O
 E.	OTHERS	ALL_CAPS	e	NO_DIGITS	FINAL_DOT	1	E	E.	E.	E.	.	E.	.	E.	O
 Knox,	OTHERS	INIT_CAPS	knox	NO_DIGITS	CONTINUING_PUNCTUATION	4	K	Kn	Kno	Knox	,	x,	ox,	nox,	O
 Ovid's	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	's	d's	id's	O
-Métamorphoses...	OTHERS	OTHERS	métamorphoses	OTHERS	OTHERS	14	M	M�	Mé	Mét	.	..	...	s...	O
+Métamorphoses...	OTHERS	INIT_CAPS	métamorphoses	NO_DIGITS	OTHERS	13	M	Mé	Mét	Méta	.	..	...	s...	O
 cit.,	OTHERS	ALL_LOWER	cit	NO_DIGITS	CONTINUING_PUNCTUATION	3	c	ci	cit	cit.	,	.,	t.,	it.,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 33:	OTHERS	OTHERS	33	NUMBER	CONTINUING_PUNCTUATION	2	3	33	33:	33:	:	3:	33:	:	O
@@ -3356,8 +3356,8 @@ Rh.	OTHERS	INIT_CAPS	rh	NO_DIGITS	FINAL_DOT	2	R	Rh	Rh.	Rh.	.	h.	Rh.	.	I-CRF
 1,	OTHERS	OTHERS	1	NUMBER	CONTINUING_PUNCTUATION	1	1	1,	1,	1,	,	1,	,	1,	I-CRF
 519-521	OTHERS	OTHERS	519521	NUMBER	OTHERS	6	5	51	519	519-	1	21	521	-521	I-CRF
 
-Η.	OTHERS	OTHERS	Η	OTHERS	FINAL_DOT	2	�	Η	Η.	Η.	.	�.	Η.	.	O
-Fränkel,	OTHERS	OTHERS	fränkel	OTHERS	CONTINUING_PUNCTUATION	8	F	Fr	Fr�	Frä	,	l,	el,	kel,	O
+Η.	OTHERS	ALL_CAPS	η	NO_DIGITS	FINAL_DOT	1	Η	Η.	Η.	Η.	.	Η.	.	Η.	O
+Fränkel,	OTHERS	INIT_CAPS	fränkel	NO_DIGITS	CONTINUING_PUNCTUATION	7	F	Fr	Frä	Frän	,	l,	el,	kel,	O
 Noten	OTHERS	INIT_CAPS	noten	NO_DIGITS	OTHERS	5	N	No	Not	Note	n	en	ten	oten	O
 zu	OTHERS	ALL_LOWER	zu	NO_DIGITS	OTHERS	2	z	zu	zu	zu	u	zu	u	zu	O
 den	OTHERS	ALL_LOWER	den	NO_DIGITS	OTHERS	3	d	de	den	den	n	en	den	n	O
@@ -3500,8 +3500,8 @@ Knaak	OTHERS	INIT_CAPS	knaak	NO_DIGITS	OTHERS	5	K	Kn	Kna	Knaa	k	ak	aak	naak	O
 Quaestiones	OTHERS	INIT_CAPS	quaestiones	NO_DIGITS	OTHERS	11	Q	Qu	Qua	Quae	s	es	nes	ones	O
 Pkaethonteae,	OTHERS	INIT_CAPS	pkaethonteae	NO_DIGITS	CONTINUING_PUNCTUATION	12	P	Pk	Pka	Pkae	,	e,	ae,	eae,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Philologische	OTHERS	OTHERS	«philologische	OTHERS	OTHERS	15	�	«	«P	«Ph	e	he	che	sche	O
-Untersuchungen»	OTHERS	OTHERS	untersuchungen»	OTHERS	OTHERS	16	U	Un	Unt	Unte	�	»	n»	en»	O
+«Philologische	OTHERS	OTHERS	«philologische	OTHERS	OTHERS	14	«	«P	«Ph	«Phi	e	he	che	sche	O
+Untersuchungen»	OTHERS	OTHERS	untersuchungen»	OTHERS	OTHERS	15	U	Un	Unt	Unte	»	n»	en»	gen»	O
 8,	OTHERS	OTHERS	8	NUMBER	CONTINUING_PUNCTUATION	1	8	8,	8,	8,	,	8,	,	8,	I-CRF
 Berlin	OTHERS	INIT_CAPS	berlin	NO_DIGITS	OTHERS	6	B	Be	Ber	Berl	n	in	lin	rlin	O
 1886,	OTHERS	OTHERS	1886	NUMBER	CONTINUING_PUNCTUATION	4	1	18	188	1886	,	6,	86,	886,	O
@@ -3676,7 +3676,7 @@ Od.	OTHERS	INIT_CAPS	od	NO_DIGITS	FINAL_DOT	2	O	Od	Od.	Od.	.	d.	Od.	.	I-CRF
 3	OTHERS	OTHERS	3	NUMBER	OTHERS	1	3	3	3	3	3	3	3	3	I-CRF
 s.	OTHERS	ALL_LOWER	s	NO_DIGITS	FINAL_DOT	1	s	s.	s.	s.	.	s.	.	s.	I-CRF
 
-Bömer	OTHERS	OTHERS	bömer	OTHERS	OTHERS	6	B	B�	Bö	Böm	r	er	mer	�mer	O
+Bömer	OTHERS	INIT_CAPS	bömer	NO_DIGITS	OTHERS	5	B	Bö	Böm	Böme	r	er	mer	ömer	O
 ad	OTHERS	ALL_LOWER	ad	NO_DIGITS	OTHERS	2	a	ad	ad	ad	d	ad	d	ad	O
 loc.,	OTHERS	ALL_LOWER	loc	NO_DIGITS	CONTINUING_PUNCTUATION	3	l	lo	loc	loc.	,	.,	c.,	oc.,	O
 che	OTHERS	ALL_LOWER	che	NO_DIGITS	OTHERS	3	c	ch	che	che	e	he	che	e	O
@@ -3687,8 +3687,8 @@ met.	OTHERS	ALL_LOWER	met	NO_DIGITS	FINAL_DOT	3	m	me	met	met.	.	t.	et.	met.	B-CR
 s.	OTHERS	ALL_LOWER	s	NO_DIGITS	FINAL_DOT	1	s	s.	s.	s.	.	s.	.	s.	I-CRF
 
 J.	OTHERS	ALL_CAPS	j	NO_DIGITS	FINAL_DOT	1	J	J.	J.	J.	.	J.	.	J.	O
-André,	OTHERS	OTHERS	andré	OTHERS	CONTINUING_PUNCTUATION	6	A	An	And	Andr	,	�,	é,	ré,	O
-Étude	OTHERS	OTHERS	Étude	OTHERS	OTHERS	6	�	É	Ét	Étu	e	de	ude	tude	O
+André,	OTHERS	INIT_CAPS	andré	NO_DIGITS	CONTINUING_PUNCTUATION	5	A	An	And	Andr	,	é,	ré,	dré,	O
+Étude	OTHERS	INIT_CAPS	étude	NO_DIGITS	OTHERS	5	É	Ét	Étu	Étud	e	de	ude	tude	O
 sur	OTHERS	ALL_LOWER	sur	NO_DIGITS	OTHERS	3	s	su	sur	sur	r	ur	sur	r	O
 les	OTHERS	ALL_LOWER	les	NO_DIGITS	OTHERS	3	l	le	les	les	s	es	les	s	O
 termes	OTHERS	ALL_LOWER	termes	NO_DIGITS	OTHERS	6	t	te	ter	term	s	es	mes	rmes	O
@@ -3699,8 +3699,8 @@ pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 90-102.	OTHERS	OTHERS	90102	NUMBER	FINAL_DOT	5	9	90	90-	90-1	.	2.	02.	102.	O
 
 J.	OTHERS	ALL_CAPS	j	NO_DIGITS	FINAL_DOT	1	J	J.	J.	J.	.	J.	.	J.	O
-André,	OTHERS	OTHERS	andré	OTHERS	CONTINUING_PUNCTUATION	6	A	An	And	Andr	,	�,	é,	ré,	O
-Étude	OTHERS	OTHERS	Étude	OTHERS	OTHERS	6	�	É	Ét	Étu	e	de	ude	tude	O
+André,	OTHERS	INIT_CAPS	andré	NO_DIGITS	CONTINUING_PUNCTUATION	5	A	An	And	Andr	,	é,	ré,	dré,	O
+Étude	OTHERS	INIT_CAPS	étude	NO_DIGITS	OTHERS	5	É	Ét	Étu	Étud	e	de	ude	tude	O
 sur	OTHERS	ALL_LOWER	sur	NO_DIGITS	OTHERS	3	s	su	sur	sur	r	ur	sur	r	O
 les	OTHERS	ALL_LOWER	les	NO_DIGITS	OTHERS	3	l	le	les	les	s	es	les	s	O
 termes	OTHERS	ALL_LOWER	termes	NO_DIGITS	OTHERS	6	t	te	ter	term	s	es	mes	rmes	O
@@ -3710,7 +3710,7 @@ cit.,	OTHERS	ALL_LOWER	cit	NO_DIGITS	CONTINUING_PUNCTUATION	3	c	ci	cit	cit.	,	.,
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 99.	OTHERS	OTHERS	99	NUMBER	FINAL_DOT	2	9	99	99.	99.	.	9.	99.	.	O
 
-André,	OTHERS	OTHERS	andré	OTHERS	CONTINUING_PUNCTUATION	6	A	An	And	Andr	,	�,	é,	ré,	O
+André,	OTHERS	INIT_CAPS	andré	NO_DIGITS	CONTINUING_PUNCTUATION	5	A	An	And	Andr	,	é,	ré,	dré,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
 102	OTHERS	OTHERS	102	NUMBER	OTHERS	3	1	10	102	102	2	02	102	2	O
 
@@ -3741,7 +3741,7 @@ Laev.	OTHERS	INIT_CAPS	laev	NO_DIGITS	FINAL_DOT	4	L	La	Lae	Laev	.	v.	ev.	aev.	B-
 carm.	OTHERS	ALL_LOWER	carm	NO_DIGITS	FINAL_DOT	4	c	ca	car	carm	.	m.	rm.	arm.	I-CRF
 frg.	OTHERS	ALL_LOWER	frg	NO_DIGITS	FINAL_DOT	3	f	fr	frg	frg.	.	g.	rg.	frg.	I-CRF
 9	OTHERS	OTHERS	9	NUMBER	OTHERS	1	9	9	9	9	9	9	9	9	I-CRF
-Büch.	OTHERS	OTHERS	büch	OTHERS	FINAL_DOT	5	B	B�	Bü	Büc	.	h.	ch.	�ch.	I-CRF
+Büch.	OTHERS	INIT_CAPS	büch	NO_DIGITS	FINAL_DOT	4	B	Bü	Büc	Büch	.	h.	ch.	üch.	I-CRF
 
 Gell.	OTHERS	INIT_CAPS	gell	NO_DIGITS	FINAL_DOT	4	G	Ge	Gel	Gell	.	l.	ll.	ell.	B-CRF
 19,	OTHERS	OTHERS	19	NUMBER	CONTINUING_PUNCTUATION	2	1	19	19,	19,	,	9,	19,	,	I-CRF
@@ -3801,7 +3801,7 @@ Bardon,	OTHERS	INIT_CAPS	bardon	NO_DIGITS	CONTINUING_PUNCTUATION	6	B	Ba	Bar	Bard
 L'Aurore	OTHERS	INIT_CAPS	laurore	NO_DIGITS	OTHERS	7	L	L'	L'A	L'Au	e	re	ore	rore	O
 et	OTHERS	ALL_LOWER	et	NO_DIGITS	OTHERS	2	e	et	et	et	t	et	t	et	O
 le	OTHERS	ALL_LOWER	le	NO_DIGITS	OTHERS	2	l	le	le	le	e	le	e	le	O
-crépuscule...	OTHERS	OTHERS	crépuscule	OTHERS	OTHERS	11	c	cr	cr�	cré	.	..	...	e...	O
+crépuscule...	OTHERS	ALL_LOWER	crépuscule	NO_DIGITS	OTHERS	10	c	cr	cré	crép	.	..	...	e...	O
 cit,	OTHERS	ALL_LOWER	cit	NO_DIGITS	CONTINUING_PUNCTUATION	3	c	ci	cit	cit,	,	t,	it,	cit,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
 93	OTHERS	OTHERS	93	NUMBER	OTHERS	2	9	93	93	93	3	93	3	93	O
@@ -3899,13 +3899,13 @@ Aen.	OTHERS	INIT_CAPS	aen	NO_DIGITS	FINAL_DOT	3	A	Ae	Aen	Aen.	.	n.	en.	Aen.	B-CR
 114)	UNPAIRED_ROUND_BRACKETS	OTHERS	114	NUMBER	OTHERS	3	1	11	114	114)	)	4)	14)	114)	I-CRF
 
 F.	OTHERS	ALL_CAPS	f	NO_DIGITS	FINAL_DOT	1	F	F.	F.	F.	.	F.	.	F.	O
-Bömer,	OTHERS	OTHERS	bömer	OTHERS	CONTINUING_PUNCTUATION	6	B	B�	Bö	Böm	,	r,	er,	mer,	O
+Bömer,	OTHERS	INIT_CAPS	bömer	NO_DIGITS	CONTINUING_PUNCTUATION	5	B	Bö	Böm	Böme	,	r,	er,	mer,	O
 Ovid	OTHERS	INIT_CAPS	ovid	NO_DIGITS	OTHERS	4	O	Ov	Ovi	Ovid	d	id	vid	Ovid	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 die	OTHERS	ALL_LOWER	die	NO_DIGITS	OTHERS	3	d	di	die	die	e	ie	die	e	O
 Sprache	OTHERS	INIT_CAPS	sprache	NO_DIGITS	OTHERS	7	S	Sp	Spr	Spra	e	he	che	ache	O
 Vergib,	OTHERS	INIT_CAPS	vergib	NO_DIGITS	CONTINUING_PUNCTUATION	6	V	Ve	Ver	Verg	,	b,	ib,	gib,	O
-«Gymnasium»	OTHERS	OTHERS	«gymnasium»	OTHERS	OTHERS	13	�	«	«G	«Gy	�	»	m»	um»	O
+«Gymnasium»	OTHERS	OTHERS	«gymnasium»	OTHERS	OTHERS	11	«	«G	«Gy	«Gym	»	m»	um»	ium»	O
 66,	OTHERS	OTHERS	66	NUMBER	CONTINUING_PUNCTUATION	2	6	66	66,	66,	,	6,	66,	,	O
 1959,	OTHERS	OTHERS	1959	NUMBER	CONTINUING_PUNCTUATION	4	1	19	195	1959	,	9,	59,	959,	O
 p.	OTHERS	ALL_LOWER	p	NO_DIGITS	FINAL_DOT	1	p	p.	p.	p.	.	p.	.	p.	O
@@ -3940,18 +3940,18 @@ Lucr.	OTHERS	INIT_CAPS	lucr	NO_DIGITS	FINAL_DOT	4	L	Lu	Luc	Lucr	.	r.	cr.	ucr.	B-
 N.V.	OTHERS	ALL_CAPS	nv	NO_DIGITS	FINAL_DOT	2	N	N.	N.V	N.V.	.	V.	.V.	N.V.	O
 Baran,	OTHERS	INIT_CAPS	baran	NO_DIGITS	CONTINUING_PUNCTUATION	5	B	Ba	Bar	Bara	,	n,	an,	ran,	O
 Les	OTHERS	INIT_CAPS	les	NO_DIGITS	OTHERS	3	L	Le	Les	Les	s	es	Les	s	O
-caractéristiques	OTHERS	OTHERS	caractéristiques	OTHERS	OTHERS	17	c	ca	car	cara	s	es	ues	ques	O
+caractéristiques	OTHERS	ALL_LOWER	caractéristiques	NO_DIGITS	OTHERS	16	c	ca	car	cara	s	es	ues	ques	O
 essentielles	OTHERS	ALL_LOWER	essentielles	NO_DIGITS	OTHERS	12	e	es	ess	esse	s	es	les	lles	O
 du	OTHERS	ALL_LOWER	du	NO_DIGITS	OTHERS	2	d	du	du	du	u	du	u	du	O
 vocabulaire	OTHERS	ALL_LOWER	vocabulaire	NO_DIGITS	OTHERS	11	v	vo	voc	voca	e	re	ire	aire	O
 chromatique	OTHERS	ALL_LOWER	chromatique	NO_DIGITS	OTHERS	11	c	ch	chr	chro	e	ue	que	ique	O
 latin,	OTHERS	ALL_LOWER	latin	NO_DIGITS	CONTINUING_PUNCTUATION	5	l	la	lat	lati	,	n,	in,	tin,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Aufstieg	OTHERS	OTHERS	«aufstieg	OTHERS	OTHERS	10	�	«	«A	«Au	g	eg	ieg	tieg	O
+«Aufstieg	OTHERS	OTHERS	«aufstieg	OTHERS	OTHERS	9	«	«A	«Au	«Auf	g	eg	ieg	tieg	O
 und	OTHERS	ALL_LOWER	und	NO_DIGITS	OTHERS	3	u	un	und	und	d	nd	und	d	O
 Niedergang	OTHERS	INIT_CAPS	niedergang	NO_DIGITS	OTHERS	10	N	Ni	Nie	Nied	g	ng	ang	gang	O
 Rom.	OTHERS	INIT_CAPS	rom	NO_DIGITS	FINAL_DOT	3	R	Ro	Rom	Rom.	.	m.	om.	Rom.	O
-Welt»	OTHERS	OTHERS	welt»	OTHERS	OTHERS	6	W	We	Wel	Welt	�	»	t»	lt»	O
+Welt»	OTHERS	OTHERS	welt»	OTHERS	OTHERS	5	W	We	Wel	Welt	»	t»	lt»	elt»	O
 II,	OTHERS	ALL_CAPS	ii	NO_DIGITS	CONTINUING_PUNCTUATION	2	I	II	II,	II,	,	I,	II,	,	O
 29,	OTHERS	OTHERS	29	NUMBER	CONTINUING_PUNCTUATION	2	2	29	29,	29,	,	9,	29,	,	O
 1,	OTHERS	OTHERS	1	NUMBER	CONTINUING_PUNCTUATION	1	1	1,	1,	1,	,	1,	,	1,	O
@@ -3985,7 +3985,7 @@ des	OTHERS	ALL_LOWER	des	NO_DIGITS	OTHERS	3	d	de	des	des	s	es	des	s	O
 Q.	OTHERS	ALL_CAPS	q	NO_DIGITS	FINAL_DOT	1	Q	Q.	Q.	Q.	.	Q.	.	Q.	O
 L.	OTHERS	ALL_CAPS	l	NO_DIGITS	FINAL_DOT	1	L	L.	L.	L.	.	L.	.	L.	O
 Catulus,	OTHERS	INIT_CAPS	catulus	NO_DIGITS	CONTINUING_PUNCTUATION	7	C	Ca	Cat	Catu	,	s,	us,	lus,	O
-«Gymnasium»	OTHERS	OTHERS	«gymnasium»	OTHERS	OTHERS	13	�	«	«G	«Gy	�	»	m»	um»	O
+«Gymnasium»	OTHERS	OTHERS	«gymnasium»	OTHERS	OTHERS	11	«	«G	«Gy	«Gym	»	m»	um»	ium»	O
 88,	OTHERS	OTHERS	88	NUMBER	CONTINUING_PUNCTUATION	2	8	88	88,	88,	,	8,	88,	,	O
 1981,	OTHERS	OTHERS	1981	NUMBER	CONTINUING_PUNCTUATION	4	1	19	198	1981	,	1,	81,	981,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -4094,24 +4094,24 @@ R.	OTHERS	ALL_CAPS	r	NO_DIGITS	FINAL_DOT	1	R	R.	R.	R.	.	R.	.	R.	O
 Heinze,	OTHERS	INIT_CAPS	heinze	NO_DIGITS	CONTINUING_PUNCTUATION	6	H	He	Hei	Hein	,	e,	ze,	nze,	O
 Ovids	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	ds	ids	vids	O
 elegische	OTHERS	ALL_LOWER	elegische	NO_DIGITS	OTHERS	9	e	el	ele	eleg	e	he	che	sche	O
-Erzählung,	OTHERS	OTHERS	erzählung	OTHERS	CONTINUING_PUNCTUATION	10	E	Er	Erz	Erz�	,	g,	ng,	ung,	O
+Erzählung,	OTHERS	INIT_CAPS	erzählung	NO_DIGITS	CONTINUING_PUNCTUATION	9	E	Er	Erz	Erzä	,	g,	ng,	ung,	O
 Leipzig	OTHERS	INIT_CAPS	leipzig	NO_DIGITS	OTHERS	7	L	Le	Lei	Leip	g	ig	zig	pzig	O
 1919,	OTHERS	OTHERS	1919	NUMBER	CONTINUING_PUNCTUATION	4	1	19	191	1919	,	9,	19,	919,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
 Vom	OTHERS	INIT_CAPS	vom	NO_DIGITS	OTHERS	3	V	Vo	Vom	Vom	m	om	Vom	m	O
 Geist	OTHERS	INIT_CAPS	geist	NO_DIGITS	OTHERS	5	G	Ge	Gei	Geis	t	st	ist	eist	O
 des	OTHERS	ALL_LOWER	des	NO_DIGITS	OTHERS	3	d	de	des	des	s	es	des	s	O
-Römertums,	OTHERS	OTHERS	römertums	OTHERS	CONTINUING_PUNCTUATION	10	R	R�	Rö	Röm	,	s,	ms,	ums,	O
+Römertums,	OTHERS	INIT_CAPS	römertums	NO_DIGITS	CONTINUING_PUNCTUATION	9	R	Rö	Röm	Röme	,	s,	ms,	ums,	O
 Stuttgart	OTHERS	INIT_CAPS	stuttgart	NO_DIGITS	OTHERS	9	S	St	Stu	Stut	t	rt	art	gart	O
 1960,	OTHERS	OTHERS	1960	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1960	,	0,	60,	960,	O
 
 H.	OTHERS	ALL_CAPS	h	NO_DIGITS	FINAL_DOT	1	H	H.	H.	H.	.	H.	.	H.	O
-Tränkle,	OTHERS	OTHERS	tränkle	OTHERS	CONTINUING_PUNCTUATION	8	T	Tr	Tr�	Trä	,	e,	le,	kle,	O
+Tränkle,	OTHERS	INIT_CAPS	tränkle	NO_DIGITS	CONTINUING_PUNCTUATION	7	T	Tr	Trä	Trän	,	e,	le,	kle,	O
 Elegisches	OTHERS	INIT_CAPS	elegisches	NO_DIGITS	OTHERS	10	E	El	Ele	Eleg	s	es	hes	ches	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
 Ovids	OTHERS	INIT_CAPS	ovids	NO_DIGITS	OTHERS	5	O	Ov	Ovi	Ovid	s	ds	ids	vids	O
 Metamorphosen,	OTHERS	INIT_CAPS	metamorphosen	NO_DIGITS	CONTINUING_PUNCTUATION	13	M	Me	Met	Meta	,	n,	en,	sen,	O
-«Hermes»	OTHERS	OTHERS	«hermes»	OTHERS	OTHERS	10	�	«	«H	«He	�	»	s»	es»	O
+«Hermes»	OTHERS	OTHERS	«hermes»	OTHERS	OTHERS	8	«	«H	«He	«Her	»	s»	es»	mes»	O
 91,	OTHERS	OTHERS	91	NUMBER	CONTINUING_PUNCTUATION	2	9	91	91,	91,	,	1,	91,	,	O
 1963,	OTHERS	OTHERS	1963	NUMBER	CONTINUING_PUNCTUATION	4	1	19	196	1963	,	3,	63,	963,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O
@@ -4121,7 +4121,7 @@ E.	OTHERS	ALL_CAPS	e	NO_DIGITS	FINAL_DOT	1	E	E.	E.	E.	.	E.	.	E.	O
 Paratore,	OTHERS	INIT_CAPS	paratore	NO_DIGITS	CONTINUING_PUNCTUATION	8	P	Pa	Par	Para	,	e,	re,	ore,	O
 L'influenza	OTHERS	INIT_CAPS	linfluenza	NO_DIGITS	OTHERS	10	L	L'	L'i	L'in	a	za	nza	enza	O
 delle	OTHERS	ALL_LOWER	delle	NO_DIGITS	OTHERS	5	d	de	del	dell	e	le	lle	elle	O
-«Heroides»	OTHERS	OTHERS	«heroides»	OTHERS	OTHERS	12	�	«	«H	«He	�	»	s»	es»	O
+«Heroides»	OTHERS	OTHERS	«heroides»	OTHERS	OTHERS	10	«	«H	«He	«Her	»	s»	es»	des»	O
 sull'episodio	OTHERS	ALL_LOWER	sullepisodio	NO_DIGITS	OTHERS	12	s	su	sul	sull	o	io	dio	odio	O
 di	OTHERS	ALL_LOWER	di	NO_DIGITS	OTHERS	2	d	di	di	di	i	di	i	di	O
 Biblide	OTHERS	INIT_CAPS	biblide	NO_DIGITS	OTHERS	7	B	Bi	Bib	Bibl	e	de	ide	lide	O
@@ -4134,12 +4134,12 @@ delle	OTHERS	ALL_LOWER	delle	NO_DIGITS	OTHERS	5	d	de	del	dell	e	le	lle	elle	O
 Metamorfosi	OTHERS	INIT_CAPS	metamorfosi	NO_DIGITS	OTHERS	11	M	Me	Met	Meta	i	si	osi	fosi	O
 ovidiane,	OTHERS	ALL_LOWER	ovidiane	NO_DIGITS	CONTINUING_PUNCTUATION	8	o	ov	ovi	ovid	,	e,	ne,	ane,	O
 in	OTHERS	ALL_LOWER	in	NO_DIGITS	OTHERS	2	i	in	in	in	n	in	n	in	O
-«Studia	OTHERS	OTHERS	«studia	OTHERS	OTHERS	8	�	«	«S	«St	a	ia	dia	udia	O
+«Studia	OTHERS	OTHERS	«studia	OTHERS	OTHERS	7	«	«S	«St	«Stu	a	ia	dia	udia	O
 Fiorentina	OTHERS	INIT_CAPS	fiorentina	NO_DIGITS	OTHERS	10	F	Fi	Fio	Fior	a	na	ina	tina	O
 A.	OTHERS	ALL_CAPS	a	NO_DIGITS	FINAL_DOT	1	A	A.	A.	A.	.	A.	.	A.	O
 Ronconi	OTHERS	INIT_CAPS	ronconi	NO_DIGITS	OTHERS	7	R	Ro	Ron	Ronc	i	ni	oni	coni	O
 sexagenario	OTHERS	ALL_LOWER	sexagenario	NO_DIGITS	OTHERS	11	s	se	sex	sexa	o	io	rio	ario	O
-oblata»,	OTHERS	OTHERS	oblata»	OTHERS	CONTINUING_PUNCTUATION	8	o	ob	obl	obla	,	�,	»,	a»,	O
+oblata»,	OTHERS	OTHERS	oblata»	OTHERS	CONTINUING_PUNCTUATION	7	o	ob	obl	obla	,	»,	a»,	ta»,	O
 Roma	OTHERS	INIT_CAPS	roma	NO_DIGITS	OTHERS	4	R	Ro	Rom	Roma	a	ma	oma	Roma	O
 1970,	OTHERS	OTHERS	1970	NUMBER	CONTINUING_PUNCTUATION	4	1	19	197	1970	,	0,	70,	970,	O
 pp.	OTHERS	ALL_LOWER	pp	NO_DIGITS	FINAL_DOT	2	p	pp	pp.	pp.	.	p.	pp.	.	O

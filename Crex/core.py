@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 # author: 56k
-import os,re,string,logging,pprint,types
+import os,re,string,logging,pprint,types,xmlrpclib,json
 from Crex.crfpp_wrap import *
 from Crex.Utils.IO import *
 
@@ -8,7 +8,7 @@ from Crex.Utils.IO import *
 Description
 """
 
-__version__='dev-1.0.1'
+__version__='dev-1.0.2'
 
 LOG_FILE="/56k/phd/code/python_crex/crfx.log"
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=LOG_FILE,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
@@ -19,18 +19,17 @@ pp = pprint.PrettyPrinter(indent=5)
 class CrexService:
 	def __init__(self):
 		self.core = CRefEx()
+	
+	#replace this method
 	def test(self,arg):
-		res = self.core.classify(arg)
-		out=[]
-		for inst in res:
-			count = 0
-			t = []
-			for i in inst:
-				count+=1
-				temp=(count,i['token'],i['label'])
-				t.append(temp)
-			out.append(t)
-		return {'short':out,'verbose':res}
+		res = self.core.clf(arg)
+		return self.core.output(res,"xml")
+		
+	def test_unicode(self,arg,outp):
+		temp = arg.data.decode("utf-8")
+		res = self.core.clf(temp)
+		return self.core.output(res,outp)
+		
 	def version(self): 
 		"""
 		Return the version of CRefEx
@@ -46,7 +45,7 @@ class CRFPP_Classifier:
 		path,fn = os.path.split(train_file_name)
 		train_fname=dir+fn+'.train'
 		t = fe.prepare_for_training(train_file_name)
-		out=open(train_fname,'w').write(t)
+		out=open(train_fname,'w').write(t.encode("utf-8"))
 		model_fname=dir+fn+'.mdl'
 		train_crfpp(dir+"crex.tpl",train_fname,model_fname)
 		self.crf_model=CRF_classifier(model_fname)
@@ -73,16 +72,40 @@ class CRefEx:
 			else:
 				# read the default value
 				self.classifier=CRFPP_Classifier("%s%s"%(self._default_training_dir,self._default_training_file))
-	def tokenize(self, arg):
-		pass
+	def tokenize(self, blurb):
+		return [y.split(" ") for y in blurb.split("\n")]
+	# the text has not to be unicode
+	def clf(self, text):
+		if(type(text) is not type(unicode("string"))):
+			text = unicode(text,"utf-8")
+		temp = self.tokenize(text)
+		res = self.classify(temp)
+		return res
+		
+	def output(self,result,outp=None):
+		"""docstring for output"""
+		fname = "/56k/crex/temp.xml"
+		f = open(fname,"w")
+		temp = verbose_to_XML(result)
+		f.write(temp)
+		f.close()
+		if(outp=="xml"):
+			return temp
+		elif(outp=="html"):
+			import codecs
+			fp = codecs.open(fname, "r", "utf-8")
+			text = fp.read()
+			fp.close()
+			return out_html(text).decode("utf-8")
+		elif(outp=="json"):
+			return json.dumps(result)
 				
 	# actually it's a proxy method
 	def classify(self, instances,input="text"):
 		res = []
 		for i in instances:
 			feat_sets = self.fe.get_features(i,[],False)
-			res.append(self.classifier.classify(instance_to_string(feat_sets)))
-				
+			res.append(self.classifier.classify(instance_to_string(feat_sets)))		
 		return res
 		
 class FeatureExtractor:
@@ -208,18 +231,19 @@ class FeatureExtractor:
 		elif(naked.isalnum()):
 			res = self.MIXED_ALPHANUM
 		return ("number",res)
-	def extract_char_ngrams(self,string):
+	def extract_char_ngrams(self,inp):
 		"""
 		"""
 		size=4
 		out=[]
+		inp  = u"%s"%inp
 		for i in range(0,4):
 			i+=1
-			temp = ("subs %i"%i,string[0:i])
+			temp = ("subs %i"%i,inp[0:i])
 			out.append(temp)
 		for i in range(0,4):
 			i+=1
-			temp = ("susb -%i"%(i),string[len(string)-i:])
+			temp = ("susb -%i"%(i),inp[len(inp)-i:])
 			out.append(temp)
 		return out
 	def extract_string_features(self,check_str):
@@ -262,11 +286,10 @@ class FeatureExtractor:
 		out = [self.extract_features(tok) for tok in instance]
 		res = [dict(r) for r in out]
 		# transform the numeric values into strings
+		print res
 		for n,x in enumerate(res):
 			for m,key in enumerate(x.iterkeys()):
-				if(type(x[key]) is type('string')):
-					pass
-				elif(type(x[key]) is not types.NoneType):
+				if(type(x[key]) is type(12)):
 					x[key] = self.feat_labels[x[key]]
 			if(outp_label is True):
 				x['z_gt_label']=labels[n]
@@ -277,9 +300,10 @@ class FeatureExtractor:
 		@param file_name the input file in IOB format
 		@return 
 		"""
-		file=open(file_name)
+		import codecs
+		fp = codecs.open(file_name, "r", "utf-8")
 		comment=re.compile(r'#.*?')
-		lines = file.read()
+		lines = fp.read()
 		instances=[group.split('\n')for group in lines.split("\n\n")]
 		res = []
 		all_labels = []
@@ -303,9 +327,17 @@ class FeatureExtractor:
 	
 def main():
 	c=CRefEx()
-	s1="this is a string Il. 1.125"
-	s="Eschilo interprete di se stesso (Ar. Ran. 1126s. e 1138-1150)"
-	pp.pprint(c.classify([s.split(" ")]))
+	s2="this is a string Il. 1.125 randomÜ Hom. Il. 1.125"
+	s1=u"this is a string Il. 1.125 randomÜ Hom. Il. 1.125 γρα"
+	s=u"Eschilo interprete di Ü se stesso (Ar. Ran. 1126s. e 1138-1150)"
+
+	test = s1
+	res = c.clf(test)
+
+	print c.output(res,"html")
+	print c.output(res,"xml")
+	print c.output(res,"json").decode("utf-8")
+	
 
 if __name__ == "__main__":
 	main()

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import CRFPP
 import sys,pprint,re,string
 from Crex.crfpp_wrap import CRF_classifier
@@ -17,21 +18,40 @@ def read_instances(inp_text):
 			out.append(inst)
 	return out
 	
+def out_html(out):
+	"""docstring for out_xml"""
+	import libxml2,libxslt
+	styledoc = libxml2.parseFile("/56k/crex/reply2html.xsl")
+	style = libxslt.parseStylesheetDoc(styledoc)
+	doc = libxml2.parseDoc(out.encode("utf-8"))
+	result = style.applyStylesheet(doc, None)
+	return style.saveResultToString(result)
+	
 def verbose_to_XML(instances):
 	"""docstring for verbose_to_XML"""
+	out = mdom.Document()
+	root = out.createElement('reply')
+	root.setAttribute("service","crefex")
+	root.setAttribute("version",str(1.0))
+
 	for inst in instances:	
-		out = mdom.Document()
-		root = out.createElement('reply')
-		root.setAttribute("service","crefex")
-		root.setAttribute("version",str(1.0))
 		ins = out.createElement('instance')
 		for t in inst:
-			text = out.createTextNode(t['token'])
+			#print type(t['token'])
+			try:
+				x = unicode(t['token'],"UTF-8")
+			except Exception, e:
+				print t['token']
+				raise e
+			
+			text = out.createTextNode(x)
 			tok = out.createElement('token')
 			tok.setAttribute("label",t['label'])
 			tok.setAttribute("id",str(t['id']))
+			tok.setAttribute("value",x)
 			features = out.createElement('features')
-			features.appendChild(out.createTextNode(", ".join(t['features'])))
+			features.appendChild(out.createTextNode(unicode(", ".join(t['features']),"UTF-8")))
+			#features.appendChild(out.createTextNode(", ".join(t['features'])))
 			probs = out.createElement('tags')
 			for tag in t['probs'].keys():
 				prob = out.createElement('tag')
@@ -48,7 +68,7 @@ def verbose_to_XML(instances):
 			ins.appendChild(tok)
 		root.appendChild(ins)
 	out.appendChild(root)
-	return out.toxml()
+	return out.toprettyxml(encoding="UTF-8")
 def read_IOB_file(file):
 	# instances is a list of lists
 	instances=[]

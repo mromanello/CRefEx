@@ -27,7 +27,8 @@ class CRF_classifier:
 		out=[]
 		self.tagger.clear()
 		for t in l_tokens:
-			self.tagger.add(t)
+			t=t.encode("utf-8")
+			self.tagger.add(t.decode("string-escape"))
 		self.tagger.parse()
 		size = self.tagger.size()
 		xsize = self.tagger.xsize()
