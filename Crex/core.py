@@ -10,7 +10,7 @@ Description
 
 __version__='dev-1.0.2'
 
-LOG_FILE="/56k/phd/code/python_crex/crfx.log"
+LOG_FILE="crfx.log"
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=LOG_FILE,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
 logger = logging.getLogger('CREX')
 
