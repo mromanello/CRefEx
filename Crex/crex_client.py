@@ -3,7 +3,7 @@
 
 import xmlrpclib,pprint
 import simplejson as json
-from Crex import clients
+from Crex.clients import CRefEx_XMLRPC_client
 #from nltk import regexp_tokenize
 from Crex.Utils.IO import *
 from Crex.core import *
@@ -22,7 +22,7 @@ s4=u"è Hom. Il. 1.125 Lendon, Jon E. -Xenophon and the alternative to realist f
 def main():
 	"""docstring for main"""
 	print("%s:%i%s"%(LHOST,PORT,PATH))
-	cl = clients.CRefEx_XMLRPC_client(LHOST,PORT,PATH)
+	cl = CRefEx_XMLRPC_client(LHOST,PORT,PATH)
 	b = xmlrpclib.Binary(s1.encode("utf-8"))
 	b = xmlrpclib.Binary(s3.encode("utf-8"))
 	print s2
