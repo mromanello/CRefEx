@@ -3,7 +3,7 @@
 
 import xmlrpclib,pprint,traceback
 import simplejson as json
-from nltk import regexp_tokenize
+#from nltk import regexp_tokenize
 from Crex.Utils.IO import *
 from Crex.core import *
 pp = pprint.PrettyPrinter(indent=5)
