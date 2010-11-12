@@ -10,7 +10,7 @@ from Crex.core import *
 pp = pprint.PrettyPrinter(indent=5)
 
 LHOST="localhost"
-HOST="137.73.122.221"
+HOST="www.mr56k.info"
 PORT=8001
 PATH="/rpc/crex"
 
@@ -21,8 +21,8 @@ s4=u"è Hom. Il. 1.125 Lendon, Jon E. -Xenophon and the alternative to realist f
 			
 def main():
 	"""docstring for main"""
-	print("%s:%i%s"%(LHOST,PORT,PATH))
-	cl = CRefEx_XMLRPC_client(LHOST,PORT,PATH)
+	print("%s:%i%s"%(HOST,PORT,PATH))
+	cl = CRefEx_XMLRPC_client(HOST,PORT,PATH)
 	b = xmlrpclib.Binary(s1.encode("utf-8"))
 	b = xmlrpclib.Binary(s3.encode("utf-8"))
 	print s2
