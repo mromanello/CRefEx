@@ -12,7 +12,11 @@ class CRefEx_XMLRPC_server:
 		PATH=["/rpc/crex"]
 		rpc_paths = PATH
 		
-	def __init__(self, host,port,path):
+	def __init__(self, host="localhost",port="8001",path="/rpc/crex"):
+		LHOST="localhost"
+		HOST="137.73.122.221"
+		PORT=8001
+		PATH="/rpc/crex"
 		try:
 			server = SimpleXMLRPCServer((host, port),requestHandler=CRefEx_XMLRPC_server.RequestHandler)
 			server.register_introspection_functions()

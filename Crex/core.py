@@ -52,7 +52,7 @@ class CrexService:
 # this class should extend an abstract classifier˝	
 class CRFPP_Classifier:
 	def __init__(self,train_file_name):
-		dir="/56k/phd/code/python_crex/data/"
+		dir=determine_path()+"/data/"
 		fe = FeatureExtractor()
 		path,fn = os.path.split(train_file_name)
 		train_fname=dir+fn+'.train'
@@ -74,7 +74,7 @@ class CRefEx:
 	def __init__(self,training_model=None,training_file=None):
 		self.training_model=training_model
 		self.classifier=None
-		self._default_training_dir="/56k/phd/code/python_crex/data/"
+		self._default_training_dir="data/"
 		self._default_training_file="test.txt"
 		self.fe = FeatureExtractor()
 		
@@ -83,7 +83,7 @@ class CRefEx:
 				self.classifier=CRFPP_Classifier(training_file)
 			else:
 				# read the default value
-				self.classifier=CRFPP_Classifier("%s%s"%(self._default_training_dir,self._default_training_file))
+				self.classifier=CRFPP_Classifier("%s/%s%s"%(determine_path(),self._default_training_dir,self._default_training_file))
 	def tokenize(self, blurb):
 		return [y.split(" ") for y in blurb.split("\n")]
 	# the text has not to be unicode
@@ -96,7 +96,7 @@ class CRefEx:
 		
 	def output(self,result,outp=None):
 		"""docstring for output"""
-		fname = "/56k/crex/temp.xml"
+		fname = determine_path()+"/data/"+"temp.xml"
 		f = open(fname,"w")
 		temp = verbose_to_XML(result)
 		f.write(temp)
@@ -352,6 +352,6 @@ def main():
 	
 
 if __name__ == "__main__":
-	#main()
-        print os.listdir(determine_path()+"/data")
+	main()
+    #print os.listdir(determine_path()+"/data")
 
