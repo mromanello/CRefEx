@@ -14,11 +14,11 @@ class CRefEx_XMLRPC_server:
 		
 	def __init__(self, host="localhost",port=8001,path="/rpc/crex"):
 		LHOST="localhost"
-		HOST="137.73.122.221"
+		HOST="www.mr56k.info"
 		PORT=8001
 		PATH="/rpc/crex"
 		try:
-			server = SimpleXMLRPCServer((host, port),requestHandler=CRefEx_XMLRPC_server.RequestHandler)
+			server = SimpleXMLRPCServer((HOST, port),requestHandler=CRefEx_XMLRPC_server.RequestHandler)
 			server.register_introspection_functions()
 			server.register_instance(CrexService())
 			server.serve_forever()
