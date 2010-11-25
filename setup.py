@@ -1,8 +1,8 @@
 import os
 from setuptools import setup, find_packages
+import Crex
 
-VERSION = '1.0.0'
-
+VERSION = Crex.__version__
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
