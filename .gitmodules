@@ -1,0 +1,3 @@
+[submodule "xml_parser"]
+	path = xml_parser
+	url = git@github.com:mromanello/Antlr_XML_parser.git
