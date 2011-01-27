@@ -2,6 +2,7 @@
 import CRFPP
 import sys,pprint,re,string
 from Crex.crfpp_wrap import CRF_classifier
+import Crex
 from partitioner import *
 from random import *
 import xml.dom.minidom as mdom
@@ -32,8 +33,7 @@ def verbose_to_XML(instances):
 	out = mdom.Document()
 	root = out.createElement('reply')
 	root.setAttribute("service","crefex")
-	root.setAttribute("version",str(1.0))
-
+	root.setAttribute("version",Crex.__version__)
 	for inst in instances:	
 		ins = out.createElement('instance')
 		for t in inst:
@@ -269,6 +269,18 @@ def prepare_for_tagging(file_name,inp="jstor/xml"):
 			out+="%s\tO\n"%t
 		out+="\n"
 	return out
+	
+def read_jstor_data(dir):
+	import os,logging
+	logger = logging.getLogger('IO')
+	logger.info("Reading %s"%dir)
+	xml_files= []
+	next =[]
+	for x in os.listdir(dir):
+		if(os.path.isdir("%s%s"%(dir,x))):
+			xml_files += ["%s%s/%s"%(dir,x,y) for y in os.listdir("%s%s/"%(dir,x)) if y.endswith('.xml')]
+			next  += read_jstor_data("%s%s/"%(dir,x))
+	return xml_files + next
 		
 
 def main():
