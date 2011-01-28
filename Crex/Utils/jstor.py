@@ -1,4 +1,8 @@
 import os,sys,pprint
+import re
+import Crex
+from Crex import Utils
+from Crex.Utils import IO
 
 def read_jstor_rdf_catalog(file_path):
 	from lxml import etree
@@ -70,9 +74,16 @@ def read_jstor_csv_catalog(file_path):
 
 if __name__ == "__main__":
 	if(len (sys.argv)>1):
-		#res = read_jstor_rdf_catalog(sys.argv[1])
 		res=[]
-		res = read_jstor_csv_catalog(sys.argv[1])
+		res = read_jstor_csv_catalog("%scitations.csv"%sys.argv[1])
 		ids = res[0]
+		paths = IO.read_jstor_data(sys.argv[1])
+		fnames=[]
+		for p in paths:
+			path,fn = os.path.split(p)
+			fn = fn.replace('_','/').replace('.xml','')
+			fnames.append(fn)
+		commons = set(ids).intersection(set(fnames))
+		print len(commons)
 	else:
 		print "Usage: <jstor_dataset_path>"
