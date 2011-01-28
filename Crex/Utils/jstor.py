@@ -1,7 +1,7 @@
 import os,sys
-from lxml import etree
 
 def read_jstor_rdf_catalog(file_path):
+	from lxml import etree
 	print file_path
 	file=open(file_path)
 	fcont=file.read()
