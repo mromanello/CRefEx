@@ -45,8 +45,8 @@ def read_jstor_csv_catalog(file_path):
 	res = list(csv.DictReader(open(file_path,'rb')))
 	for n in range(len(res)):
 		i=res[n]
-		keys =[ 'JOURNALTITLE','TYPE','PUBDATE']
-		for key in keys:
+		#keys =[ 'JOURNALTITLE','TYPE','PUBDATE']
+		for key in indexes.keys():
 			if(indexes[key].has_key(i[key])):
 				indexes[key][i[key]].append(i['ID'])
 			else:
