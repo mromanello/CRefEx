@@ -59,4 +59,4 @@ if __name__ == "__main__":
 		#res = read_jstor_rdf_catalog(sys.argv[1])
 		read_jstor_csv_catalog(sys.argv[1])
 	else:
-		"Usage: <jstor_dataset_path>"
+		print "Usage: <jstor_dataset_path>"
