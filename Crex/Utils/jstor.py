@@ -51,7 +51,7 @@ def read_jstor_csv_catalog(file_path):
 		else:
 			indexes['journal'][title] = []
 			indexes['journal'][title].append(n)
-			print len(indexes['journal'][title]doc)
+			print len(indexes['journal'][title])
 	print indexes
 
 if __name__ == "__main__":
