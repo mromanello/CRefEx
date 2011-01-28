@@ -40,23 +40,39 @@ def read_jstor_rdf_catalog(file_path):
 				el_res["type"]=n.text
 	
 def read_jstor_csv_catalog(file_path):
-	import csv
+	import csv,re
 	indexes = {'JOURNALTITLE':{},'PUBDATE':{},'TYPE':{}}
+	ids=[]
 	res = list(csv.DictReader(open(file_path,'rb')))
+	print len(res)
 	for n in range(len(res)):
 		i=res[n]
+		ids.append(i['ID'])
 		#keys =[ 'JOURNALTITLE','TYPE','PUBDATE']
 		for key in indexes.keys():
+			if(key=="PUBDATE"):
+				r=re.compile(r'[A-Za-z0-9\-,.\s]+ \n?([0-9]{4})')
+				r2=re.compile(r'([0-9]{4}/[0-9]{4})')
+				if(r.match(i[key])):
+					i[key] = r.search(i[key]).group(1)
+				elif(r2.match(i[key])):
+					i[key] = r2.search(i[key]).group(1)
 			if(indexes[key].has_key(i[key])):
 				indexes[key][i[key]].append(i['ID'])
 			else:
 				indexes[key][i[key]] = []
 				indexes[key][i[key]].append(i['ID'])
-	pprint.pprint( indexes)
+	#pprint.pprint(ids)
+	for i in indexes:
+		for n in indexes[i].keys():
+			print "%s: count=%i"%(n,len(indexes[i][n]))
+	return ids,indexes
 
 if __name__ == "__main__":
 	if(len (sys.argv)>1):
 		#res = read_jstor_rdf_catalog(sys.argv[1])
-		read_jstor_csv_catalog(sys.argv[1])
+		res=[]
+		res = read_jstor_csv_catalog(sys.argv[1])
+		ids = res[0]
 	else:
 		print "Usage: <jstor_dataset_path>"
