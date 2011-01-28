@@ -45,13 +45,14 @@ def read_jstor_csv_catalog(file_path):
 	res = list(csv.DictReader(open(file_path,'rb')))
 	for n in range(len(res)):
 		i=res[n]
-		title = i['JOURNALTITLE']
-		if(indexes['journal'].has_key(title)):
-			indexes['journal'][title].append(n)
-		else:
-			indexes['journal'][title] = []
-			indexes['journal'][title].append(n)
-			print len(indexes['journal'][title])
+		keys =[ i['JOURNALTITLE'],i['TYPE']
+		for key in keys:
+			if(indexes['journal'].has_key(key)):
+		indexes['journal'][key].append(i['ID'])
+	else:
+	indexes['journal'][key] = []
+	indexes['journal'][ket].append(i['ID'])
+	#print len(indexes['journal'][key])
 	print indexes
 
 if __name__ == "__main__":
