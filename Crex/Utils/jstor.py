@@ -1,4 +1,4 @@
-import os,sys
+import os,sys,pprint
 
 def read_jstor_rdf_catalog(file_path):
 	from lxml import etree
@@ -41,18 +41,18 @@ def read_jstor_rdf_catalog(file_path):
 	
 def read_jstor_csv_catalog(file_path):
 	import csv
-	indexes = {'journal':{},'date':{},'type':{}}
+	indexes = {'JOURNALTITLE':{},'PUBDATE':{},'TYPE':{}}
 	res = list(csv.DictReader(open(file_path,'rb')))
 	for n in range(len(res)):
 		i=res[n]
-		keys =[ 'JOURNALTITLE','TYPE']
+		keys =[ 'JOURNALTITLE','TYPE','PUBDATE']
 		for key in keys:
-			if(indexes['journal'].has_key(i[key])):
-				indexes['journal'][i[key]]].append(i['ID'])
+			if(indexes[key].has_key(i[key])):
+				indexes[key][i[key]].append(i['ID'])
 			else:
-				indexes['journal'][i[key]] = []
-				indexes['journal'][i[key]].append(i['ID'])
-	print indexes
+				indexes[key][i[key]] = []
+				indexes[key][i[key]].append(i['ID'])
+	pprint.pprint( indexes)
 
 if __name__ == "__main__":
 	if(len (sys.argv)>1):
