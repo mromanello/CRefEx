@@ -208,22 +208,38 @@ def parse_jstordfr_XML(inp):
 	"""
 	out=[]
 	xml_exp=re.compile(r'(?:<citation>)(.*?)(?:</citation>)')
+	xml_exp=re.compile(r'(?:<reference)(?:.*?>)(.*?)(?:</reference>)')
 	cdata_exp=re.compile(r'(?:<!\[CDATA\[)(.*?)(\]\]>)')
 	if(xml_exp.search(inp) is not None):
+		out=xml_exp.findall(inp)
+		#for item in res2:
+		#	res1=cdata_exp.match(item)
+		#	out.append(res1.groups()[0])
+	return out
+	
+def parse_dfr_keyword_xml(inp):
+	"""docstring for fname"""
+	out=[]
+	xml_exp=re.compile(r'(?:<keyterm frequency=\")(.*?)(?:\" >)(.*?)(?:</keyterm>)')
+	if(xml_exp.search(inp) is not None):
 		res2=xml_exp.findall(inp)
-		for item in res2:
-			res1=cdata_exp.match(item)
-			out.append(res1.groups()[0])
+		out = res2
+	return out
+	
+def parse_dfr_wordcount_xml(inp):
+	"""docstring for fname"""
+	out=[]
+	xml_exp=re.compile(r'(?:<wordcount frequency=\")(.*?)(?:\" >)(.*?)(?:</wordcount>)')
+	if(xml_exp.search(inp) is not None):
+		res2=xml_exp.findall(inp)
+		out = res2
 	return out
 
 def parse_one_p_line(inp):
 	"""
 	Describe what the function does.
 	"""
-	out=[]
-	for line in inp.split("\n"):
-		out.append(line)
-	return out
+	return [line for line in inp.split("\n")]
 
 def tag_IOB_file(train_file_name,to_tag_file_name):
 	"""
@@ -271,6 +287,9 @@ def prepare_for_tagging(file_name,inp="jstor/xml"):
 	return out
 	
 def read_jstor_data(dir):
+	"""
+	Returns a list of strings being the absolute paths to XML files in the dataset
+	"""
 	import os,logging
 	logger = logging.getLogger('IO')
 	logger.info("Reading %s"%dir)

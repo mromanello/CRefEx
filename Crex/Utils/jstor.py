@@ -1,8 +1,13 @@
-import os,sys,pprint
+import os,sys,pprint,codecs,logging
 import re
 import Crex
 from Crex import Utils
 from Crex.Utils import IO
+import urllib
+
+
+_default_username_ = "mromanello"
+_default_password_ = "chohuka5"
 
 def read_jstor_rdf_catalog(file_path):
 	from lxml import etree
@@ -42,16 +47,48 @@ def read_jstor_rdf_catalog(file_path):
 			elif(n.tag=="{%s}type"%dcns):
 				print "%s: %s"%(n.tag,n.text)
 				el_res["type"]=n.text
+		return
+"""
+TODO
+"""	
+
+def get_jstor_info(doc_id=None,reqs = ["wordcounts","references","keyterms"]):
+	#reqs = ["wordcounts","bigrams","trigrams","quadgrams","references","keyterms"]
+	logger = logging.getLogger("jstor")
+	res = {}
+	if(doc_id is not None):
+		for r in reqs:
+			logger.info("Getting %s for %s"%(r,doc_id))
+			res[r] = get_jstor(r,doc_id)
+	return res
+		
+	
+def get_jstor(request,doc_id=None,username=_default_username_,password=_default_password_):
+	base_url = "dfr.jstor.org/resource/"
+	result = None
+	if(doc_id is not None):
+		try:
+			url = "http://%s:%s@%s%s?view=%s"%(username,password,base_url,doc_id,request)
+			result = urllib.urlopen(url)
+			url = "http://%s%s?view=%s"%(base_url,doc_id,request)
+		except Exception, e:
+			raise e
+	if(result is not None):
+		return url,result.read()
+	else:
+		return None,result
 	
 def read_jstor_csv_catalog(file_path):
 	import csv,re
 	indexes = {'JOURNALTITLE':{},'PUBDATE':{},'TYPE':{}}
-	ids=[]
-	res = list(csv.DictReader(open(file_path,'rb')))
+	ids={}
+	res = list(csv.DictReader(codecs.open(file_path, "r", "utf-8" )))
 	print len(res)
 	for n in range(len(res)):
 		i=res[n]
-		ids.append(i['ID'])
+		if(i['VOLUME']==""):
+			i['VOLUME']=0
+		ids[i['ID']] = i
 		#keys =[ 'JOURNALTITLE','TYPE','PUBDATE']
 		for key in indexes.keys():
 			if(key=="PUBDATE"):
@@ -69,7 +106,8 @@ def read_jstor_csv_catalog(file_path):
 	#pprint.pprint(ids)
 	for i in indexes:
 		for n in indexes[i].keys():
-			print "%s: count=%i"%(n,len(indexes[i][n]))
+			#print "%s: count=%i"%(n,len(indexes[i][n]))
+			pass
 	return ids,indexes
 
 if __name__ == "__main__":
@@ -83,6 +121,7 @@ if __name__ == "__main__":
 			path,fn = os.path.split(p)
 			fn = fn.replace('_','/').replace('.xml','')
 			fnames.append(fn)
+		# explain
 		commons = set(ids).intersection(set(fnames))
 		print len(commons)
 	else:
