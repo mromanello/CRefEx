@@ -26,8 +26,7 @@
     <xsl:template match="token">
         <span>
             <xsl:attribute name="class">
-                token
-                <xsl:value-of select="@label"/>
+                token_<xsl:value-of select="@label"/>
             </xsl:attribute>
             <xsl:attribute name="id">
                 <xsl:value-of select="@id"/>
