@@ -88,8 +88,8 @@ def eval(fname,n_folds):
 			train_file="%sfold_%i.train"%(EVAL_PATH,y+1)
 			test_file="%sfold_%i.test"%(EVAL_PATH,y+1)
 			model_file="%sfold_%i.mdl"%(EVAL_PATH,y+1)
-			file=open(train_file,"w").write(out)
-			open(test_file,"w").write(out2)
+			file=open(train_file,"w").write(out.encode("utf-8"))
+			open(test_file,"w").write(out2.encode("utf-8"))
 			train_crfpp("%screx.tpl"%DATA_PATH,train_file,model_file)
 			crf=CRF_classifier(model_file)
 			errors=0
@@ -131,7 +131,7 @@ def eval(fname,n_folds):
 								fp+=1
 							else:
 								fn+=1
-						logger.debug("%s -> GT_Label \"%s\" : Classified_Label \"%s\"\talpha: %f\tbeta: %f\tp: %f"%(token,gt_label,class_label,alpha,beta,p))
+						logger.debug("%s -> GT_Label \"%s\" : Classified_Label \"%s\"\talpha: %s\tbeta: %s\tp: %s"%(token,gt_label,class_label,alpha,beta,p))
 						try:
 							assert (gt_label==class_label)
 						except AssertionError:
@@ -161,13 +161,17 @@ def eval(fname,n_folds):
 				,'train_set_size':0
 				}
 			valid_res.append(res)
+		print "*********"
 		print "Average fscore: %f"%(tot_fscore/float(iterations_num))
 		print "Average accuracy: %f"%(tot_acc/float(iterations_num))
 		print "Average precision: %f"%(tot_prec/float(iterations_num))
 		print "Average recall: %f"%(tot_fscore/float(iterations_num))
 		print "Output in HTML format written to output.html"
-		open('data/output.html','w').write(eval_results_to_HTML(results))
-			
+		print "*********"
+		
+		#open('data/output.html','w').write(eval_results_to_HTML(results.encode("utf-8")))
+		for n,r in enumerate(results):
+			print "%i %s"%(n+1," ".join(["%s/%s"%(n["token"],n["label"]) for n in r]))
 		
 	except RuntimeError,e:
 		"Not able to prepare %s for training!"%fname	

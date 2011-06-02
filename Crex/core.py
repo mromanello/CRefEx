@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# author: 56k
+# author: Matteo Romanello, matteo.romanello@gmail.com
 import os,re,string,logging,pprint,types,xmlrpclib,json
 import Crex
 from Crex.crfpp_wrap import *
@@ -48,8 +48,10 @@ class CrexService:
 		"""
 		logger.debug("Printing version")
 		return __version__
-	
-# this class should extend an abstract classifier˝	
+
+"""	
+This class should extend an abstract classifier	
+"""
 class CRFPP_Classifier:
 	def __init__(self,train_file_name):
 		dir=determine_path()+"/data/"
@@ -84,15 +86,19 @@ class CRefEx:
 			else:
 				# read the default value
 				self.classifier=CRFPP_Classifier("%s/%s%s"%(determine_path(),self._default_training_dir,self._default_training_file))
+	"""
+	Utility function to tokenise a text.
+	"""
 	def tokenize(self, blurb):
 		return [y.split(" ") for y in blurb.split("\n")]
-	# the text has not to be unicode
+	"""
+	Classify method.
+	"""
 	def clf(self, text):
 		if(type(text) is not type(unicode("string"))):
 			text = unicode(text,"utf-8")
 		temp = self.tokenize(text)
-		res = self.classify(temp)
-		return res
+		return self.classify(temp)
 		
 	def output(self,result,outp=None):
 		"""docstring for output"""
@@ -298,7 +304,7 @@ class FeatureExtractor:
 		out = [self.extract_features(tok) for tok in instance]
 		res = [dict(r) for r in out]
 		# transform the numeric values into strings
-		print res
+		logger.debug(res)
 		for n,x in enumerate(res):
 			for m,key in enumerate(x.iterkeys()):
 				if(type(x[key]) is type(12)):
@@ -339,16 +345,25 @@ class FeatureExtractor:
 	
 def main():
 	c=CRefEx()
-	s2="this is a string Il. 1.125 randomÜ Hom. Il. 1.125"
+	s2="Hom. Il. 1.125 is a citation"
 	s1=u"this is a string Il. 1.125 randomÜ Hom. Il. 1.125 γρα"
 	s=u"Eschilo interprete di Ü se stesso (Ar. Ran. 1126s. e 1138-1150)"
 
-	test = s1
-	res = c.clf(test)
+	test1 = s
+	test2 = s2
+	res1 = c.clf(test1)
+	res2 = c.clf(test2)
 
-	print c.output(res,"html")
-	print c.output(res,"xml")
-	print c.output(res,"json").decode("utf-8")
+	#print c.output(res,"html")
+	#print c.output(res,"xml")
+	#print c.output(res,"json").decode("utf-8")
+	
+	
+	readable1 = ["%s/%s"%(n["token"],n["label"]) for n in res1[0]]
+	readable2 = ["%s/%s"%(n["token"],n["label"]) for n in res2[0]]
+	print " ".join(readable1)
+	print " ".join(readable2)
+
 	
 
 if __name__ == "__main__":
