@@ -3,7 +3,8 @@
 
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 from SimpleXMLRPCServer import SimpleXMLRPCRequestHandler
-from core import CrexService
+from Crex.core import CrexService
+from Crex.Utils.services import *
 import sys
 
 		

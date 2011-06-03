@@ -6,20 +6,21 @@ import CRFPP
 import sys,logging,os
 import pprint
 
-logger = logging.getLogger('CRFPP_WRAP')
+#global logger
+moodule_logger = logging.getLogger('CREX.CRFPP_WRAP')
 
 def train_crfpp(template_file,train_data_file,model_file):
-		cmd="crf_learn -f 10 -t %s %s %s"%(template_file,train_data_file,model_file)
+		cmd="crf_learn -f 1 -t %s %s %s"%(template_file,train_data_file,model_file)
 		os.popen(cmd).readlines()
 		return
 
 class CRF_classifier:
 	def __init__(self,model_file,verb_level=2,best_out_n=2):
-		logger = logging.getLogger('CRFPP')
+		self.logger = logging.getLogger('CREX.CRFPP_WRAP.CRFPP')
 		try:
 			self.m,self.v,self.bn=model_file,verb_level,best_out_n
 			self.tagger = CRFPP.Tagger("-m %s -v %i -n%i"%(model_file,verb_level,best_out_n))
-			logger.info("CRFPP Tagger initialized with command %s"%("-m %s -v %i -n%i"%(self.m,self.v,self.bn)))
+			self.logger.info("CRFPP Tagger initialized with command %s"%("-m %s -v %i -n%i"%(self.m,self.v,self.bn)))
 		except RuntimeError, e:
 			print "RuntimeError: ", e,
 			
@@ -43,7 +44,7 @@ class CRF_classifier:
 			else:
 				feats.append(self.tagger.x(i, j))
 			res['features']=feats
-			#logger.debug(feats)
+		   self.logger.debug(res['features'])
 		   res['label']=self.tagger.y2(i)
 		   res['probs']={}
 		   for j in range(0, (ysize)):
@@ -54,7 +55,7 @@ class CRF_classifier:
 			probs['alpha']="%f"%vals[1]
 			probs['beta']="%f"%vals[2]
 			res['probs'][tag]=probs
-			logger.debug(str(res))
+		   self.logger.info("%s => %s"%(res["token"],res["label"]))
 		   out.append(res)
 		return out
 	

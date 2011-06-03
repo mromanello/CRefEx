@@ -9,9 +9,6 @@ from Crex.Utils.IO import *
 Description
 """
 
-
-LOG_FILE="crfx.log"
-logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=LOG_FILE,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
 logger = logging.getLogger('CREX')
 
 pp = pprint.PrettyPrinter(indent=5)
@@ -47,7 +44,7 @@ class CrexService:
 		Return the version of CRefEx
 		"""
 		logger.debug("Printing version")
-		return __version__
+		return Crex.__version__
 
 """	
 This class should extend an abstract classifier	
@@ -73,7 +70,9 @@ class CRFPP_Classifier:
 		
 class CRefEx:
 	"""Canonical Reference Extractor"""
-	def __init__(self,training_model=None,training_file=None):
+	def __init__(self,cfg_file=None,training_model=None,training_file=None):
+		#self.init_logger(loglevel=logging.DEBUG,log_file="/Users/56k/phd/code/python_crex/Crex/crfx_3.log")
+		self.read_config_file(cfg_file)
 		self.training_model=training_model
 		self.classifier=None
 		self._default_training_dir="data/"
@@ -86,6 +85,32 @@ class CRefEx:
 			else:
 				# read the default value
 				self.classifier=CRFPP_Classifier("%s/%s%s"%(determine_path(),self._default_training_dir,self._default_training_file))
+	
+	def read_config_file(self,cfg_file):
+		self.init_logger(loglevel=logging.INFO)
+		logger.info("it's supposed to read %s"%cfg_file)
+		pass
+	
+	"""
+	Initialise the logger
+	"""
+	def init_logger(self,log_file=None, loglevel=logging.DEBUG):
+		if(log_file is not None):
+			logging.basicConfig(level=loglevel,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=log_file,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
+			logger = logging.getLogger('CREX')
+			logger.info("Logger initialised")
+		else:
+			logger = logging.getLogger('CREX')
+			logger.setLevel(loglevel)
+			ch = logging.StreamHandler()
+			ch.setLevel(loglevel)
+			formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+			ch.setFormatter(formatter)
+			logger.addHandler(ch)
+			logger.info("Logger initialised")
+			
+			
+	
 	"""
 	Utility function to tokenise a text.
 	"""
@@ -209,6 +234,7 @@ class FeatureExtractor:
 		else:
 			res = self.OTHERS
 		return ("brackets",res)
+		
 	def extract_case_feature(self,check_str):
 		"""
 		Extract a feature concerning the ortographic case of a token
@@ -223,6 +249,7 @@ class FeatureExtractor:
 			elif(naked[0].isupper()):
 				res = self.INIT_CAPS
 		return ("case",res)
+		
 	def extract_punctuation_feature(self,check_str):
 		res = self.OTHERS
 		punct_exp=re.compile('[%s]' % re.escape(string.punctuation))
@@ -236,6 +263,7 @@ class FeatureExtractor:
 		elif(cont_punct.match(check_str)):
 			res = self.CONTINUING_PUNCTUATION
 		return ("punct",res)
+		
 	def extract_number_feature(self,check_str):
 		"""
 		TODO
@@ -249,6 +277,7 @@ class FeatureExtractor:
 		elif(naked.isalnum()):
 			res = self.MIXED_ALPHANUM
 		return ("number",res)
+		
 	def extract_char_ngrams(self,inp):
 		"""
 		"""
@@ -264,6 +293,7 @@ class FeatureExtractor:
 			temp = ("susb -%i"%(i),inp[len(inp)-i:])
 			out.append(temp)
 		return out
+		
 	def extract_string_features(self,check_str):
 		"""
 		Extract string length and text only string lowercase
@@ -304,6 +334,7 @@ class FeatureExtractor:
 		out = [self.extract_features(tok) for tok in instance]
 		res = [dict(r) for r in out]
 		# transform the numeric values into strings
+		logger = logging.getLogger('CREX.FeatureExtractor')
 		logger.debug(res)
 		for n,x in enumerate(res):
 			for m,key in enumerate(x.iterkeys()):
@@ -344,8 +375,10 @@ class FeatureExtractor:
 		return out
 	
 def main():
-	c=CRefEx()
-	s2="Hom. Il. 1.125 is a citation"
+	c=CRefEx(cfg_file="crefex.cfg")
+	
+	print "*** Quick Test***"
+	s2="the string (Hom. Il. 1.125) is a citation"
 	s1=u"this is a string Il. 1.125 randomÜ Hom. Il. 1.125 γρα"
 	s=u"Eschilo interprete di Ü se stesso (Ar. Ran. 1126s. e 1138-1150)"
 
@@ -356,11 +389,11 @@ def main():
 
 	#print c.output(res,"html")
 	#print c.output(res,"xml")
-	#print c.output(res,"json").decode("utf-8")
-	
+	#print c.output(res,"json").decode("utf-8")	
 	
 	readable1 = ["%s/%s"%(n["token"],n["label"]) for n in res1[0]]
 	readable2 = ["%s/%s"%(n["token"],n["label"]) for n in res2[0]]
+	logger.info('ciao')
 	print " ".join(readable1)
 	print " ".join(readable2)
 

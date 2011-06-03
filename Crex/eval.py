@@ -5,12 +5,11 @@ from partitioner import *
 from partitioner import crossvalidationdataconstructor
 import pprint
 
-logger=logging.getLogger('EVAL')
+logger=logging.getLogger('CREX.EVAL')
 EVAL_PATH="/home/ngs0554/eval/"
 DATA_PATH="/home/ngs0554/crex_data/"
 
 def eval(fname,n_folds):
-	print EVAL_PATH
 	valid_res=[]
 	fe = FeatureExtractor()
 	try:
@@ -25,7 +24,7 @@ def eval(fname,n_folds):
 			max=len(neg_inst)
 		else:
 			max=len(pos_inst)
-		print("Toal instances: %i (Test set plus training set)"%(len(neg_inst)+len(pos_inst)))
+		print("Total instances: %i (Test set plus training set)"%(len(neg_inst)+len(pos_inst)))
 		iterations_num=n_folds
 		c = CrossValidationDataConstructor(pos_inst, neg_inst, numPartitions=iterations_num, randomize=False)
 		dataSets_iterator = c.getDataSets()
@@ -146,8 +145,8 @@ def eval(fname,n_folds):
 			tot_prec+=prec
 			tot_rec+=rec
 			tot_fscore+=fscore
-			logger.debug("%i Errors out of %i tokens (in %i testing instances)"%(errors,tot_tokens,len(test)))
-			logger.debug("FOLD#%i: TP:%i\tFP:%i\tTN:%i\tFN:%i\tACC:%f\tPREC:%f\tRECALL:%f\tFSCORE:%f"%((y+1),tp,fp,tn,fn,acc,prec,rec,fscore))
+			logger.info("%i Errors out of %i tokens (in %i testing instances)"%(errors,tot_tokens,len(test)))
+			logger.info("FOLD#%i: TP:%i\tFP:%i\tTN:%i\tFN:%i\tACC:%f\tPREC:%f\tRECALL:%f\tFSCORE:%f"%((y+1),tp,fp,tn,fn,acc,prec,rec,fscore))
 			res={
 				'accuracy':acc
 				,'precision':prec
@@ -161,6 +160,11 @@ def eval(fname,n_folds):
 				,'train_set_size':0
 				}
 			valid_res.append(res)
+		
+		#open('data/output.html','w').write(eval_results_to_HTML(results.encode("utf-8")))
+		for n,r in enumerate(results):
+			print "%i %s"%(n+1," ".join(["%s/%s"%(n["token"],n["label"]) for n in r]))
+			
 		print "*********"
 		print "Average fscore: %f"%(tot_fscore/float(iterations_num))
 		print "Average accuracy: %f"%(tot_acc/float(iterations_num))
@@ -169,10 +173,6 @@ def eval(fname,n_folds):
 		print "Output in HTML format written to output.html"
 		print "*********"
 		
-		#open('data/output.html','w').write(eval_results_to_HTML(results.encode("utf-8")))
-		for n,r in enumerate(results):
-			print "%i %s"%(n+1," ".join(["%s/%s"%(n["token"],n["label"]) for n in r]))
-		
 	except RuntimeError,e:
 		"Not able to prepare %s for training!"%fname	
 
@@ -180,6 +180,7 @@ def main():
 	global DATA_PATH,EVAL_PATH
 	DATA_PATH=sys.argv[1]
 	EVAL_PATH=sys.argv[2]
+	c=CRefEx(cfg_file="crefex.cfg")
 	eval("%s/test.txt"%DATA_PATH,10)
 
 def run_example(data_dir):
