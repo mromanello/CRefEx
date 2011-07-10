@@ -3,4 +3,4 @@
 	url = git@github.com:mromanello/Antlr_XML_parser.git
 [submodule "citation_parser"]
 	path = citation_parser
-	url = ./citation_parser
+	url = git@github.com:mromanello/CitationParser.git
