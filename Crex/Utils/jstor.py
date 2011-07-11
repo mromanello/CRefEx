@@ -6,8 +6,8 @@ from Crex.Utils import IO
 import urllib
 
 
-_default_username_ = "mromanello"
-_default_password_ = "chohuka5"
+_default_username_ = ""
+_default_password_ = ""
 
 def read_jstor_rdf_catalog(file_path):
 	from lxml import etree
