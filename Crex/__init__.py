@@ -1,2 +1,2 @@
 # -*- coding: utf-8 -*-
-__version__='dev-1.0.4'
+__version__='1.1.0-alpha'
