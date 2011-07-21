@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 # author: Matteo Romanello, matteo.romanello@gmail.com
+
+import getopt
+from ConfigParser import SafeConfigParser
 import os,re,string,logging,pprint,types,xmlrpclib,json
 import Crex
 from Crex.crfpp_wrap import *
@@ -87,18 +90,25 @@ class CRefEx:
 				self.classifier=CRFPP_Classifier("%s/%s%s"%(determine_path(),self._default_training_dir,self._default_training_file))
 	
 	def read_config_file(self,cfg_file):
-		self.init_logger(loglevel=logging.INFO)
-		logger.info("it's supposed to read %s"%cfg_file)
+		parser = SafeConfigParser()
+		parser.read(cfg_file)
+		verbose = parser.getboolean("logging","verbose")
+		logfile = parser.get("logging","file")
+		if(verbose):
+			self.init_logger(loglevel=logging.DEBUG, log_file=logfile)
+		else:
+			self.init_logger(loglevel=logging.INFO, log_file=logfile)
+		logger.info("Reading configuration from file %s"%cfg_file)
 		pass
 	
 	"""
 	Initialise the logger
 	"""
 	def init_logger(self,log_file=None, loglevel=logging.DEBUG):
-		if(log_file is not None):
-			logging.basicConfig(level=loglevel,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filename=log_file,datefmt='%a, %d %b %Y %H:%M:%S',filemode='w')
+		if(log_file !="" or log_file is not None):
+			logging.basicConfig(filename=log_file,level=loglevel,format='%(asctime)s - %(name)s - [%(levelname)s] %(message)s',filemode='w',datefmt='%a, %d %b %Y %H:%M:%S')
 			logger = logging.getLogger('CREX')
-			logger.info("Logger initialised")
+			logger.info("Logger initialised with %s, %s"%(log_file,str(loglevel)))
 		else:
 			logger = logging.getLogger('CREX')
 			logger.setLevel(loglevel)
@@ -375,31 +385,44 @@ class FeatureExtractor:
 		return out
 	
 def main():
-	c=CRefEx(cfg_file="crefex.cfg")
-	
-	print "*** Quick Test***"
-	s2="the string (Hom. Il. 1.125) is a citation"
-	s1=u"this is a string Il. 1.125 randomÜ Hom. Il. 1.125 γρα"
-	s=u"Eschilo interprete di Ü se stesso (Ar. Ran. 1126s. e 1138-1150)"
-
-	test1 = s
-	test2 = s2
-	res1 = c.clf(test1)
-	res2 = c.clf(test2)
-
-	#print c.output(res,"html")
-	#print c.output(res,"xml")
-	#print c.output(res,"json").decode("utf-8")	
-	
-	readable1 = ["%s/%s"%(n["token"],n["label"]) for n in res1[0]]
-	readable2 = ["%s/%s"%(n["token"],n["label"]) for n in res2[0]]
-	logger.info('ciao')
-	print " ".join(readable1)
-	print " ".join(readable2)
+	pass
 
 	
 
 if __name__ == "__main__":
-	main()
-    #print os.listdir(determine_path()+"/data")
+	conf_file=None
+	tests=["Hom. Il. 1.125) is a citation", u"this is a string Il. 1.125 randomÜ Hom. Il. 1.125 γρα",u"Eschilo interprete di Ü se stesso (Ar. Ran. 1126s. e 1138-1150)"]
+	try:
+		opts, args = getopt.getopt(sys.argv[1:], "hc:i:", ["help","conf_file","input"])
+	except getopt.GetoptError, err:
+		print str(err) # will print something like "option -a not recognized"
+		usage()
+		sys.exit(2)
+	for o, a in opts:
+		if o == "-v":
+			verbose = True
+		elif o in ("-h", "--help"):
+			usage()
+			sys.exit()
+		elif o in ("-i", "--inp"):
+			import codecs
+			f = codecs.open(a, "r", "utf-8" )
+			tests = f.read().split("\n")
+		elif o in ("-c", "--config"):
+			conf_file = a
+			if(conf_file is not None):
+				c=CRefEx(cfg_file=conf_file)
+				"""
+				TODO:	The tests should be read directly from a file.
+				Path to file should go in the 
+				"""
+				
+				for n,t in enumerate(tests):
+					logger.info("*** Quick Test %i***"%(n+1))
+					result = c.clf(t)
+					readable_result = ["%s/%s"%(n["token"],n["label"]) for n in result[0]]
+					logger.info(" ".join(readable_result).decode("UTF-8"))
+				
+		else:
+			assert False, "unhandled option"
 
