@@ -29,8 +29,8 @@ def determine_path ():
         sys.exit ()
 
 class CrexService:
-	def __init__(self):
-		self.core = CRefEx()
+	def __init__(self,cfg_file=None):
+		self.core = CRefEx(cfg_file)
 	
 	#replace this method
 	def test(self,arg):

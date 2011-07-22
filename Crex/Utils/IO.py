@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import CRFPP
-import sys,pprint,re,string
+import sys,pprint,re,string,logging
 from Crex.crfpp_wrap import CRF_classifier
 import Crex
 from partitioner import *
@@ -22,7 +22,11 @@ def read_instances(inp_text):
 def out_html(out):
 	"""docstring for out_xml"""
 	import libxml2,libxslt
-	styledoc = libxml2.parseFile("/56k/crex/reply2html.xsl")
+	from Crex import core
+	xsl_path="%s/%s/%s"%(core.determine_path(),"data","reply2html.xsl")
+	styledoc = libxml2.parseFile(xsl_path)
+	logger=logging.getLogger("CREX.IO")
+	logger.info("Using stylesheet \"%s\""%xsl_path)
 	style = libxslt.parseStylesheetDoc(styledoc)
 	doc = libxml2.parseDoc(out.encode("utf-8"))
 	result = style.applyStylesheet(doc, None)

@@ -32,7 +32,7 @@ def main():
 		print e
 		
 	try:
-		cl.proxy.test_unicode(c,"xml")
+		cl.proxy.test_unicode(c,"html")
 		print "Test 2 done"
 	except Exception as e:
 		print e
