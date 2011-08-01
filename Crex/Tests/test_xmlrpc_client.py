@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+# author: Matteo Romanello, matteo.romanello@gmail.com
 
 import xmlrpclib,pprint
 import simplejson as json

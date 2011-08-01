@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# author: Matteo Romanello, matteo.romanello@gmail.com
+
 import CRFPP
 import sys,pprint,re,string,logging
 from Crex.crfpp_wrap import CRF_classifier
