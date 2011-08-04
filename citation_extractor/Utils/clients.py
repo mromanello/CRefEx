@@ -4,8 +4,8 @@
 import xmlrpclib,pprint,traceback
 import simplejson as json
 #from nltk import regexp_tokenize
-from Crex.Utils.IO import *
-from Crex.core import *
+from citation_extractor.Utils.IO import *
+from citation_extractor.core import *
 pp = pprint.PrettyPrinter(indent=5)
 
 class CRefEx_XMLRPC_client:

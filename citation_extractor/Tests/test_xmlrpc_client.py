@@ -4,10 +4,10 @@
 
 import xmlrpclib,pprint
 import simplejson as json
-from Crex.Utils.clients import CRefEx_XMLRPC_client
+from citation_extractor.Utils.clients import CRefEx_XMLRPC_client
 #from nltk import regexp_tokenize
-from Crex.Utils.IO import *
-from Crex.core import *
+from citation_extractor.Utils.IO import *
+from citation_extractor.core import *
 pp = pprint.PrettyPrinter(indent=5)
 
 LHOST="localhost"

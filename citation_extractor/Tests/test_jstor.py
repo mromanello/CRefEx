@@ -1,7 +1,7 @@
-import Crex
-from Crex import Utils
-from Crex.Utils import IO
-from Crex.Utils import jstor
+import citation_extractor
+from citation_extractor import Utils
+from citation_extractor.Utils import IO
+from citation_extractor.Utils import jstor
 
 from jstor_corpus import models
 

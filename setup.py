@@ -1,8 +1,8 @@
 import os
 from setuptools import setup, find_packages
-import Crex
+import citation_extractor
 
-VERSION = Crex.__version__
+VERSION = citation_extractor.__version__
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
@@ -15,7 +15,7 @@ setup(name='crex',
     packages=find_packages(),
     include_package_data=True,
     #package_dir={'crex': 'crex'},
-    package_data={'Crex': ['data/*.*']},
+    package_data={'citation_extractor': ['data/*.*']},
     long_description=read('README.md'),
     #install_requires=['partitioner','CRFPP'],
     zip_safe=False,

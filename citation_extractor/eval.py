@@ -1,6 +1,6 @@
 import sys,logging,re
-from Crex.core import *
-from Crex.crfpp_wrap import CRF_classifier
+from citation_extractor.core import *
+from citation_extractor.crfpp_wrap import CRF_classifier
 from partitioner import *
 from partitioner import crossvalidationdataconstructor
 import pprint

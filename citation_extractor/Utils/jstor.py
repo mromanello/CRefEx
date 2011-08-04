@@ -1,8 +1,8 @@
 import os,sys,pprint,codecs,logging
 import re
-import Crex
-from Crex import Utils
-from Crex.Utils import IO
+import citation_extractor
+from citation_extractor import Utils
+from citation_extractor.Utils import IO
 import urllib
 
 

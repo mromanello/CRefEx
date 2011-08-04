@@ -20,5 +20,5 @@ RUNNING TESTS
 USAGE
 -----
 
-python Crex/core.py -i tests.txt -c crefex.cfg
+python citation_extractor/core.py -i tests.txt -c crefex.cfg
 

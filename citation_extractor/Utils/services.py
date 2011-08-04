@@ -4,7 +4,7 @@
 
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 from SimpleXMLRPCServer import SimpleXMLRPCRequestHandler
-from Crex.core import CrexService
+from citation_extractor.core import citation_extractorService
 import sys,logging
 
 global logger
@@ -19,7 +19,7 @@ class CRefEx_XMLRPC_server:
 		try:
 			server = SimpleXMLRPCServer((host, port),requestHandler=CRefEx_XMLRPC_server.RequestHandler)
 			server.register_introspection_functions()
-			server.register_instance(CrexService(config))
+			server.register_instance(citation_extractorService(config))
 			server.serve_forever()
 			global logger
 			logger.info("Service started!")

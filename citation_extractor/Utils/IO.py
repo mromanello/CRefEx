@@ -3,8 +3,8 @@
 
 import CRFPP
 import sys,pprint,re,string,logging
-from Crex.crfpp_wrap import CRF_classifier
-import Crex
+from citation_extractor.crfpp_wrap import CRF_classifier
+import citation_extractor
 from partitioner import *
 from random import *
 import xml.dom.minidom as mdom
@@ -24,7 +24,7 @@ def read_instances(inp_text):
 def out_html(out):
 	"""docstring for out_xml"""
 	import libxml2,libxslt
-	from Crex import core
+	from citation_extractor import core
 	xsl_path="%s/%s/%s"%(core.determine_path(),"data","reply2html.xsl")
 	styledoc = libxml2.parseFile(xsl_path)
 	logger=logging.getLogger("CREX.IO")
@@ -39,7 +39,7 @@ def verbose_to_XML(instances):
 	out = mdom.Document()
 	root = out.createElement('reply')
 	root.setAttribute("service","crefex")
-	root.setAttribute("version",Crex.__version__)
+	root.setAttribute("version",citation_extractor.__version__)
 	for inst in instances:	
 		ins = out.createElement('instance')
 		for t in inst:

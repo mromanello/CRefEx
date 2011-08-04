@@ -5,8 +5,8 @@
 
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 from SimpleXMLRPCServer import SimpleXMLRPCRequestHandler
-from Crex.core import CrexService
-from Crex.Utils.services import *
+from citation_extractor.core import citation_extractorService
+from citation_extractor.Utils.services import *
 import sys,getopt
 
 		

@@ -4,9 +4,9 @@
 import getopt
 from ConfigParser import SafeConfigParser
 import os,re,string,logging,pprint,types,xmlrpclib,json
-import Crex
-from Crex.crfpp_wrap import *
-from Crex.Utils.IO import *
+import citation_extractor
+from citation_extractor.crfpp_wrap import *
+from citation_extractor.Utils.IO import *
 
 """
 Description
@@ -28,7 +28,7 @@ def determine_path ():
         print "There is no __file__ variable. Please contact the author."
         sys.exit ()
 
-class CrexService:
+class citation_extractorService:
 	def __init__(self,cfg_file=None):
 		self.core = CRefEx(cfg_file)
 	
@@ -47,7 +47,7 @@ class CrexService:
 		Return the version of CRefEx
 		"""
 		logger.debug("Printing version")
-		return Crex.__version__
+		return citation_extractor.__version__
 
 """	
 This class should extend an abstract classifier	
@@ -74,7 +74,7 @@ class CRFPP_Classifier:
 class CRefEx:
 	"""Canonical Reference Extractor"""
 	def __init__(self,cfg_file=None,training_model=None,training_file=None):
-		#self.init_logger(loglevel=logging.DEBUG,log_file="/Users/56k/phd/code/python_crex/Crex/crfx_3.log")
+		#self.init_logger(loglevel=logging.DEBUG,log_file="/Users/56k/phd/code/python_crex/citation_extractor/crfx_3.log")
 		self.read_config_file(cfg_file)
 		self.training_model=training_model
 		self.classifier=None

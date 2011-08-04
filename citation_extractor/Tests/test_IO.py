@@ -1,6 +1,6 @@
-import Crex, pprint
+import citation_extractor, pprint
 import os,sys, logging
-from Crex.Utils import IO
+from citation_extractor.Utils import IO
 
 #create logger
 logger = logging.getLogger("test")
