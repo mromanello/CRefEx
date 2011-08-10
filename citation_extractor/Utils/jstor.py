@@ -52,14 +52,14 @@ def read_jstor_rdf_catalog(file_path):
 TODO
 """	
 
-def get_jstor_info(doc_id=None,reqs = ["wordcounts","references","keyterms"]):
+def get_jstor_info(doc_id=None,reqs = ["wordcounts","references","keyterms"],username=_default_username_,password=_default_password_):
 	#reqs = ["wordcounts","bigrams","trigrams","quadgrams","references","keyterms"]
 	logger = logging.getLogger("jstor")
 	res = {}
 	if(doc_id is not None):
 		for r in reqs:
 			logger.info("Getting %s for %s"%(r,doc_id))
-			res[r] = get_jstor(r,doc_id)
+			res[r] = get_jstor(r,doc_id,username,password)
 	return res
 		
 	
@@ -83,13 +83,11 @@ def read_jstor_csv_catalog(file_path):
 	indexes = {'JOURNALTITLE':{},'PUBDATE':{},'TYPE':{}}
 	ids={}
 	res = list(csv.DictReader(codecs.open(file_path, "r", "utf-8" )))
-	print len(res)
 	for n in range(len(res)):
 		i=res[n]
 		if(i['VOLUME']==""):
 			i['VOLUME']=0
 		ids[i['ID']] = i
-		#keys =[ 'JOURNALTITLE','TYPE','PUBDATE']
 		for key in indexes.keys():
 			if(key=="PUBDATE"):
 				r=re.compile(r'[A-Za-z0-9\-,.\s]+ \n?([0-9]{4})')

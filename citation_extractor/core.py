@@ -414,7 +414,7 @@ if __name__ == "__main__":
 				c=CRefEx(cfg_file=conf_file)
 				"""
 				TODO:	The tests should be read directly from a file.
-				Path to file should go in the 
+				Path to file should go in the configuration file
 				"""
 				
 				for n,t in enumerate(tests):
