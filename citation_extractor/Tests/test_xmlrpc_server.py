@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 # author: Matteo Romanello, matteo.romanello@gmail.com
 
 
@@ -8,7 +8,7 @@ from SimpleXMLRPCServer import SimpleXMLRPCRequestHandler
 from citation_extractor.core import citation_extractorService
 from citation_extractor.Utils.services import *
 import sys,getopt
-
+import daemon
 		
 def launch_server(host,port,path,cfg):
 	try:
