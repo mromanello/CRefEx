@@ -1,22 +1,4 @@
-CRex is a Canonical Citation Toolkit
+Canonical Referene Extractor (CRex)
 ====================================
 
-[this needs to be rewritten]
-
-RATIONALE
----------
-[TBD]
-
-INSTALLATION
-------------
-[TBD]
-
-RUNNING TESTS
--------------
-[TBD]
-
-USAGE
------
-
-python citation_extractor/core.py -i tests.txt -c crefex.cfg
-
+CRex has been now replaced by CCiT, the Canonical Citation Toolkit https://github.com/mromanello/CCiT.
