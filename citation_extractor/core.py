@@ -36,6 +36,11 @@ class citation_extractorService:
 	def test(self,arg):
 		res = self.core.clf(arg)
 		return self.core.output(res,"xml")
+        
+        def json(self,arg):
+            res = self.core.clf(arg)
+            return self.core.output(res,"json")
+
 		
 	def test_unicode(self,arg,outp):
 		temp = arg.data.decode("utf-8")

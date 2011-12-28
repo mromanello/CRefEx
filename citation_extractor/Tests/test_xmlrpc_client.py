@@ -27,7 +27,7 @@ def main():
 	b = xmlrpclib.Binary(s2.encode("utf-8"))
 	c = xmlrpclib.Binary(s3.encode("utf-8"))
 	try:
-		print cl.proxy.test_unicode(b,"json")
+		cl.proxy.test_unicode(b,"json")
 		print "Test 1 done"
 	except Exception as e:
 		print e
