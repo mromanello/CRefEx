@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 # author: Matteo Romanello, matteo.romanello@gmail.com
 
 import xmlrpclib,pprint
@@ -22,12 +22,12 @@ s4=u"Lendon, Jon E. -Xenophon and the alternative to realist foreign policy : Cy
 			
 def main():
 	"""docstring for main"""
-	print("%s:%i%s"%(LHOST,PORT,PATH))
-	cl = CRefEx_XMLRPC_client(LHOST,PORT,PATH)
+	print("%s:%i%s"%(HOST,PORT,PATH))
+	cl = CRefEx_XMLRPC_client(HOST,PORT,PATH)
 	b = xmlrpclib.Binary(s2.encode("utf-8"))
 	c = xmlrpclib.Binary(s3.encode("utf-8"))
 	try:
-		cl.proxy.test_unicode(b,"json")
+		print cl.proxy.test_unicode(b,"json")
 		print "Test 1 done"
 	except Exception as e:
 		print e
