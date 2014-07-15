@@ -2,9 +2,6 @@
 	path = citation_parser
 	url = git@github.com:mromanello/CitationParser.git
 
-[submodule "xml_parser"]
-	path = xml_parser
-	url = https://github.com/mromanello/Antlr_XML_parser
 [submodule "citation_extractor"]
 	path = citation_extractor
 	url = git@github.com:mromanello/CitationExtractor.git
